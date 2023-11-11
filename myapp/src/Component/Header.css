@@ -1,0 +1,77 @@
+header
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    border-bottom: 1px solid #000000;
+}
+.logo-bkbook
+{
+    width: 171px;
+    height: 121px;
+    flex-shrink: 0;
+}
+.logo
+{
+    display: flex;
+}
+nav .logo
+{
+    color: #2454ce;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.32px;
+}
+nav .menu
+{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+
+}
+header nav .menu ul
+{
+    display: flex;
+    margin-right: 10px;
+
+}
+header nav .menu ul li
+{
+    list-style: none;
+    margin-left: 30px;
+}
+header nav .menu ul li a
+{
+    text-decoration: none;
+    font-size: 20px;
+}
+header nav .menu ul li a:hover
+{
+    color: red;
+    text-decoration: underline;
+}
+header nav .menu .search-bar
+{
+    align-items: center;
+    justify-content: space-between;
+    width: 235px;
+    height: 40px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    padding: 0 10px;
+    margin: 20px;
+}
+header nav .menu .star,
+header nav .menu .cart
+{
+    margin: 10px;
+}
+header nav .menu .cart
+{
+    margin-right: 20px;
+}
