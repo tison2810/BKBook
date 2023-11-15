@@ -4,15 +4,15 @@ import Header from '../Component/Header.js';
 import Footer from '../Component/Footer.js';
 import { Product } from './Trangchu.js';
 
-import increase from './images/increase.svg';
-import decrease from './images/decrease.svg';
-import namiya from './images/namiya.jpg';
-import garbageDump from './images/garbagedump.png';
-import nxc1ct from './images/nxc1ct.jpg';
-import vncncd from './images/vncncd.jpg';
-import yThien from './images/yThien.jpg';
-import osho from './images/osho-tu-ton.jpg';
-import toancc from './images/toancc.webp';
+import increase from '../images/increase.svg';
+import decrease from '../images/decrease.svg';
+import namiya from '../images/namiya.jpg';
+import garbageDump from '../images/garbagedump.png';
+import nxc1ct from '../images/nxc1ct.jpg';
+import vncncd from '../images/vncncd.jpg';
+import yThien from '../images/yThien.jpg';
+import osho from '../images/osho-tu-ton.jpg';
+import toancc from '../images/toancc.webp';
 
 let totalPrice = 0;
 const productsInCartInput = [
