@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Trangchu from './Trangchu';
-import Giohang from './Giohang';
-import reportWebVitals from './reportWebVitals';
+import Trangchu from './homePage/Trangchu';
+import Giohang from './homePage/Giohang';
+import reportWebVitals from './homePage/reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
