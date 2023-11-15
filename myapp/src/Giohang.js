@@ -2,7 +2,7 @@ import './Giohang.css';
 import React from 'react';
 import Header from './Component/Header.js';
 import Footer from './Component/Footer.js';
-import { Product } from './Trangchu.js';
+import { Product } from './homePage/Trangchu.js';
 
 import increase from './images/increase.svg';
 import decrease from './images/decrease.svg';

@@ -1,20 +1,20 @@
 //import logo from './logo.svg';
 import './Trangchu.css';
 import React from 'react';
-import namiya from './images/namiya.jpg';
-import nxc1ct from './images/nxc1ct.jpg';
-import vncncd from './images/vncncd.jpg';
-import yThien from './images/yThien.jpg';
-import osho from './images/osho-tu-ton.jpg';
-import toancc from './images/toancc.webp';
-import grammar from './images/grammar.webp';
-import ketoanviahe from './images/ktvh.png';
-import nonggian from './images/nglbn.webp';
-import tddn from './images/tddn.jpg';
-import tiengnguoitrongvan from './images/tiengnguoitrongvan.jpg';
-import voting from './images/voting.png';
-import Header from './Component/Header.js';
-import Footer from './Component/Footer.js';
+import namiya from '../images/namiya.jpg';
+import nxc1ct from '../images/nxc1ct.jpg';
+import vncncd from '../images/vncncd.jpg';
+import yThien from '../images/yThien.jpg';
+import osho from '../images/osho-tu-ton.jpg';
+import toancc from '../images/toancc.webp';
+import grammar from '../images/grammar.webp';
+import ketoanviahe from '../images/ktvh.png';
+import nonggian from '../images/nglbn.webp';
+import tddn from '../images/tddn.jpg';
+import tiengnguoitrongvan from '../images/tiengnguoitrongvan.jpg';
+import voting from '../images/voting.png';
+import Header from '../Component/Header.js';
+import Footer from '../Component/Footer.js';
 
 function Product(props) {
   return (
