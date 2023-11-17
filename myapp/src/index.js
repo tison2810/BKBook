@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Trangchu from './homePage/Trangchu';
-import Giohang from './homePage/Giohang';
+// import Trangchu from './homePage/Trangchu';
+// import Giohang from './homePage/Giohang';
+import App from './DHCN/personalBuy';
 import reportWebVitals from './homePage/reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Trangchu/>
+    <App/>
   </React.StrictMode>
 );
 /*Sử dụng <Trangchu /> hoặc <Giohang/>*/

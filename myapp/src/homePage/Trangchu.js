@@ -13,6 +13,7 @@ import nonggian from '../images/nglbn.webp';
 import tddn from '../images/tddn.jpg';
 import tiengnguoitrongvan from '../images/tiengnguoitrongvan.jpg';
 import voting from '../images/voting.png';
+// import Header from '../Component/logHeader.js';
 import Header from '../Component/Header.js';
 import Footer from '../Component/Footer.js';
 

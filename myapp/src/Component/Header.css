@@ -4,12 +4,13 @@ header
     padding: 0;
     box-sizing: border-box;
     position: relative;
-    border-bottom: 1px solid #000000;
+    border-bottom: 2px solid #000000;
 }
 .logo-bkbook
 {
     width: 171px;
     height: 121px;
+    margin: 20px;
     flex-shrink: 0;
 }
 .logo
@@ -63,8 +64,15 @@ header nav .menu .search-bar
     height: 40px;
     border: 1px solid #000000;
     border-radius: 20px;
-    padding: 0 10px;
+    padding: 0 20px;
     margin: 20px;
+}
+.personalmenu
+{
+    display: flex;
+    column-gap: 1px;
+    list-style: none;
+
 }
 header nav .menu .star,
 header nav .menu .cart
