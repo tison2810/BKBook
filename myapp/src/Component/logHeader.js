@@ -20,10 +20,10 @@ function Header() {
                         <BsBell />
                         </li>
                         <li>
-                        <BsPerson />
+                        <BsChat />
                         </li>
                         <li>
-                        <BsChat />
+                        <BsPerson />    
                         </li>
                     </ul>
                 </div>

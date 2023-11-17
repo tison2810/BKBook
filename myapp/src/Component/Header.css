@@ -10,7 +10,7 @@ header
 {
     width: 171px;
     height: 121px;
-    margin: 20px;
+    margin: 0px;
     flex-shrink: 0;
 }
 .logo
@@ -20,15 +20,15 @@ header
 nav .logo
 {
     color: #2454ce;
-    font-size: 32px;
+    font-size: 30px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    line-height: 120px;
     letter-spacing: -0.32px;
 }
 nav .menu
 {
-    margin: auto;
+    /* margin: auto; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -67,8 +67,9 @@ header nav .menu .search-bar
     padding: 0 20px;
     margin: 20px;
 }
-.personalmenu
+.menu .personalmenu
 {
+    align-items: right;
     display: flex;
     column-gap: 1px;
     list-style: none;
