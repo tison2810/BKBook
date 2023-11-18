@@ -1,10 +1,7 @@
 //import logo from './logo.svg';
 import React from 'react';
-<<<<<<<< HEAD:myapp/src/homePage/Trangchu.js
-========
 
 import '../Styles/Trangchu.css';
->>>>>>>> pr/3:myapp/src/Pages/Trangchu.js
 import namiya from '../images/namiya.jpg';
 import nxc1ct from '../images/nxc1ct.jpg';
 import vncncd from '../images/vncncd.jpg';
@@ -17,10 +14,7 @@ import nonggian from '../images/nglbn.webp';
 import tddn from '../images/tddn.jpg';
 import tiengnguoitrongvan from '../images/tiengnguoitrongvan.jpg';
 import voting from '../images/voting.png';
-<<<<<<<< HEAD:myapp/src/homePage/Trangchu.js
 // import Header from '../Component/logHeader.js';
-========
->>>>>>>> pr/3:myapp/src/Pages/Trangchu.js
 import Header from '../Component/Header.js';
 import Footer from '../Component/Footer.js';
 
