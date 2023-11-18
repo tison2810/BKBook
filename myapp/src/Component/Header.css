@@ -49,12 +49,17 @@ header nav .menu ul li
 header nav .menu ul li a
 {
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
+    color: #2454ce;
 }
 header nav .menu ul li a:hover
 {
     color: red;
     text-decoration: underline;
+}
+header nav .menu ul li a:visited
+{
+    color: #2454ce;
 }
 header nav .menu .search-bar
 {

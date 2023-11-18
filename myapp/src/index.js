@@ -1,15 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
 import './index.css';
+<<<<<<< HEAD
 // import Trangchu from './homePage/Trangchu';
 // import Giohang from './homePage/Giohang';
 import App from './DHCN/personalBuy';
 import reportWebVitals from './homePage/reportWebVitals';
+=======
+
+import reportWebVitals from './reportWebVitals';
+>>>>>>> pr/3
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+<<<<<<< HEAD
     <App/>
+=======
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+>>>>>>> pr/3
   </React.StrictMode>
 );
 /*Sử dụng <Trangchu /> hoặc <Giohang/>*/
