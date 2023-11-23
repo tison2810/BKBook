@@ -1,3 +1,31 @@
-.custom-select{
-    margin-right: 80px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.filterDropdown select {
+  position:  absolute;
+  font-family:'Roboto', sans-serif;
+  font-size: 20px;
+  left: 320px;
+  top: 140px;
+  height: 45px;
+  width: 160px;
+  letter-spacing: -0.24px;
+  /* padding: 10px; */
+  /* text-align: */
+}
+.filterDropdown{
+  border: 2px solid #ccc;
+}
+.orderedTable{
+  position: absolute;
+  top: 200px;
+  left: 320px;
+  width: 1140px;
+  height: 450px;
+  border: 2px solid #91B0FF;
+  border-collapse: collapse;
+  text-align: center;
+  background-color: #ffffff;
+}
+thead, td, tr{
+  border: 2px solid #91B0FF;
+  border-collapse: collapse;
 }
