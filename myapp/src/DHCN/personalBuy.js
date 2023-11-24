@@ -1,6 +1,6 @@
 //import logo from './logo.svg';
 import './personalBuy.css';
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../Component/logHeader.js';
 // import Header from '../Component/Header.js';
 import Footer from '../Component/Footer.js';
@@ -88,50 +88,106 @@ import Table from 'react-bootstrap/Table';
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
 // document.addEventListener("click", closeAllSelect);
+
+// const orderedTable =
+//   <Table className="orderedTable">
+//     <thead>
+//       <tr>
+//         <th scope="col">Trạng thái</th>
+//         <th scope="col">Mã đơn hàng</th>
+//         <th scope="col">Ngày mua</th>
+//         <th scope="col">Chi tiết</th>
+//       </tr>
+//     </thead>
+//     <tbody>
+//       <tr className="DaGiao">
+//         <td>Đã giao</td>
+//         <td>0x0001</td>
+//         <td>31/02/2023</td>
+//         <td><a href = "#" >Xem chi tiết</a></td>
+//       </tr>
+//       <tr className="DangGiao">
+//         <td>Đang giao</td>
+//         <td>0x0002</td>
+//         <td>31/02/2023</td>
+//         <td><a href = "#" >Xem chi tiết</a></td>
+//       </tr>
+//       <tr className="DaHuy">
+//         <td>Đã hủy</td>
+//         <td>0x0003</td>
+//         <td>31/02/2023</td>
+//         <td><a href = "#" >Xem chi tiết</a></td>
+//       </tr>
+//     </tbody>
+// </Table>
+const getStatusClass = (status) => {
+  switch (status) {
+    case 'Đã giao':
+      return 'DaGiao';
+    case 'Đang giao':
+      return 'DangGiao';
+    case 'Đã hủy':
+      return 'DaHuy';
+    case 'Đang xử lí':
+      return 'DangXuLi';
+    case 'Chờ thanh toán':
+      return 'ChoThanhToan';
+    default:
+      return ''; // Không có class nếu không có trạng thái nào khớp
+  }
+};
+
+function App() {
+const [filter, setFilter] = useState('Tất cả'); // State để lưu giá trị filter, mặc định là '0' (Tất cả)
+const handleFilterChange = (e) => {
+  setFilter(e.target.value);
+};
+const data = [
+  { trangThai: 'Đã giao', maDonHang: '0x0001', ngayMua: '31/02/2023' },
+  { trangThai: 'Đang giao', maDonHang: '0x0002', ngayMua: '31/02/2023' },
+  { trangThai: 'Đã hủy', maDonHang: '0x0003', ngayMua: '31/02/2023' },
+  { trangThai: 'Đang xử lí', maDonHang: '0x0004', ngayMua: '31/02/2023' },
+  { trangThai: 'Chờ thanh toán', maDonHang: '0x0005', ngayMua: '31/02/2023' },
+];
+
+// Lọc dữ liệu theo giá trị của dropdown
+const filteredData = 
+filter === 'Tất cả' ? data : data.filter(item => item.trangThai.toLowerCase() === filter.toLowerCase());
 const filterDropdown =
   <div class="filterDropdown">
-    <select>
-      <option value="0">Tất cả</option>
-      <option value="1">Đã giao</option>
-      <option value="2">Đang giao</option>
-      <option value="3">Đang xử lí</option>
-      <option value="4">Đã hủy</option>
+    <select onChange={handleFilterChange} value={filter}>
+      <option value="Tất cả">Tất cả</option>
+      <option value="Đã giao">Đã giao</option>
+      <option value="Đang giao">Đang giao</option>
+      <option value="Đang xử lí">Đang xử lí</option>
+      <option value="Chờ thanh toán">Chờ thanh toán</option>
+      <option value="Đã hủy">Đã hủy</option>
     </select>
   </div>
 
-const orderedTable =
-  <Table class="orderedTable">
-    <thead>
-      <tr>
-        <th scope="col">Trạng thái</th>
-        <th scope="col">Mã đơn hàng</th>
-        <th scope="col">Ngày mua</th>
-        <th scope="col">Chi tiết</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Đã giao</td>
-        <td>0x0001</td>
-        <td>31/02/2023</td>
-        <td><nav>Xem chi tiết</nav></td>
-      </tr>
-      <tr>
-        <td>Đang giao</td>
-        <td>0x0002</td>
-        <td>31/02/2023</td>
-        <td><nav>Xem chi tiết</nav></td>
-      </tr>
-      <tr>
-        <td>Đã hủy</td>
-        <td>0x0003</td>
-        <td>31/02/2023</td>
-        <td><nav>Xem chi tiết</nav></td>
-      </tr>
-    </tbody>
-
-  </Table>
-function App() {
+  const orderedTable =
+    <div className="table-container">
+      <Table className="orderedTable">
+        <thead>
+          <tr>
+            <th scope="col">Trạng thái</th>
+            <th scope="col">Mã đơn hàng</th>
+            <th scope="col">Ngày mua</th>
+            <th scope="col">Chi tiết</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredData.map((item, index) => (
+            <tr key={index} className={getStatusClass(item.trangThai)}>
+              <td>{item.trangThai}</td>
+              <td>{item.maDonHang}</td>
+              <td>{item.ngayMua}</td>
+              <td><a href="#">Xem chi tiết</a></td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </div>
   return (
     <React.Fragment>
       <Header />
