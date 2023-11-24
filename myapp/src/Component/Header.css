@@ -63,7 +63,7 @@ header nav .menu ul li a:visited
 }
 header nav .menu .search-bar
 {
-    align-items: center;
+    align-items: between;
     justify-content: space-between;
     width: 235px;
     height: 40px;

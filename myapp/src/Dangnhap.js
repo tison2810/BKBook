@@ -2,6 +2,8 @@ import React from 'react';
 import Header from './Component/Header.js';
 import Footer from './Component/Footer.js';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 import './Dangnhap.css';
 
@@ -14,6 +16,12 @@ function LoginTitle() {
 }
 
 function LoginForm() {
+    const navigate = useNavigate();
+
+    const handleButtonClick = () => {
+      // Chuyển đến trang '/homepagelogged'
+      navigate('/homepagelogged');
+    };
     return (
         <div className='login-form'>
             <p>
@@ -30,7 +38,7 @@ function LoginForm() {
                 <a href="#">Quên mật khẩu?</a>
             </div>
             <form>
-                <button className="login-button" type="button">Đăng nhập</button>
+                <button className="login-button" onClick={handleButtonClick} type="button">Đăng nhập</button>
             </form>
         </div>
     );

@@ -26,6 +26,7 @@
 }
 .orderedTable td{
   height: 100px;
+  width: 1140px;
 }
 .orderedTable .DaGiao td:first-child{
   background-color: #5fff50;
@@ -43,7 +44,7 @@
   background-color: rgb(69, 252, 255);
 }
 th, td{
-  border: 3px solid #6590fc;
+  border: 3px solid #000000;
   border-collapse: collapse;
 }
 a{

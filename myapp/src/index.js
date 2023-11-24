@@ -1,22 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-// import App from './App';
-import App from './DHCN/personalBuy'
+import App from './App';
+// import App from './DHCN/personalBuy'
 import './index.css';
 
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
-  //   <BrowserRouter>
-  //     <App />
-  //   </BrowserRouter>
-  // </React.StrictMode>
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>
 );
 /*Sử dụng <Trangchu /> hoặc <Giohang/>*/
 
