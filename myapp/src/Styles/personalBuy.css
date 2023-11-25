@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.filterDropdown select {
+  position:  absolute;
+  font-family:'Roboto', sans-serif;
+  font-size: 20px;
+  left: 320px;
+  top: 140px;
+  height: 45px;
+  width: 160px;
+  letter-spacing: -0.24px;
+  /* padding: 10px; */
+  /* text-align: */
+}
+.filterDropdown{
+  border: 2px solid #ccc;
+}
+.orderedTable{
+  position: absolute;
+  top: 200px;
+  left: 320px;
+  width: 920px;
+  border: 2px solid #91B0FF;
+  border-collapse: collapse;
+  text-align: center;
+  background-color: #ffffff;
+}
+.orderedTable td{
+  height: 100px;
+  width: 1140px;
+}
+.orderedTable .DaGiao td:first-child{
+  background-color: #5fff50;
+}
+.orderedTable .DangGiao td:first-child{
+  background-color: rgb(255, 255, 11);
+}
+.orderedTable .DaHuy td:first-child{
+  background-color: rgb(255, 69, 69);
+}
+.orderedTable .DangXuLi td:first-child{
+  background-color: rgb(255, 166, 22);
+}
+.orderedTable .ChoThanhToan td:first-child{
+  background-color: rgb(69, 252, 255);
+}
+th, td{
+  border: 3px solid #000000;
+  border-collapse: collapse;
+}
+a{
+  /* text-decoration: none; */
+  color: #1d5dff;
+}
+a:hover{
+  color: rgb(226, 8, 8);
+}
+.table-container {
+  max-height: 400px; /* Đặt chiều cao tối đa của khu vực chứa bảng */
+  overflow: auto; /* Tạo thanh cuộn nếu bảng quá dài */
+}
