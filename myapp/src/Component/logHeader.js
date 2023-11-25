@@ -1,11 +1,11 @@
 import React from 'react';
-import './Header.css';
+import './logHeader.css';
 import logo from '../images/logoBK.png';
 import { BsBell } from "react-icons/bs";
 import { BsPerson } from "react-icons/bs";
 import { BsChat } from "react-icons/bs";
 import { Link } from 'react-router-dom';
-function Header() {
+function LogHeader() {
     return (
         <header>
             <nav>
@@ -37,4 +37,4 @@ function Header() {
         </header>
     );
 }
-export default Header;
+export default LogHeader;

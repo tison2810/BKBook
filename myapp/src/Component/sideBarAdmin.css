@@ -16,7 +16,6 @@ body {
     border-right: 1px solid #E5E5E5;
 }
 .sidebar ul a{
-    text-decoration: none;
     text-align: center;
     display: block;
     height: 100%;

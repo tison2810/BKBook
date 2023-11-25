@@ -10,9 +10,19 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.1",
     "react-dom": "^18.2.0",
+    "react-icon": "^1.0.0",
     "react-icons": "^4.12.0",
+<<<<<<< HEAD
     "react-router-dom": "^6.20.0",
+=======
+<<<<<<< HEAD
+    "react-router-dom": "^6.20.0",
+    "react-scripts": "^5.0.1",
+=======
+    "react-router-dom": "^6.19.0",
+>>>>>>> 35140d482698f0b76337461a335281a4dceb1169
     "react-scripts": "5.0.1",
+>>>>>>> e88667e29b4cc1193f67e0357ab6b69faf6cd17c
     "web-vitals": "^2.1.4"
   },
   "scripts": {

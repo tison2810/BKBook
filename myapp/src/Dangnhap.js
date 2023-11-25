@@ -2,8 +2,16 @@ import React from 'react';
 import Header from './Component/Header.js';
 import Footer from './Component/Footer.js';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom';
 
+=======
+<<<<<<< HEAD
+import { useNavigate } from 'react-router-dom';
+
+=======
+>>>>>>> e88667e29b4cc1193f67e0357ab6b69faf6cd17c
+>>>>>>> 35140d482698f0b76337461a335281a4dceb1169
 
 import './Dangnhap.css';
 
@@ -16,12 +24,21 @@ function LoginTitle() {
 }
 
 function LoginForm() {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 35140d482698f0b76337461a335281a4dceb1169
     const navigate = useNavigate();
 
     const handleButtonClick = () => {
       // Chuyển đến trang '/homepagelogged'
       navigate('/homepagelogged');
     };
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> e88667e29b4cc1193f67e0357ab6b69faf6cd17c
+>>>>>>> 35140d482698f0b76337461a335281a4dceb1169
     return (
         <div className='login-form'>
             <p>
@@ -38,7 +55,15 @@ function LoginForm() {
                 <a href="#">Quên mật khẩu?</a>
             </div>
             <form>
+<<<<<<< HEAD
                 <button className="login-button" onClick={handleButtonClick} type="button">Đăng nhập</button>
+=======
+<<<<<<< HEAD
+                <button className="login-button" onClick={handleButtonClick} type="button">Đăng nhập</button>
+=======
+                <button className="login-button" type="button">Đăng nhập</button>
+>>>>>>> e88667e29b4cc1193f67e0357ab6b69faf6cd17c
+>>>>>>> 35140d482698f0b76337461a335281a4dceb1169
             </form>
         </div>
     );

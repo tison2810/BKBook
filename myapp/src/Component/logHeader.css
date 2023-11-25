@@ -13,13 +13,13 @@ header
     margin: 0px;
     flex-shrink: 0;
 }
-.logoo
+.logo
 {
     display: flex;
 }
-nav .logoo
+nav .logo
 {
-    color: #003bba;
+    color: #04eeee;
     font-size: 30px;
     font-style: normal;
     font-weight: 400;
@@ -35,33 +35,7 @@ nav .menu
     padding-right: 10px;
 
 }
-header nav .menu ul
-{
-    display: flex;
-    margin-right: 10px;
-
-}
-header nav .menu ul li
-{
-    list-style: none;
-    margin-left: 30px;
-}
-header nav .menu ul li a
-{
-    text-decoration: none;
-    font-size: 25px;
-    color: #2454ce;
-}
-header nav .menu ul li a:hover
-{
-    color: red;
-    text-decoration: underline;
-}
-header nav .menu ul li a:visited
-{
-    color: #2454ce;
-}
-header nav .menu .search-bar
+/* header nav .menu .search-bar
 {
     align-items: center;
     justify-content: space-between;
@@ -71,7 +45,7 @@ header nav .menu .search-bar
     border-radius: 20px;
     padding: 0 20px;
     margin: 20px;
-}
+} */
 .menu .personalmenu
 {
     align-items: right;
@@ -79,13 +53,4 @@ header nav .menu .search-bar
     column-gap: 1px;
     list-style: none;
 
-}
-header nav .menu .star,
-header nav .menu .cart
-{
-    margin: 10px;
-}
-header nav .menu .cart
-{
-    margin-right: 20px;
 }

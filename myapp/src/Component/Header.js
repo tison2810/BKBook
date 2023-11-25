@@ -10,7 +10,7 @@ function Header() {
         <header>
             <nav>
                 <div className="menu">
-                    <div className="logo">
+                    <div className="logoo">
                         <img className="logo-bkbook" src={logo} alt="BKBOOK" />
                         <h2>BKBOOK</h2>
                     </div>

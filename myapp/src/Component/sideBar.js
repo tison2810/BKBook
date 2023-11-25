@@ -13,4 +13,8 @@ function Sidebar () {
     );
 };
 
+<<<<<<< HEAD
 export default Sidebar;
+=======
+export default Sidebar;
+>>>>>>> 35140d482698f0b76337461a335281a4dceb1169
