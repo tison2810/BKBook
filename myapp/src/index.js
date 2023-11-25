@@ -2,7 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+<<<<<<< HEAD
 // import App from './DHCN/personalBuy'
+=======
+>>>>>>> e88667e29b4cc1193f67e0357ab6b69faf6cd17c
 import './index.css';
 
 // import reportWebVitals from './reportWebVitals';
@@ -23,4 +26,8 @@ root.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+<<<<<<< HEAD
 // reportWebVitals();
+=======
+// reportWebVitals();
+>>>>>>> e88667e29b4cc1193f67e0357ab6b69faf6cd17c
