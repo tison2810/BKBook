@@ -1,0 +1,173 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.brand {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.search-button {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.avatar {
+  height: 30px;
+}
+
+.product-list-container {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.submit-button,
+.cancel-button {
+  flex: 1; /* Làm cho cả hai nút chiếm bằng nhau */
+  margin-right: 5px; /* Khoảng cách giữa nút xác nhận và hủy */
+}
+
+.empty-message {
+  margin-top: 20px;
+  color: #888;
+}
+
+.product-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-button {
+  padding: 8px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.action-button.delete {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.action-button.update {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-button {
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.footer-button:first-child {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.footer-button:nth-child(2) {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.footer-button:last-child {
+  background-color: #28a745;
+  color: #fff;
+}
