@@ -7,9 +7,8 @@
     justify-items: center;
     justify-content: space-around;
     align-items: center;
-    border-radius: 20px;
-    border: 1px solid #4A7DFF;
     background-color: white;
+    font-size: 14px;
 }
 .product-in-cart-image
 {
@@ -40,7 +39,6 @@
 .product-in-cart-info p
 {
     margin: 5px;
-    font-size: 18px;
     font-weight: 400;
 
 }
@@ -49,6 +47,7 @@
     display: grid;
     grid-template-columns: 30px 50px 30px;
     column-gap: 1px;
+    font-size: 14px;
 }
 .product-in-cart-quantity form button
 {
@@ -93,7 +92,8 @@
 }
 .cart-header p
 {
-    margin: 0;
+    margin: 0 16px;
+    padding-top: 5;
 }
 .list-product-in-cart-header
 {
@@ -103,50 +103,78 @@
     justify-items: center;
     justify-content: space-around;
     align-items: center;
-    padding: 8px 16px;
+    /* padding: 8px 16px; */
     font-size: 18px;
     font-weight: 700;
-    border-bottom: 1px solid #4A7DFF;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     background-color: white;
+    height: 30px;
+    padding: 5px;
+    border-radius: 17px;
 }
 .list-product-in-cart
 {
-    border: 1px solid #4A7DFF;
-    background-color: #F4F6FD;;
+    background-color: #ffffff00;
+    margin: 16px;
+    margin-top: 5px;
 }
 .products-in-cart
 {
-    height: 263px;
+    height: 390px;
     background-color: white;
     overflow: auto;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
+    padding: 5px;
+    border-radius: 20px;
 }
+.products-in-cart::-webkit-scrollbar {
+    display: none;
+  }
 /*///////////////////////////////////////////////////////////////////////////////////////////////*/
 .other-book
 {
     display: flex;
     flex-direction: column;
-    width: 837px;
-    height: 295px;
+    width: 750px;
+    height: 100%;
     flex-shrink: 0;
     border-radius: 20px;
-    border: 1px solid #4A7DFF;
     align-items: center;
+    background-color: #FFF;
 }
 .other-book-list
 {
     display: flex;
+    height: 100%;
+    column-gap: 5px;
 }
 .other-book-list .product
 {
-    width: 200px;
-    height: 225px;
+    width: 175px;
+    height: 230px;
     margin: 1px;
+}
+.other-book-list .product .product-image
+{
+    width: 100px;
+    height: 130px;
+}
+.other-book-list .product p
+{
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 0px;
 }
 .other-book-header
 {
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 700;
+}
+.other-book .other-book-list .star-voting
+{
+    width: 7px;
+    height: 7px;
 }
 /*///////////////////////////////////////////////////////////////////////////////////////////////*/
 .order-info-title
@@ -165,14 +193,14 @@
 .order-info
 {
     display: grid;
-    width: 420px;
+    width: 440px;
     max-height: 295px;
     border-radius: 20px;
-    border: 1px solid #4A7DFF;
     align-items: center;
-    font-size: 20px;
+    font-size: 18px;
     padding: 5px;
     padding-top: 25px;
+    background-color: #FFF;
 }
 .order-info .order-button
 {
@@ -196,13 +224,25 @@
     letter-spacing: -0.2px;
     border: none;
 }
-form .cod
+form .adjust-infomation
 {
     background: #0500FF;
+}
+form .adjust-infomation:hover,
+form .payment:hover
+{
+    filter: brightness(90%);
 }
 form .payment
 {
     background: #F00;
+}
+.custom-name, .custom-address, 
+.custom-phone, .total-price
+{
+    display: grid;
+    grid-template-columns: 100px 300px;
+    padding-left: 5px;
 }
 /*///////////////////////////////////////////////////////////////////////////////////////////////*/
 .sub-bar
@@ -210,5 +250,12 @@ form .payment
     display: grid;
     grid-template-columns: auto auto;
     column-gap: 10px;
-    margin: 5px;
+    margin: 0 16px;
+    height: 310px;
+    justify-content: space-between;
+}
+.body-gio-hang
+{
+    height: 800px;
+    padding: 5px 0;
 }

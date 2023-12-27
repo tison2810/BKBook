@@ -15,15 +15,16 @@ function Header() {
                         <h2>BKBOOK</h2>
                     </div>
                     <input className= "search-bar" type="text" placeholder="Nhập tên sách, tác giả bạn muốn tìm" />
-                    <Link className="cart" to='/giohang'>
+                    {/* <Link className="cart" to='/giohang'>
                         <img src={cart} alt="cart" />
                     </Link>
                     <a className="star" href="#">
                         <img src={star} alt="star" />
-                    </a>
+                    </a> */}
                     <ul>
+                        <li><Link to='/giohang'>GIỎ HÀNG</Link></li>
+                        <li><Link to='/'>YÊU THÍCH</Link></li>
                         <li><Link to='/'>TRANG CHỦ</Link></li>
-                        <li><a href="#">DANH MỤC</a></li>
                         <li><Link to='/dangnhap'>TÀI KHOẢN</Link></li>
                     </ul>
                 </div>
