@@ -83,28 +83,36 @@
 {
   display: block;
   margin: 0 auto; 
-  width: 90px;
-  height: 120px;
+  width: 110px;
+  height: 150px;
   flex-shrink: 0;
 }
 .product
 {
   margin: 5px;
   width: 200px;
-  height: 225px;
+  height: 253px;
+  padding-top: 5px;
   flex-shrink: 0;
   overflow: hidden;
   border: 1px solid #C2D0FF;
-  background: rgba(224, 231, 248, 0.37);
   font-size: 10px;
+  border-radius: 10px;
+  /* background: rgba(224, 231, 248, 0.5); */
+  background: rgba(255, 255, 255, 0.95);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.product:hover
+{
+  background: rgba(234, 234, 234, 0.95);
 }
 .multiple-products
 {
   display:flex;
   justify-content: space-around;
 }
-.product a {
-  margin-left: 5px;
+.product .book-title {
   text-decoration: none;
   font-size: 18px;
   overflow: hidden;
@@ -148,7 +156,7 @@ p-voting
   position: relative;
 }
 /*///////////////////////////////////////////////////////////////////////////////////////////////*/
-.orange-label
+.label1
 {
   display: flex;
   width: 250px;
@@ -159,12 +167,15 @@ p-voting
   gap: 10px;
   flex-shrink: 0;
   border-radius: 30px;
-  border: 1px solid #000;
-  background: #FFA800;
+  border: 0.2px solid #fff;
+  /* background: #FFA800; */
   margin: 20px;
+  /* background-color: #e09082;
+  background-image: linear-gradient(315deg, #e09082 0%, #f8dba4 74%); */
+  background-color: #038AD7;
 }
-.light-green-label
-{
+.label2
+{ 
   display: flex;
   width: 250px;
   height: 81px;
@@ -174,9 +185,10 @@ p-voting
   gap: 10px;
   flex-shrink: 0;
   border-radius: 30px;
-  border: 1px solid #000;
-  background: #56e88e;
+  border: 0.2px solid #fff;
+  /* background: #56e88e; */
   margin: 20px;
+  background-color: #038AD7;
 }
 .text-label
 {
@@ -192,6 +204,63 @@ p-voting
 {
   display: flex;
   margin: 10px;
+  margin-top: 0px;
   justify-content: center;
   align-items: center;
+}
+.body
+{
+  background: linear-gradient(rgba(152, 152, 152, 0.4), rgba(152, 152, 152, 0.4)), url('../images/background3.jpg') center/cover no-repeat;
+  font-family: 'Noticia Text', serif;
+}
+.list-products
+{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  margin: 0px;
+  margin-left: 90px;
+}
+.content
+{
+  display: grid;
+  grid-template-columns: 210px auto;
+  align-items: start;
+  justify-content: center;
+}
+.content .fiter-type
+{
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #C2D0FF;
+  border-radius: 10px;
+  font-size: 25px;
+  width: 200px;
+  margin-left: 60px;
+  text-align: center;
+  height: 95%;
+}
+.content .fiter-type p 
+{
+  margin-bottom: 20px;
+}
+.fiter-type ul
+{
+  list-style: none;
+  padding: 0px;
+  margin: 10px;
+  display: grid;
+  row-gap: 8px;
+  justify-items: start;
+  font-size: 20px;
+}
+.fiter-type ul li
+{
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.fiter-type ul li:hover
+{
+  transform: scale(1.2);
+  color: #2454ce;
 }

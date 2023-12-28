@@ -116,9 +116,9 @@ const productsInCart = (
 function ListProductInCart() {
     return (
     <div>
-        <div className="cart-header">
+        {/* <div className="cart-header">
             <p>Giỏ hàng</p>
-        </div>
+        </div> */}
         <div className="list-product-in-cart">
             <div className="list-product-in-cart-header">
                 <span>Sản phẩm</span>
@@ -126,9 +126,7 @@ function ListProductInCart() {
                 <span>Số lượng</span>
                 <span>Thành tiền</span>
             </div>
-            <div className="products-in-cart">
-                {productsInCart}
-            </div> 
+            {productsInCart}
         </div>
     </div>
     );
@@ -155,10 +153,10 @@ function OrderInfo(props) {
             </div>
             <div className="order-button">
                 <form>
-                    <button className="cod" type="button">Trả tiền mặt</button>
+                    <button className="adjust-infomation" type="button">Sửa thông tin</button>
                 </form>
                 <form>
-                    <button className="payment" type="button">Chuyển khoản</button>
+                    <button className="payment" type="button">Thanh toán</button>
                 </form>
             </div>
         </div>
@@ -219,8 +217,10 @@ function Giohang() {
     return (
         <React.Fragment>
             <Header/>
-            <ListProductInCart/>
-            <SubBar/>
+            <div className="body body-gio-hang">
+                <ListProductInCart/>
+                <SubBar/>
+            </div>
             <Footer/>
         </React.Fragment>
 

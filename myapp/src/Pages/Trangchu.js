@@ -14,6 +14,7 @@ import nonggian from '../images/nglbn.webp';
 import tddn from '../images/tddn.jpg';
 import tiengnguoitrongvan from '../images/tiengnguoitrongvan.jpg';
 import voting from '../images/voting.png';
+import background from '../images/background.jpg';
 // import Header from '../Component/logHeader.js';
 import Header from '../Component/Header.js';
 import Footer from '../Component/Footer.js';
@@ -21,8 +22,8 @@ import Footer from '../Component/Footer.js';
 function Product(props) {
   return (
     <div className="product">
-      <img className="product-img" src={props.imgSrc} alt={props.name} />
-      <a href="#top">{props.name}</a>
+      <img className = "product-img" src={props.imgSrc} alt = {props.name}/>
+      <p className='book-title'>{props.name}</p>
       {/* <ul>
         <li className="voting">
           <p>{props.vote}</p>
@@ -47,12 +48,132 @@ function Label(props) {
 }
 
 const labels =
-  <div className="labels">
-    <Label clName="orange-label" text="Giảm giá sốc" />
-    <Label clName="orange-label" text="Mua sách tặng vở" />
-    <Label clName="light-green-label" text="Bao sách miễn phí" />
-    <Label clName="light-green-label" text="Hỗ trợ vận chuyển" />
+<div className="labels">
+  <Label clName = "label1" text = "Giảm giá sốc"/>
+  <Label clName = "label1" text = "Mua sách tặng vở"/>
+  <Label clName = "label2" text = "Bao sách miễn phí"/>
+  <Label clName = "label2" text = "Hỗ trợ vận chuyển"/>
+</div>
+
+const listProducts =
+<ul className="list-products">
+  <li className="list-products-ele">
+    <Product
+      imgSrc={yThien}
+      name = "Ỷ thiên đồ long ký"
+      vote = "5/5"
+      price = "25.000"
+    />
+  </li>
+  <li className="list-products-ele">
+    <Product
+      imgSrc={vncncd}
+      name = "Về nơi có nhiều cánh đồng"
+      vote = "4.9/5"
+      price = "150.000đ"
+    />
+  </li>
+  <li className="list-products-ele">
+    <Product
+      imgSrc={namiya}
+      name = "Điều kỳ diệu ở tiệm tạp hóa Namiya"
+      vote = "5/5"
+      price = "63.000đ"
+    />
+  </li>
+  <li className="list-products-ele">
+    <Product
+      imgSrc={nxc1ct}
+      name = "Ngày xưa có một chuyện tình"
+      vote = "4.5/5"
+      price = "99.000đ"
+    />
+  </li>
+  <li className="list-products-ele">
+    <Product
+      imgSrc={grammar}
+      name = "Essential Grammar in Use"
+      vote = "4.7/5"
+      price = "155.000đ"
+    />
+  </li>
+  <li className="list-products-ele">
+    <Product
+      imgSrc={toancc}
+      name = "Toán cao cấp tập 1"
+      vote = "4.6/5"
+      price = "76.000đ"
+    />
+  </li>
+  <li className="list-products-ele">
+    <Product
+      imgSrc={yThien}
+      name = "Ỷ thiên đồ long ký"
+      vote = "5/5"
+      price = "25.000"
+    />
+  </li>
+  <li className="list-products-ele">
+    <Product
+      imgSrc={yThien}
+      name = "Ỷ thiên đồ long ký"
+      vote = "5/5"
+      price = "25.000"
+    />
+  </li>
+  <li className="list-products-ele">
+    <Product
+      imgSrc={vncncd}
+      name = "Về nơi có nhiều cánh đồng"
+      vote = "4.9/5"
+      price = "150.000đ"
+    />
+  </li>
+  <li className="list-products-ele">
+    <Product
+      imgSrc={namiya}
+      name = "Điều kỳ diệu ở tiệm tạp hóa Namiya"
+      vote = "5/5"
+      price = "63.000đ"
+    />
+  </li>
+  <li className="list-products-ele">
+    <Product
+      imgSrc={nxc1ct}
+      name = "Ngày xưa có một chuyện tình"
+      vote = "4.5/5"
+      price = "99.000đ"
+    />
+  </li>
+  <li className="list-products-ele">
+    <Product
+      imgSrc={grammar}
+      name = "Essential Grammar in Use"
+      vote = "4.7/5"
+      price = "155.000đ"
+    />
+  </li>
+</ul>
+
+const content = 
+<div className='content'>
+  <div className='fiter-type'>
+    <p> Danh mục</p>
+    <ul>
+      <li>Truyện ngắn</li>
+      <li>Truyện dài</li>
+      <li>Tiểu thuyết</li>
+      <li>Truyện tranh</li>
+      <li>Kinh dị</li>
+      <li>Trinh thám</li>
+      <li>Ngôn tình</li>
+      <li>Sách tham khảo</li>
+      <li>Sách ngoại ngữ</li>
+      <li>Sách giáo khoa</li>
+    </ul>
   </div>
+  {listProducts}
+</div>
 
 const productsBar1 =
   <div className="product-bar">
@@ -152,11 +273,12 @@ const productsBar2 =
 function App() {
   return (
     <React.Fragment>
-      <Header />
-      {labels}
-      {productsBar1}
-      {productsBar2}
-      <Footer />
+      <Header/>
+      <div className='body'>
+        {labels}
+        {content}
+      </div>
+      <Footer/>
     </React.Fragment>
   );
 }
