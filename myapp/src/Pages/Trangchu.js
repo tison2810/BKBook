@@ -18,21 +18,13 @@ import background from '../images/background.jpg';
 // import Header from '../Component/logHeader.js';
 import Header from '../Component/Header.js';
 import Footer from '../Component/Footer.js';
+import Sideboard from '../Component/Sideboard.js';
 
 function Product(props) {
   return (
     <div className="product">
       <img className = "product-img" src={props.imgSrc} alt = {props.name}/>
       <p className='book-title'>{props.name}</p>
-      {/* <ul>
-        <li className="voting">
-          <p>{props.vote}</p>
-          <span><img className="star-voting" src={voting}/></span>
-        </li>
-        <li>
-          <p>{props.price}</p>
-        </li>
-      </ul> */}
       <p className="p-voting">{props.vote}<span><img className="star-voting" src={voting} /></span></p>
       <p>{props.price}<sup>đ</sup></p>
     </div>
@@ -47,14 +39,6 @@ function Label(props) {
   )
 }
 
-const labels =
-<div className="labels">
-  <Label clName = "label1" text = "Giảm giá sốc"/>
-  <Label clName = "label1" text = "Mua sách tặng vở"/>
-  <Label clName = "label2" text = "Bao sách miễn phí"/>
-  <Label clName = "label2" text = "Hỗ trợ vận chuyển"/>
-</div>
-
 const listProducts =
 <ul className="list-products">
   <li className="list-products-ele">
@@ -65,99 +49,11 @@ const listProducts =
       price = "25.000"
     />
   </li>
-  <li className="list-products-ele">
-    <Product
-      imgSrc={vncncd}
-      name = "Về nơi có nhiều cánh đồng"
-      vote = "4.9/5"
-      price = "150.000đ"
-    />
-  </li>
-  <li className="list-products-ele">
-    <Product
-      imgSrc={namiya}
-      name = "Điều kỳ diệu ở tiệm tạp hóa Namiya"
-      vote = "5/5"
-      price = "63.000đ"
-    />
-  </li>
-  <li className="list-products-ele">
-    <Product
-      imgSrc={nxc1ct}
-      name = "Ngày xưa có một chuyện tình"
-      vote = "4.5/5"
-      price = "99.000đ"
-    />
-  </li>
-  <li className="list-products-ele">
-    <Product
-      imgSrc={grammar}
-      name = "Essential Grammar in Use"
-      vote = "4.7/5"
-      price = "155.000đ"
-    />
-  </li>
-  <li className="list-products-ele">
-    <Product
-      imgSrc={toancc}
-      name = "Toán cao cấp tập 1"
-      vote = "4.6/5"
-      price = "76.000đ"
-    />
-  </li>
-  <li className="list-products-ele">
-    <Product
-      imgSrc={yThien}
-      name = "Ỷ thiên đồ long ký"
-      vote = "5/5"
-      price = "25.000"
-    />
-  </li>
-  <li className="list-products-ele">
-    <Product
-      imgSrc={yThien}
-      name = "Ỷ thiên đồ long ký"
-      vote = "5/5"
-      price = "25.000"
-    />
-  </li>
-  <li className="list-products-ele">
-    <Product
-      imgSrc={vncncd}
-      name = "Về nơi có nhiều cánh đồng"
-      vote = "4.9/5"
-      price = "150.000đ"
-    />
-  </li>
-  <li className="list-products-ele">
-    <Product
-      imgSrc={namiya}
-      name = "Điều kỳ diệu ở tiệm tạp hóa Namiya"
-      vote = "5/5"
-      price = "63.000đ"
-    />
-  </li>
-  <li className="list-products-ele">
-    <Product
-      imgSrc={nxc1ct}
-      name = "Ngày xưa có một chuyện tình"
-      vote = "4.5/5"
-      price = "99.000đ"
-    />
-  </li>
-  <li className="list-products-ele">
-    <Product
-      imgSrc={grammar}
-      name = "Essential Grammar in Use"
-      vote = "4.7/5"
-      price = "155.000đ"
-    />
-  </li>
 </ul>
 
 const content = 
 <div className='content'>
-  <div className='fiter-type'>
+  {/* <div className='fiter-type'>
     <p> Danh mục</p>
     <ul>
       <li>Truyện ngắn</li>
@@ -171,113 +67,15 @@ const content =
       <li>Sách ngoại ngữ</li>
       <li>Sách giáo khoa</li>
     </ul>
-  </div>
+  </div> */}
   {listProducts}
 </div>
-
-const productsBar1 =
-  <div className="product-bar">
-    <div className="header">
-      <h1 className="header-title">Sách bán chạy</h1>
-      <div className="spacer"></div>
-      <a href="#view-all" className="header-link">Xem tất cả sản phẩm</a>
-    </div>
-    <div className="multiple-products">
-      <Product
-        imgSrc={yThien}
-        name="Ỷ thiên đồ long ký"
-        vote="5/5"
-        price="25.000đ"
-      />
-      <Product
-        imgSrc={vncncd}
-        name="Về nơi có nhiều cánh đồng"
-        vote="4.9/5"
-        price="150.000đ"
-      />
-      <Product
-        imgSrc={namiya}
-        name="Điều kỳ diệu ở tiệm tạp hóa Namiya"
-        vote="5/5"
-        price="63.000đ"
-      />
-      <Product
-        imgSrc={nxc1ct}
-        name="Ngày xưa có một chuyện tình"
-        vote="4.5/5"
-        price="99.000đ"
-      />
-      <Product
-        imgSrc={grammar}
-        name="Essential Grammar in Use"
-        vote="4.7/5"
-        price="155.000đ"
-      />
-      <Product
-        imgSrc={toancc}
-        name="Toán cao cấp tập 1"
-        vote="4.6/5"
-        price="76.000đ"
-      />
-    </div>
-  </div>
-
-const productsBar2 =
-  <div className="product-bar">
-    <div className="header">
-      <h1 className="header-title">Sách giảm giá</h1>
-      <div className="spacer"></div>
-      <a href="#view-all" className="header-link">Xem tất cả sản phẩm</a>
-    </div>
-    <div className="multiple-products">
-      <Product
-        imgSrc={nonggian}
-        name="Nóng giận là bản năng, tĩnh lặng là bản lĩnh"
-        vote="4.1/5"
-        price="53.000đ"
-      />
-      <Product
-        imgSrc={osho}
-        name="Osho - Tự tôn"
-        vote="4.6/5"
-        price="103.000đ"
-      />
-      <Product
-        imgSrc={namiya}
-        name="Điều kỳ diệu ở tiệm tạp hóa Namiya"
-        vote="5/5"
-        price="63.000đ"
-      />
-      <Product
-        imgSrc={tddn}
-        name="Thánh dực dũng nghĩa"
-        vote="4.2/5"
-        price="84.500đ"
-      />
-      <Product
-        imgSrc={ketoanviahe}
-        name="Kế toán vỉa hè"
-        vote="5/5"
-        price="154.999đ"
-      />
-      <Product
-        imgSrc={tiengnguoitrongvan}
-        name="Tiếng người trong văn"
-        vote="4.8/5"
-        price="85.600đ"
-      />
-    </div>
-  </div>
-
 
 function App() {
   return (
     <React.Fragment>
       <Header/>
-      <div className='body'>
-        {labels}
-        {content}
-      </div>
+      <Sideboard/>
       <Footer/>
     </React.Fragment>
   );
