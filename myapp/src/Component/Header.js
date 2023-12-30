@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../AuthContext';
 import './Header.css';
 import star from '../images/Star.svg';
 import cart from '../images/Cart.svg';
 import logo from '../images/logoBK.png';
 
 function Header() {
+    const { loggedIn, userInfo } = useAuth();
+
+    console.log('loggedIn:', loggedIn);
+    console.log('userInfo:', userInfo);
+    
     return (
         <header>
             <nav>
@@ -25,7 +31,13 @@ function Header() {
                         <li><Link to='/giohang'>GIỎ HÀNG</Link></li>
                         <li><Link to='/'>YÊU THÍCH</Link></li>
                         <li><Link to='/'>TRANG CHỦ</Link></li>
-                        <li><Link to='/dangnhap'>TÀI KHOẢN</Link></li>
+                        <li>
+                            {loggedIn ? (
+                                <Link to='/'> TÀI KHOẢN</Link>
+                            ) : (
+                                <Link to='/dangnhap'>ĐĂNG NHẬP</Link>
+                            )}
+                        </li>
                     </ul>
                 </div>
             </nav>

@@ -103,12 +103,10 @@
 }
 .login-form form
 {
-    width: 264px;
-    height: 63px;
-    flex-shrink: 0;
-    border-radius: 60px;
-    border: 1px solid #000;
-}
+    display: block;
+    margin-top: 0em;
+    padding: 0px 5px;
+} 
 .login-form form button
 {
     width: 264px;
@@ -123,12 +121,15 @@
     line-height: normal;
     letter-spacing: -0.2px;
     cursor: pointer;
+    position: relative;
+    left: 30%;
 }
 .login-form .sub
 {
     display: grid;
     grid-template-columns: auto auto;
     column-gap: 250px;
+    margin: 10px 5px 10px 0;
 }
 
 .signup-welcome {
@@ -228,4 +229,18 @@
     column-gap: 140px;
     margin: 0px 34px 49px 34px;
     justify-content: space-evenly;
+}
+.login-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+    max-width: 80%;
+    max-height: 80%;
+    padding: 20px;
+    text-align: center;
 }
