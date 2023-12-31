@@ -9,6 +9,7 @@ import PersonalBuy from './Pages/personalBuy';
 import TrangchuLogged from './Pages/TrangchuLogged';
 import Dangnhap from './Dangnhap';
 import Dangky from './Dangky';
+import Xemsanpham from './Pages/Xemsanpham';
 function App() {
     return (
         <div className='App'>
@@ -21,6 +22,7 @@ function App() {
                 <Route path='/dangky' element={<Dangky />} />
                 <Route path='/homepagelogged' element={<TrangchuLogged />} />
                 <Route path='/personalBuy' element={<PersonalBuy />} />
+                <Route path='/xemsanpham' element={<Xemsanpham />} />
             </Routes>
             </SearchProvider>
             </AuthProvider>
