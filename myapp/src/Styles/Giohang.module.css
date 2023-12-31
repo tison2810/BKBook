@@ -1,4 +1,4 @@
-.product-in-cart
+.productInCart
 {
     display: grid;
     grid-template-columns: 600px 150px 120px 150px 50px;
@@ -10,24 +10,24 @@
     background-color: white;
     font-size: 14px;
 }
-.product-in-cart-image
+.productInCartImage
 {
     width: 90px;
     aspect-ratio: auto 90 / 120;
     height: 120px;
 }
-.product-in-cart-name img
+.productInCartName img
 {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.product-in-cart-info
+.productInCartInfo
 {
     display: grid;
     row-gap: 4px;
 }
-.product-in-cart-name
+.productInCartName
 {
     display: grid;
     grid-template-columns: 100px 1fr;
@@ -36,20 +36,20 @@
     align-items: center;
     width: 600px;
 }
-.product-in-cart-info p
+.productInCartInfo p
 {
     margin: 5px;
     font-weight: 400;
 
 }
-.product-in-cart-quantity form
+.productInCartQuantity form
 {
     display: grid;
     grid-template-columns: 30px 50px 30px;
     column-gap: 1px;
     font-size: 14px;
 }
-.product-in-cart-quantity form button
+.productInCartQuantity form button
 {
     border: 1.1px solid #000;
     background: none;
@@ -58,29 +58,29 @@
     cursor: pointer;
     display: flex;
 }
-.product-in-cart-quantity form input
+.productInCartQuantity form input
 {
     border: 1.1px solid #000;
     background: #FFFBFB;
     text-align: center;
-}
-.garbage-dump form .garbage-dump-button
+}s
+.garbageDump form .garbageDumpButton
 {
     border: none;
     background: none;
     cursor: pointer;
 }
-.product-in-cart-sum-price
+.productInCartSumPrice
 {
     color: #001AFF;
     font-weight: 700;
 }
-.garbage-dump-button img {
+.garbageDumpButton img {
     width: 20px;
     height: 25px;
   }
 /*///////////////////////////////////////////////////////////////////////////////////////////////*/
-.cart-header
+.cartHeader
 {
     color: #000;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -90,12 +90,12 @@
     line-height: normal;
     letter-spacing: -0.32px;
 }
-.cart-header p
+.cartHeader p
 {
     margin: 0 16px;
     padding-top: 5;
 }
-.list-product-in-cart-header
+.listProductInCartHeader
 {
     display: grid;
     grid-template-columns: 600px 150px 120px 150px 50px;
@@ -112,13 +112,13 @@
     padding: 5px;
     border-radius: 17px;
 }
-.list-product-in-cart
+.listProductInCart
 {
     background-color: #ffffff00;
     margin: 16px;
     margin-top: 5px;
 }
-.products-in-cart
+.productsInCart
 {
     height: 390px;
     background-color: white;
@@ -128,11 +128,11 @@
     padding: 5px;
     border-radius: 20px;
 }
-.products-in-cart::-webkit-scrollbar {
+.productsInCart::-webkit-scrollbar {
     display: none;
   }
 /*///////////////////////////////////////////////////////////////////////////////////////////////*/
-.other-book
+.otherBook
 {
     display: flex;
     flex-direction: column;
@@ -143,54 +143,54 @@
     align-items: center;
     background-color: #FFF;
 }
-.other-book-list
+.otherBookList
 {
     display: flex;
     height: 100%;
     column-gap: 5px;
 }
-.other-book-list .product
+.otherBookList .product
 {
     width: 175px;
     height: 230px;
     margin: 1px;
 }
-.other-book-list .product .product-image
+.otherBookList .product .productImage
 {
     width: 100px;
     height: 130px;
 }
-.other-book-list .product p
+.otherBookList .product p
 {
     font-size: 14px;
     margin-top: 5px;
     margin-bottom: 0px;
 }
-.other-book-header
+.otherBookHeader
 {
     font-size: 18px;
     font-weight: 700;
 }
-.other-book .other-book-list .star-voting
+.otherBook .otherBookList .starVoting
 {
     width: 7px;
     height: 7px;
 }
 /*///////////////////////////////////////////////////////////////////////////////////////////////*/
-.order-info-title
+.orderInfoTitle
 {
     font-size: 18px;
     font-weight: 700;
     font-style: bold;
 }
-.order-info div
+.orderInfo div
 {
     display: grid;
     grid-template-columns: 100px 300px;
     column-gap: 10px;
     margin-bottom: 10px;
 }
-.order-info
+.orderInfo
 {
     display: grid;
     width: 440px;
@@ -202,14 +202,14 @@
     padding-top: 25px;
     background-color: #FFF;
 }
-.order-info .order-button
+.orderInfo .orderButton
 {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     margin: 10px;
 }
-.order-button button
+.orderButton button
 {
     width: 150px;
     height: 40px;
@@ -224,11 +224,11 @@
     letter-spacing: -0.2px;
     border: none;
 }
-form .adjust-infomation
+form .adjustInfomation
 {
     background: #0500FF;
 }
-form .adjust-infomation:hover,
+form .adjustInfomation:hover,
 form .payment:hover
 {
     filter: brightness(90%);
@@ -237,15 +237,15 @@ form .payment
 {
     background: #F00;
 }
-.custom-name, .custom-address, 
-.custom-phone, .total-price
+.customName, .customAddress, 
+.customPhone, .totalPrice
 {
     display: grid;
     grid-template-columns: 100px 300px;
     padding-left: 5px;
 }
 /*///////////////////////////////////////////////////////////////////////////////////////////////*/
-.sub-bar
+.subBar
 {
     display: grid;
     grid-template-columns: auto auto;
@@ -254,7 +254,7 @@ form .payment
     height: 310px;
     justify-content: space-between;
 }
-.body-gio-hang
+.bodyGioHang
 {
     height: 800px;
     padding: 5px 0;

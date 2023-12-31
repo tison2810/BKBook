@@ -4,7 +4,7 @@ import Footer from '../Component/Footer.js';
 import { Product } from './Trangchu.js';
 
 
-import '../Styles/Giohang.css';
+import styles from '../Styles/Giohang.module.css';
 import increase from '..//images/increase.svg';
 import decrease from '../images/decrease.svg';
 import namiya from '../images/namiya.jpg';
@@ -39,7 +39,16 @@ const productsInCartInput = [
         publisher:"NXB Văn học",
         price:"120.000",
         quantity:"1",
+    },
+    {
+        imgSrc:osho,
+        name:"Tự tôn",
+        author:"Osho",
+        publisher:"NXB Phương Đông",
+        price:"99.000",
+        quantity:"1",
     }
+
 
 ]
 
@@ -48,19 +57,19 @@ function ProductInCart(props) {
     sumPrice = sumPrice.toFixed(3);
 
     return (
-        <div className="product-in-cart">
-            <div className="product-in-cart-name">
-                <div className="product-in-cart-image">
+        <div className={styles.productInCart}>
+            <div className={styles.productInCartName}>
+                <div className={styles.productInCartImage}>
                     <img src={props.imgSrc} alt={props.name} />
                 </div>
-                <div className="product-in-cart-info">
+                <div className={styles.productInCartInfo}>
                     <p>{props.name}</p>
                     <p><span>Tác giả: </span><span>{props.author}</span></p>
                     <p>{props.publisher}</p>
                 </div>
             </div>
-            <div className="product-in-cart-single-price">{props.price}<sup>đ</sup></div>
-            <div className="product-in-cart-quantity">
+            <div className={styles.productInCartSinglePrice}>{props.price}<sup>đ</sup></div>
+            <div className={styles.productInCartQuantity}>
                     <form>
                         <button type="button">
                             <img src={decrease} alt="decrease" />
@@ -71,12 +80,12 @@ function ProductInCart(props) {
                         </button>
                     </form>
             </div>
-            <div className="product-in-cart-sum-price">
+            <div className={styles.productInCartSumPrice}>
                 {sumPrice}<sup>đ</sup>
             </div>
-            <div className="garbage-dump">
+            <div className={styles.garbageDump}>
                 <form>
-                    <button className="garbage-dump-button" type="button">
+                    <button className={styles.garbageDumpButton} type="button">
                         <img src={garbageDump} alt="garbage-dump" />
                     </button>
                 </form>
@@ -93,7 +102,7 @@ function ProductInCart(props) {
             quantity="2"
         /> */}
 const productsInCart = (
-    <div className="products-in-cart">
+    <div className={styles.productsInCart}>
       {productsInCartInput.map((product, index) => {
         totalPrice += product.price * parseInt(product.quantity, 10);
         return (
@@ -116,11 +125,11 @@ const productsInCart = (
 function ListProductInCart() {
     return (
     <div>
-        {/* <div className="cart-header">
+        {/* <div className={styles.cart-header">
             <p>Giỏ hàng</p>
         </div> */}
-        <div className="list-product-in-cart">
-            <div className="list-product-in-cart-header">
+        <div className={styles.listProductInCart}>
+            <div className={styles.listProductInCartHeader}>
                 <span>Sản phẩm</span>
                 <span>Đơn giá</span>
                 <span>Số lượng</span>
@@ -134,29 +143,29 @@ function ListProductInCart() {
 
 function OrderInfo(props) {
     return (
-        <div className="order-info">
-            <div className="custom-name">
-                <span className="order-info-title">Họ và tên:</span>
-                <span className="custom-name-value">{props.cusName}</span>
+        <div className={styles.orderInfo}>
+            <div className={styles.customName}>
+                <span className={styles.orderInfoTitle}>Họ và tên:</span>
+                <span className={styles.customNameValue}>{props.cusName}</span>
             </div>
-            <div className="custom-address">
-                <span className="order-info-title">Địa chỉ:</span>
-                <span className="custom-address-value">{props.cusAddress}</span>
+            <div className={styles.customAddress}>
+                <span className={styles.orderInfoTitle}>Địa chỉ:</span>
+                <span className={styles.customAddressValue}>{props.cusAddress}</span>
             </div>
-            <div className="custom-phone">
-                <span className="order-info-title">SĐT:</span>
-                <span className="custom-phone-value">{props.phone}</span>
+            <div className={styles.customPhone}>
+                <span className={styles.orderInfoTitle}>SĐT:</span>
+                <span className={styles.customPhoneValue}>{props.phone}</span>
             </div>
-            <div className="total-price">
-                <span className="order-info-title">Tổng giá:</span>
-                <span className="total-price-value">{props.totalPrice.toFixed(3)}<sup>đ</sup></span>
+            <div className={styles.totalPrice}>
+                <span className={styles.orderInfoTitle}>Tổng giá:</span>
+                <span className={styles.totalPriceValue}>{props.totalPrice.toFixed(3)}<sup>đ</sup></span>
             </div>
-            <div className="order-button">
+            <div className={styles.orderButton}>
                 <form>
-                    <button className="adjust-infomation" type="button">Sửa thông tin</button>
+                    <button className={styles.adjustInfomation} type="button">Sửa thông tin</button>
                 </form>
                 <form>
-                    <button className="payment" type="button">Thanh toán</button>
+                    <button className={styles.payment} type="button">Thanh toán</button>
                 </form>
             </div>
         </div>
@@ -166,11 +175,11 @@ function OrderInfo(props) {
 
 function OtherBook () {
     return (
-<div className="other-book">
-    <div className="other-book-header">
+<div className={styles.otherBook}>
+    <div className={styles.otherBookHeader}>
         <p>Các sản phẩm khác</p>
     </div>
-    <div className="other-book-list">
+    <div className={styles.otherBookList}>
         <Product
             imgSrc={yThien}
             name = "Ỷ thiên đồ long ký"
@@ -202,8 +211,8 @@ function OtherBook () {
 
 function SubBar() {
     return (
-        <div className="sub-bar">
-            <OtherBook/>
+        <div className={styles.subBar}>
+            {/* <OtherBook/> */}
             <OrderInfo
                 cusName="Nguyễn Văn A"
                 cusAddress="Đường 1, Phường 1, Quận 1, TP.HCM"
@@ -217,7 +226,7 @@ function Giohang() {
     return (
         <React.Fragment>
             <Header/>
-            <div className="body body-gio-hang">
+            <div className={styles.bodyGioHang}>
                 <ListProductInCart/>
                 <SubBar/>
             </div>
