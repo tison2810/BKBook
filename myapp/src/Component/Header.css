@@ -8,7 +8,7 @@ header
     height: 100px;
     /* background: linear-gradient(180deg, rgba(255, 132, 98, 0.67) -53.1%, rgba(244, 218, 152, 0.28) 49%); */
     /* background: linear-gradient(44.8deg, rgba(255, 136, 102, 0.67) -53.1%, rgba(255, 221, 136, 0.28) 49%); */
-    background-color: #87CEEB;
+    background-color: #ffffff;
     border-bottom: 0.2px solid rgba(152, 152, 152, 0.4);
 }
  header nav,
@@ -20,11 +20,11 @@ header
 {
     width: 171px;
     height: 121px;
-    margin: 20px;
+    margin: 0px;
     flex-shrink: 0;
     margin-right: 0px;
 }
-.logo
+.logoo
 {
     display: flex;
     height: 100%;
@@ -36,18 +36,18 @@ header
     position: relative;
     left: -25px;
 }
-nav .logo
+nav .logoo
 {
-    color: #2454ce;
-    font-size: 32px;
+    color: #003bba;
+    font-size: 30px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    line-height: 120px;
     letter-spacing: -0.32px;
 }
 nav .menu
 {
-    margin: auto;
+    /* margin: auto; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -77,8 +77,8 @@ header nav .menu ul li
 header nav .menu ul li a
 {
     text-decoration: none;
-    font-size: 25px;
-    color: #2454ce;
+    font-size: 20px;
+    color: #a1a1a1;
     transition: ease 0.5s;
     height: 100%;
     width: 100%;
@@ -90,8 +90,8 @@ header nav .menu ul li a
 header nav .menu ul li a:hover
 {
     text-decoration: none;
-    background: #038AD7;
-    color: #fff;
+    /* background: #038AD7; */
+    color: #ff3030;
 }
 header nav .menu .search-bar
 {
@@ -105,8 +105,9 @@ header nav .menu .search-bar
     padding-right: 0px;
     margin: 5px;
 }
-.personalmenu
+.menu .personalmenu
 {
+    align-items: right;
     display: flex;
     column-gap: 1px;
     list-style: none;

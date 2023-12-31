@@ -1,11 +1,11 @@
 import React from 'react';
-import './Header.css';
+import './logHeader.css';
 import logo from '../images/logoBK.png';
 import { BsBell } from "react-icons/bs";
 import { BsPerson } from "react-icons/bs";
 import { BsChat } from "react-icons/bs";
-
-function Header() {
+import { Link } from 'react-router-dom';
+function LogHeader() {
     return (
         <header>
             <nav>
@@ -14,16 +14,22 @@ function Header() {
                         <img className="logo-bkbook" src={logo} alt="BKBOOK" />
                         <h2>BKBOOK</h2>
                     </div>
-                    <input className= "search-bar" type="text" placeholder="Nhập tên sách, tác giả bạn muốn tìm" />
+                    <input className="search-bar" type="text" placeholder="Nhập tên sách, tác giả bạn muốn tìm" />
                     <ul className="personalmenu">
                         <li>
-                        <BsBell />
+                            <Link>
+                                <BsBell />
+                            </Link>
                         </li>
                         <li>
-                        <BsPerson />
+                            <Link>
+                                <BsChat />
+                            </Link>
                         </li>
                         <li>
-                        <BsChat />
+                            <Link to="/personalBuy">
+                                <BsPerson />
+                            </Link>
                         </li>
                     </ul>
                 </div>
@@ -31,4 +37,4 @@ function Header() {
         </header>
     );
 }
-export default Header;
+export default LogHeader;
