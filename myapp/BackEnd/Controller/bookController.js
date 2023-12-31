@@ -24,3 +24,29 @@ exports.search = (req, res) => {
     res.json(results);
   });
 }
+
+exports.getProductDetails = (req, res) => {
+  const bookId = req.params.bookId;
+
+  const query = 'SELECT * FROM sach WHERE ID = ?';
+  const params = [bookId];
+
+  db.query(query, params, (error, results) => {
+    if (error) throw error;
+    res.json(results[0]);
+  });
+}
+
+exports.getProductReviews = (req, res) => {
+  const bookId = req.params.bookId;
+  
+  const query = 'SELECT danhgia.*, HoTen FROM danhgia, khachhang WHERE IDSach = ? AND danhgia.SoDienThoai = khachhang.SoDienThoai';
+  db.query(query, [bookId], (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Đã có lỗi xảy ra' });
+    } else {
+      res.json(results);
+    }
+  });
+};
