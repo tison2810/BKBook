@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Trangchu from './Pages/Trangchu';
+import Giohang from './Pages/Giohang';
+import PersonalBuy from './Pages/personalBuy';
+import TrangchuLogged from './Pages/TrangchuLogged';
+import Dangnhap from './Dangnhap';
+import Dangky from './Dangky';
+import Xemsanpham from './Pages/Xemsanpham';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className='App'>
+            <Routes>
+                <Route path='/' element={<Trangchu />} />
+                <Route path='/giohang' element={<Giohang />} />
+                <Route path='/dangnhap' element={<Dangnhap />} />
+                <Route path='/dangky' element={<Dangky />} />
+                <Route path='/homepagelogged' element={<TrangchuLogged />} />
+                <Route path='/personalBuy' element={<PersonalBuy />} />
+                <Route path='/xemsanpham' element={<Xemsanpham />} />
+            </Routes>
+        </div>
+    );
 }
-
 export default App;

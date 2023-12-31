@@ -1,0 +1,42 @@
+.sideboard
+{
+  display: grid;
+  grid-template-columns: 210px auto;
+  align-items: start;
+  justify-content: center;
+}
+.sideboard .sideboard-ele
+{
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #C2D0FF;
+  border-radius: 10px;
+  font-size: 25px;
+  width: 200px;
+  margin-left: 60px;
+  text-align: center;
+  height: 95%;
+}
+.sideboard .sideboard-ele p 
+{
+  margin-bottom: 20px;
+}
+.sideboard-ele ul
+{
+  list-style: none;
+  padding: 0px;
+  margin: 10px;
+  display: grid;
+  row-gap: 8px;
+  justify-items: start;
+  font-size: 20px;
+}
+.sideboard-ele ul li
+{
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.sideboard-ele ul li:hover
+{
+  transform: scale(1.2);
+  color: #2454ce;
+}
