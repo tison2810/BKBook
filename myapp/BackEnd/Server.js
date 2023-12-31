@@ -3,13 +3,8 @@
 // const bodyParser = require('body-parser');
 // const cors = require('cors');
 
-<<<<<<< HEAD:myapp/BackEnd/Server.js
-const app = express();
-const port = 8080;
-=======
 // const app = express();
 // const port = 3001;
->>>>>>> 5a530eaa11ebfa4f9cc6359f6e69f4d583a7e3a3:myapp/src/BackEnd/Server.js
 
 // app.use(cors());
 
