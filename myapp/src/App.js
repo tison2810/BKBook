@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './AuthContext';
+import { SearchProvider } from './SearchContext';
 
 import Trangchu from './Pages/Trangchu';
 import Giohang from './Pages/Giohang';
@@ -12,6 +13,7 @@ function App() {
     return (
         <div className='App'>
             <AuthProvider>
+            <SearchProvider>
             <Routes>
                 <Route path='/' element={<Trangchu />} />
                 <Route path='/giohang' element={<Giohang />} />
@@ -20,6 +22,7 @@ function App() {
                 <Route path='/homepagelogged' element={<TrangchuLogged />} />
                 <Route path='/personalBuy' element={<PersonalBuy />} />
             </Routes>
+            </SearchProvider>
             </AuthProvider>
         </div>
     );
