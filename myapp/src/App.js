@@ -10,6 +10,7 @@ import TrangchuLogged from './Pages/TrangchuLogged';
 import Dangnhap from './Dangnhap';
 import Dangky from './Dangky';
 import Xemsanpham from './Pages/Xemsanpham';
+import Xemchitiet from './Pages/Xemchitiet';
 function App() {
     return (
         <div className='App'>
@@ -23,6 +24,7 @@ function App() {
                 <Route path='/homepagelogged' element={<TrangchuLogged />} />
                 <Route path='/personalBuy' element={<PersonalBuy />} />
                 <Route path='/xemsanpham' element={<Xemsanpham />} />
+                <Route path='/xemchitiet' element={<Xemchitiet />} />
             </Routes>
             </SearchProvider>
             </AuthProvider>
