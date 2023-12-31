@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../Component/Header.js';
 import Footer from '../Component/Footer.js';
 import { Product } from './Trangchu.js';
-
+import { useAuth } from '../AuthContext.js';
 
 import styles from '../Styles/Giohang.module.css';
 import increase from '..//images/increase.svg';
@@ -15,6 +15,35 @@ import yThien from '../images/yThien.jpg';
 import osho from '../images/osho-tu-ton.jpg';
 import toancc from '../images/toancc.webp';
 let totalPrice = 0;
+
+// const productsInCartInput = [
+//     {
+//         imgSrc:namiya,
+//         name:"Điều kỳ diệu của tiệp tạm hóa Namiya",
+//         author:"Higashino Keigo",
+//         publisher:"NXB Hội Nhà Văn",
+//         price:"63.000",
+//         quantity:"2",
+//     },
+//     {
+//         imgSrc:vncncd,
+//         name:"Về nơi có nhiều cánh đồng",
+//         author:"Phan",
+//         publisher:"NXB Văn hóa - Văn nghệ",
+//         price:"150.000",
+//         quantity:"1",
+//     },
+//     {
+//         imgSrc:yThien,
+//         name:"Ỷ thiên đồ long ký",
+//         author:"Kim Dung",
+//         publisher:"NXB Văn học",
+//         price:"120.000",
+//         quantity:"1",
+//     }
+
+// ]
+
 const productsInCartInput = [
     {
         imgSrc:namiya,
@@ -52,9 +81,10 @@ const productsInCartInput = [
 
 ]
 
+
 function ProductInCart(props) {
     let sumPrice = props.price * props.quantity;
-    sumPrice = sumPrice.toFixed(3);
+    // sumPrice = sumPrice.toFixed(3);
 
     return (
         <div className={styles.productInCart}>
@@ -101,6 +131,28 @@ function ProductInCart(props) {
             price="63.000"
             quantity="2"
         /> */}
+
+// const productsInCart = (
+//     <div className="products-in-cart">
+//       {productsInCartInput.map((product, index) => {
+//         totalPrice += product.price * parseInt(product.quantity, 10);
+//         return (
+//             <ProductInCart
+//                 key={index} 
+//                 imgSrc={product.imgSrc}
+//                 name={product.name}
+//                 author={product.author}
+//                 publisher={product.publisher}
+//                 price={product.price}
+//                 quantity={product.quantity}
+//             />
+//         );
+//       }
+//       )
+//       }
+//     </div>
+//   );
+
 const productsInCart = (
     <div className={styles.productsInCart}>
       {productsInCartInput.map((product, index) => {
@@ -122,7 +174,20 @@ const productsInCart = (
     </div>
   );
 
+
 function ListProductInCart() {
+    
+    const {userInfo} = useAuth();
+    const [products, setProducts] = useState([]);
+    console.log('userInfo:', userInfo);
+    useEffect(() => {
+        const username = userInfo.username;
+        fetch(`http://localhost:3001/api/cart/${username}`)
+          .then(response => response.json())
+          .then(data => setProducts(data))
+          .catch(error => console.error('Error fetching cart:', error));
+      }, []); 
+    console.log('products:', products);
     return (
     <div>
         {/* <div className={styles.cart-header">
@@ -135,7 +200,23 @@ function ListProductInCart() {
                 <span>Số lượng</span>
                 <span>Thành tiền</span>
             </div>
-            {productsInCart}
+            <div className="products-in-cart">
+                {products.map((product, index) => {
+                totalPrice += product.Gia * parseInt(product.SoLuong, 10);
+                console.log('totalPrice:', totalPrice);
+                return (
+                <ProductInCart
+                    key={index} 
+                    imgSrc={`/images/${product.Anh}`}
+                    name={product.Ten}
+                    author={product.TacGia}
+                    publisher={product.NXB}
+                    price={product.Gia}
+                    quantity={product.SoLuong}
+                    />
+                );
+                })}
+            </div>
         </div>
     </div>
     );
@@ -156,9 +237,9 @@ function OrderInfo(props) {
                 <span className={styles.orderInfoTitle}>SĐT:</span>
                 <span className={styles.customPhoneValue}>{props.phone}</span>
             </div>
-            <div className={styles.totalPrice}>
-                <span className={styles.orderInfoTitle}>Tổng giá:</span>
-                <span className={styles.totalPriceValue}>{props.totalPrice.toFixed(3)}<sup>đ</sup></span>
+            <div className="total-price">
+                <span className="order-info-title">Tổng giá:</span>
+                <span className="total-price-value">{props.totalPrice}<sup>đ</sup></span>
             </div>
             <div className={styles.orderButton}>
                 <form>
