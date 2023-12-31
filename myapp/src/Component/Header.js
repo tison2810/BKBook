@@ -14,7 +14,6 @@ function Header() {
                         <img className="logo-bkbook" src={logo} alt="BKBOOK" />
                         <h2>BKBOOK</h2>
                     </div>
-                    <input className= "search-bar" type="text" placeholder="Nhập tên sách, tác giả bạn muốn tìm" />
                     {/* <Link className="cart" to='/giohang'>
                         <img src={cart} alt="cart" />
                     </Link>
@@ -22,10 +21,10 @@ function Header() {
                         <img src={star} alt="star" />
                     </a> */}
                     <ul>
-                        <li><Link to='/giohang'>GIỎ HÀNG</Link></li>
-                        <li><Link to='/'>YÊU THÍCH</Link></li>
-                        <li><Link to='/'>TRANG CHỦ</Link></li>
-                        <li><Link to='/dangnhap'>TÀI KHOẢN</Link></li>
+                        <li><Link to='/giohang'>Giỏ hàng</Link></li>
+                        <li><Link to='/'>Yêu thích</Link></li>
+                        <li><Link to='/'>Trang chủ</Link></li>
+                        <li><Link to='/dangnhap'>Tài khoản</Link></li>
                     </ul>
                 </div>
             </nav>

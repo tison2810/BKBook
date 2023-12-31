@@ -30,7 +30,7 @@ body {
     border-bottom: 1px solid #E5E5E5;
     border-right: 1px solid #E5E5E5;
 }
-ul li:hover a{
+.sidebar ul li:hover a{
     /* padding-left: 50px; */
     color: #FF5050;
 }

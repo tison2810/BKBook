@@ -1,7 +1,7 @@
 //import logo from './logo.svg';
 import React from 'react';
 
-import '../Styles/Trangchu.css';
+// import '../Styles/Trangchu.css';
 import namiya from '../images/namiya.jpg';
 import nxc1ct from '../images/nxc1ct.jpg';
 import vncncd from '../images/vncncd.jpg';
