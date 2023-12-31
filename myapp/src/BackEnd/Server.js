@@ -55,7 +55,6 @@ app.post('/api/login', (req, res) => {
       res.status(500).json({ message: 'Đã có lỗi xảy ra' });
     } else {
       if (results.length > 0) {
-        
         // Xác thực thành công
         res.status(200).json({ message: 'Đăng nhập thành công' });
       } else {
@@ -63,6 +62,17 @@ app.post('/api/login', (req, res) => {
         res.status(401).json({ message: 'Tên đăng nhập hoặc mật khẩu không đúng' });
       }
     }
+  });
+});
+
+app.get('/api/cart/:username', (req, res) => {
+  const username = req.params.username;
+  const query = 
+  'SELECT Anh, Ten, TacGia, NXB, Gia, SoLuong FROM khachhang, khachthemsach, sach WHERE TenDangNhap=? AND khachhang.SoDienThoai=khachthemsach.SoDienThoai AND khachthemsach.IDSach=sach.ID';
+  db.query(query, [username], (error, results) => {
+    if (error) throw error;
+    
+    res.json(results);
   });
 });
 

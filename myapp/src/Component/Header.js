@@ -9,8 +9,8 @@ import logo from '../images/logoBK.png';
 function Header() {
     const { loggedIn, userInfo } = useAuth();
 
-    console.log('loggedIn:', loggedIn);
-    console.log('userInfo:', userInfo);
+    // console.log('loggedIn:', loggedIn);
+    // console.log('userInfo:', userInfo);
     
     return (
         <header>
