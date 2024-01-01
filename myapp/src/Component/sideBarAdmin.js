@@ -8,6 +8,7 @@ function Sidebar () {
                 <li><a href="#">Xác nhận đơn hàng</a></li>
                 <li><a href="#">Theo dõi đơn hàng</a></li>
                 <li><a href="#">Tìm kiếm sản phẩm</a></li>
+                <li><a href="#">Quản lí sản phẩm</a></li>
             </ul>
         </div>
     );
