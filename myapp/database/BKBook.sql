@@ -167,4 +167,67 @@ IF SoDanhGia > 0 THEN
 END IF;
 END //
 
+CREATE PROCEDURE CapNhatSoLuongSachTrongGioHang(
+    p_SoDienThoai CHAR(10),
+    p_IDSach INT,
+    p_SoLuong INT
+)
+BEGIN
+    DECLARE existingQuantity INT;
+    DECLARE newQuantity INT;
+
+    SET existingQuantity = (SELECT SoLuong FROM KhachThemSach WHERE SoDienThoai = p_SoDienThoai AND IDSach = p_IDSach);
+    SET newQuantity = (existingQuantity + p_SoLuong); 
+    UPDATE KhachThemSach SET SoLuong = newQuantity WHERE SoDienThoai = p_SoDienThoai AND IDSach = p_IDSach;
+
+END //
+
+CREATE PROCEDURE ThemSachVaoGioHang(
+    p_SoDienThoai CHAR(10),
+    p_IDSach INT,
+    p_SoLuong INT
+)
+BEGIN
+    -- Nếu sách chưa có trong giỏ hàng, thêm mới vào
+    IF p_IDSach NOT IN (SELECT IDSach FROM KhachThemSach WHERE SoDienThoai = p_SoDienThoai) THEN
+        -- Thêm sách vào giỏ hàng
+        INSERT INTO KhachThemSach(p_SoDienThoai, p_IDSach, p_SoLuong) VALUE (p_IDSach, p_SoLuong);
+
+    ELSE
+        -- Nếu sách đã có trong giỏ hàng, gọi thủ tục cập nhật số lượng
+        CALL CapNhatSoLuongSachTrongGioHang(p_SoDienThoai, p_IDSach, p_SoLuong);
+    END IF;
+END //
+
+CREATE PROCEDURE TaoDonHangTuGioHang(
+    p_SoDienThoai CHAR(10)
+)
+BEGIN
+    DECLARE p_TongTien INT;
+    DECLARE p_XacNhan CHAR(1);
+    DECLARE p_DiaChi VARCHAR(1000);
+    DECLARE IDDonHang INT;
+
+    SELECT SUM(S.Gia * KTS.SoLuong) INTO p_TongTien
+    FROM KhachThemSach KTS
+    JOIN Sach S ON KTS.IDSach = S.ID
+    WHERE KTS.SoDienThoai = p_SoDienThoai;
+
+    SET p_XacNhan = 'N';
+    SET p_DiaChi = (SELECT DiaChi FROM KhachHang WHERE SoDienThoai = p_SoDienThoai);
+    
+    INSERT INTO DonHang (SoDienThoai, TongTien, NgayTao, XacNhan, DiaChi) VALUE (p_SoDienThoai, p_TongTien, NOW(), p_XacNhan, p_DiaChi);
+    
+    SET IDDonHang = LAST_INSERT_ID();
+    
+    INSERT INTO DonHangCoSach (IDDonHang, IDSach, SoLuong, TongTien)
+    SELECT IDDonHang, IDSach, SoLuong, Gia * SoLuong
+    FROM KhachThemSach KTS
+    JOIN Sach S ON KTS.IDSach = S.ID
+    WHERE KTS.SoDienThoai = p_SoDienThoai;
+    
+    DELETE FROM KhachThemSach WHERE SoDienThoai = p_SoDienThoai;
+    
+END //
+
 DELIMITER ;
