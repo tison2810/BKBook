@@ -44,7 +44,7 @@ function Xacnhandon(){
           <Sidebar />
           <input className= "searchbar" type="text" placeholder="Nhập mã đơn hàng cần tìm" />
           {OrderTable}
-          <Footer />
+          {/* <Footer /> */}
         </React.Fragment>
       );
 }

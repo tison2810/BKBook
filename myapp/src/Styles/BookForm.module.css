@@ -1,4 +1,4 @@
-.bookForm body {
+body {
   margin: 0;
   padding: 0;
   display: flex;
@@ -7,7 +7,7 @@
   height: 100vh;
 }
 
-.bookForm form {
+.bookInput form {
   display: flex;
   flex-direction: column;
   width: 100%;
