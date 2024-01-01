@@ -172,7 +172,7 @@ CREATE PROCEDURE TaoDonHangTuGioHang(
     p_TongTien INT
 )
 BEGIN
-    DECLARE p_XacNhan CHAR(1);
+    DECLARE p_XacNhan CHAR(20);
     DECLARE p_DiaChi VARCHAR(1000);
     DECLARE IDDonHang INT;
 

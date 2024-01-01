@@ -29,7 +29,7 @@ function App() {
                 {/* <Route path='/homepagelogged' element={<TrangchuLogged />} /> */}
                 <Route path='/personalBuy' element={<PersonalBuy />} />
                 <Route path='/xemsanpham/:bookId' element={<Xemsanpham />} />
-                <Route path='/xemchitiet' element={<Xemchitiet />} />
+                <Route path='/xemchitiet/:orderId' element={<Xemchitiet />} />
                 <Route path='/xemlichsutrang' element={<Xemlichsutrang />} />
                 <Route path='/bookform' element={<BookForm />} />
                 <Route path='/theodoidon' element={<Theodoidon />} />

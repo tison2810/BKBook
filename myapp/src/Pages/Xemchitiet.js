@@ -1,18 +1,30 @@
 import styles from '../Styles/Xemchitiet.module.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../Component/logHeader.js';
 import Footer from '../Component/Footer.js';
 import Sidebar from '../Component/sideBar.js';
 import Table from 'react-bootstrap/Table';
-import codethieunhi from '../images/300baicodethieunhi.jpg';
+import { useParams, useNavigate } from 'react-router-dom';
 
-const books = [
-  {TenSach: '300 bài code thiếu nhi', SoLuong: '1', Gia: '512.000'},
-  {TenSach: 'Blockchain cho trẻ em', SoLuong: '1', Gia: '245.000'},
-]
 const ViewDetails = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSecondModalOpen, setIsSecondModalOpen] = useState(false);
+  const { orderId } = useParams();
+  const [books, setBooks] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch(`http://localhost:3001/api/orderProduct/${orderId}`)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          setBooks(result);
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+  }, [orderId]);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -26,18 +38,80 @@ const ViewDetails = () => {
   const closeModal = () => {
     setIsModalOpen(false);
     setIsSecondModalOpen(false);
+    turnBack();
   };
+
+  const turnBack = () => {
+    navigate('/personalBuy');
+  }
+
+  const handelCancel = () => {
+    try {
+      fetch(`http://localhost:3001/api/updateOrderState/${orderId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ state: 'Yêu cầu hủy đơn' }),
+      })
+        .then(res => res.json())
+        .then(
+          (result) => {
+            console.log(result);
+          },
+          (error) => {
+            console.log(error);
+          }
+        )
+      openSecondModal();
+    }
+    catch (error) {
+      console.log(error);
+      window.alert('Hiện tại không thể hủy đơn. Vui lòng thử lại!');
+    }
+  }
+  
+  const handelPayment = () => {
+    const payment = window.confirm('Bạn có muốn thanh toán đơn hàng này?');
+    if (!payment) return;
+    try {
+      fetch(`http://localhost:3001/api/updateOrderState/${orderId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ state: 'Đã thanh toán' }),
+      })
+        .then(res => res.json())
+        .then(
+          (result) => {
+            console.log(result);
+          },
+          (error) => {
+            console.log(error);
+          }
+        )
+      window.alert('Thanh toán thành công!');
+      turnBack();
+    } catch (error) {
+      console.log(error);
+      window.alert('Thanh toán thất bại!');
+    }
+  }
+
+  if (books.length === 0) return <div>Đang tải...</div>;
+  console.log(books);
   return (
     <div className={styles.containerDetails}>
       <h2>Lịch sử mua hàng</h2>
-      <button className={styles.buttonDetails_1}>Quay lại</button>
+      <button className={styles.buttonDetails_1} onClick={turnBack}>Quay lại</button>
       <div className={styles.midDetails}>
         <div className={styles.midDetailsLeft}>
-          <img src={codethieunhi} />
+          <img src={`/images/${books[0].Anh}`} />
         </div>
         <div className={styles.midDetailsRight}>
           <button className={styles.buttonDetails_2} >
-            Chờ thanh toán
+            {books[0].XacNhan}
           </button>
           <Table className={styles.orderTable}>
         <thead>
@@ -50,17 +124,24 @@ const ViewDetails = () => {
         <tbody>
           {books.map((book) => (
             <tr key={book.title}>
-              <td>{book.TenSach}</td>
+              <td className='book-name'>{book.Ten}</td>
               <td>{book.SoLuong}</td>
-              <td>{book.Gia}</td>
+              <td>{book.TongTien.toLocaleString('vi-VN')}<sup>đ</sup></td>
             </tr>
           ))}
         </tbody>
       </Table>
           <div className={styles.midDetailsRightBottom}>
-            <button className={styles.buttonDetails_3}>
-              Thanh toán
+          {books[0].XacNhan !== 'Đã thanh toán' && books[0].XacNhan !== 'Đã hủy' &&
+            books[0].XacNhan !== 'Đã giao' && books[0].XacNhan !== 'Đang giao' &&
+          (
+            <button
+            className={styles.buttonDetails_3}
+            onClick={handelPayment}
+            >
+            Thanh Toán
             </button>
+          )}
             <button className={styles.buttonDetails_4} onClick={openModal}>
               Hủy đơn
             </button>
@@ -69,7 +150,7 @@ const ViewDetails = () => {
                 <div className={styles.modalContent}>
                   <h3>Bạn có muốn hủy đơn?</h3>
                   <div className={styles.modalButton}>
-                    <button className={styles.modalButton_1} onClick={openSecondModal}>Có</button>
+                    <button className={styles.modalButton_1} onClick={handelCancel}>Có</button>
                     <button className={styles.modalButton_2} onClick={closeModal}>Không</button>
                   </div>
                 </div>

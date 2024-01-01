@@ -13,8 +13,6 @@ function Header() {
 
     const {userInfo, isAdmin} = useAuth();
 
-    console.log(userInfo, isAdmin);
-
     return (
         <header>
             <nav>
