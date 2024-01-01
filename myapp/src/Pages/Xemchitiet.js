@@ -5,6 +5,11 @@ import Footer from '../Component/Footer.js';
 import Sidebar from '../Component/sideBar.js';
 import Table from 'react-bootstrap/Table';
 import codethieunhi from '../images/300baicodethieunhi.jpg';
+
+const books = [
+  {TenSach: '300 bài code thiếu nhi', SoLuong: '1', Gia: '512.000'},
+  {TenSach: 'Blockchain cho trẻ em', SoLuong: '1', Gia: '245.000'},
+]
 const ViewDetails = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSecondModalOpen, setIsSecondModalOpen] = useState(false);
@@ -34,9 +39,24 @@ const ViewDetails = () => {
           <button className={styles.buttonDetails_2} >
             Chờ thanh toán
           </button>
-          <div>Tên sách: 300 bài code thiếu nhi</div>
-          <div>Thời gian đặt mua: 02:17 26/10/2023</div>
-          <div>Vui lòng thanh toán cho sản phẩm này trước 23:59 31/10/2023</div>
+          <Table className={styles.orderTable}>
+        <thead>
+          <tr>
+            <th>Tên sách</th>
+            <th>Số lượng</th>
+            <th>Giá</th>
+          </tr>
+        </thead>
+        <tbody>
+          {books.map((book) => (
+            <tr key={book.title}>
+              <td>{book.TenSach}</td>
+              <td>{book.SoLuong}</td>
+              <td>{book.Gia}</td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
           <div className={styles.midDetailsRightBottom}>
             <button className={styles.buttonDetails_3}>
               Thanh toán
