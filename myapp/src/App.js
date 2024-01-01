@@ -12,6 +12,7 @@ import Dangky from './Dangky';
 import Xemsanpham from './Pages/Xemsanpham';
 import Xemchitiet from './Pages/Xemchitiet';
 import Xemlichsutrang from './Pages/Xemlichsutrang';
+import BookForm from './Pages/BookForm';
 function App() {
     return (
         <div className='App'>
@@ -27,6 +28,7 @@ function App() {
                 <Route path='/xemsanpham/:bookId' element={<Xemsanpham />} />
                 <Route path='/xemchitiet' element={<Xemchitiet />} />
                 <Route path='/xemlichsutrang' element={<Xemlichsutrang />} />
+                <Route path='/bookform' element={<BookForm />} />
             </Routes>
             </SearchProvider>
             </AuthProvider>

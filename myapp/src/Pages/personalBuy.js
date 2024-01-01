@@ -1,5 +1,5 @@
 //import logo from './logo.svg';
-import '../Styles/personalBuy.css';
+import styles from '../Styles/personalBuy.module.css';
 import React, { useState } from 'react';
 import Header from '../Component/logHeader.js';
 // import Header from '../Component/Header.js';
@@ -42,7 +42,7 @@ function PersonalBuy() {
   const filteredData =
     filter === 'Tất cả' ? data : data.filter(item => item.trangThai.toLowerCase() === filter.toLowerCase());
   const filterDropdown =
-    <div class="filterDropdown">
+    <div className={styles.filterDropdown}>
       <select onChange={handleFilterChange} value={filter}>
         <option value="Tất cả">Tất cả</option>
         <option value="Đã giao">Đã giao</option>
@@ -54,8 +54,8 @@ function PersonalBuy() {
     </div>
 
   const orderedTable =
-    <Table className="orderedTable">
-      <div className="table-container">
+    <Table className={styles.orderedTable}>
+      <div className={styles.tableContainer}>
         <thead>
           <tr>
             <th scope="col">Trạng thái</th>

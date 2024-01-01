@@ -24,7 +24,7 @@ th, td{
     border-collapse: collapse;
 }
 
-.table-container {
+.tableContainer {
     max-height: 350px; 
     overflow: auto; 
   }

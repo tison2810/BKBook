@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-.container-details{
+.containerDetails{
   padding: 20px;
   margin-left: 300px;
   margin-top:-550px;
   height:600px;
   /* background-color: blue; */
 }
-.button-details-1{
+.buttonDetails_1{
   margin-top:5px;
   cursor: pointer;
   width:150px;
@@ -17,14 +17,14 @@
   font-size:15px;
   background-color: #DADADA;
 }
-.mid-details{
+.midDetails{
   margin-left:20px;
   margin-top:50px;
   width:800px;
   height:300px;
   display:flex;
 }
-.mid-details-left{
+.midDetailsLeft{
   width:300px;
   img{
     width:300px;
@@ -32,11 +32,11 @@
     border-radius:5px;
   }
 }
-.mid-details-right{
+.midDetailsRight{
   width:500px;
   margin-left:10px;
 }
-.button-details-2{
+.buttonDetails_2{
   cursor: pointer;
   width:150px;
   height:30px;
@@ -45,10 +45,10 @@
   font-size:15px;
   background-color: #43FFD8;
 }
-.mid-details-right-bottom{
+.midDetailsRightBottom{
   margin-top:150px;
 }
-.button-details-3{
+.buttonDetails_3{
   border: 2px solid #C92127;
   border-color: #C92127;
   margin-left: 30px;
@@ -61,7 +61,7 @@
   font-size:15px;
   cursor: pointer;
 }
-.button-details-4{
+.buttonDetails_4{
   border: 2px solid #C92127;
   border-color: #C92127;
   margin-left:20px;
@@ -74,7 +74,7 @@
   font-size:15px;
   cursor: pointer;
 }
-.modal-window {
+.modalWindow {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -89,17 +89,17 @@
   border: 2px solid #C92127;
 }
 
-.modal-content {
+.modalContent {
   margin-top:50px;
   margin-left:50px;
 }
-.modal-button{
+.modalButton{
   margin-top:50px;
   button{
     margin-left:20px;
   }
 }
-.modal-button-1{
+.modalButton_1{
   border: 2px solid #FFFFFF;
   color:#FFFFFF;
   font-size:15px;
@@ -108,7 +108,7 @@
   width:60px;
   height:30px;
 }
-.modal-button-2{
+.modalButton_2{
   border: 2px solid #C92127;
   border-color: #C92127;
   color:#C92127;
@@ -118,7 +118,7 @@
   width:60px;
   height:30px;
 }
-.modal-button-3{
+.modalButton_3{
   border: 2px solid #FFFFFF;
   color:#FFFFFF;
   font-size:15px;
@@ -129,7 +129,7 @@
   margin-top:50px;
   margin-left:40px;
 }
-.modal-content-2 {
+.modalContent_2 {
   margin-top:50px;
   margin-left:35px;
 }

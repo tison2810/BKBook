@@ -1,4 +1,4 @@
-import '../Styles/Xacnhandon.css';
+import styles from '../Styles/Xacnhandon.css';
 import React from 'react';
 import Header from '../Component/logHeader.js';
 import Footer from '../Component/Footer.js';
@@ -14,8 +14,8 @@ function Xacnhandon(){
         { MaDonHang: '0x0005', NguoiDat: 'Trương Thành Đạt SĐT:0913020447', GiaTri: '76.000', DiaChi: '242 Lý Thường Kiệt, P14, Q.10, TP.HCM' },
       ];
     const OrderTable = 
-    <Table className="OrderTable">
-    <div className="table-container">
+    <Table className={styles.OrderTable}>
+    <div className={styles.tableContainer}>
       <thead>
         <tr>
           <th scope="col">Mã đơn</th>
