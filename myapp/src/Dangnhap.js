@@ -36,35 +36,32 @@ function LoginForm() {
         });
     };
 
+    const handleLoginRequest = async (apiEndpoint, isAdmin) => {
+        try {
+          const response = await axios.post(apiEndpoint, formData);
+          console.log(response.data);
+      
+          if (response.status === 200) {
+            handleLogin(formData, isAdmin);
+            navigate('/');
+          }
+        } catch (error) {
+          console.error('Đã có lỗi xảy ra', error);
+          setIsModalOpen(true);
+          setModalContent('Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng thử lại!');
+        }
+      };
+      
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+      
+        const isAdmin = document.getElementById('isAdmin').checked;
 
-        try {
-            const response = await axios.post('http://localhost:3001/api/login', formData);
-            console.log(response.data);
-
-            // Xác thực thành công, chuyển hướng đến trang chủ
-            if (response.status === 200) {
-                handleLogin({ username: formData.username });
-                navigate('/');
-            }
-        }
-        catch (error) {
-            try {
-                const adminResponse = await axios.post('http://localhost:3001/api/AdminLogin', formData);
-                console.log(adminResponse.data);
-    
-                // Xác thực thành công, chuyển hướng đến trang chủ
-                if (adminResponse.status === 200) {
-                    handleLogin({ username: formData.username });
-                    navigate('/theodoidon');
-                }
-            }
-            catch(adminError){
-            console.error('Đã có lỗi xảy ra', adminError);
-            setIsModalOpen(true);
-            setModalContent('Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng thử lại!');
-            }
+        if (isAdmin) {
+            handleLoginRequest('http://localhost:3001/api/AdminLogin', true);
+        } else {
+            handleLoginRequest('http://localhost:3001/api/login', false);
         }
     };
 
@@ -87,9 +84,9 @@ function LoginForm() {
                     type="password" placeholder='Mật khẩu'
                     onChange={handleChange} />
                 <div className={styles.sub}>
-                    <div className={styles.rememberUserInput}>
-                        <input type="checkbox" id="remember-user" />
-                        <label htmlFor="remember-user">Ghi nhớ tài khoản</label>
+                    <div className={styles.isAdmid}>
+                        <input type="checkbox" id="isAdmin" />
+                        <label htmlFor="isAdmin">Bạn là nhân viên?</label>
                     </div>
                     <a href="#">Quên mật khẩu?</a>
                 </div>
