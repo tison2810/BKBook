@@ -71,10 +71,6 @@ const ViewProduct = () =>{
         setModalContent('Đã có lỗi xảy ra. Vui lòng thử lại!');
       });
   };
-  // console.log(productDetails);
-  // console.log(reviewDetails);
-  // console.log(userInfo);
-  // console.log(count);
   if (!productDetails) return null;
   let pricePerProduct = 0;
   if (productDetails.MucGiamGia == null || productDetails.MucGiamGia === 0) 
@@ -123,10 +119,10 @@ const ViewProduct = () =>{
             ) : (
             <div className="money-container">
               <p className="money-text-1">
-              {productDetails.Gia*(1-productDetails.MucGiamGia/100)} đ
+              {(productDetails.Gia*(1-productDetails.MucGiamGia/100)).toLocaleString('vi-VN')} đ
               </p>
               <p className="money-text-2">
-              <del>{productDetails.Gia} đ</del>
+              <del>{productDetails.Gia.toLocaleString('vi-VN')} đ</del>
               </p>
               <p className="money-text-3">
               -{productDetails.MucGiamGia}%
@@ -160,7 +156,7 @@ const ViewProduct = () =>{
         </div>
         <div className ="column-3">
           <div>
-            <h1>Mô tả sản phẩm</h1>
+            <h2>Mô tả sản phẩm</h2>
             <div className ="describe-story">
             <p>{productDetails.MoTa}</p>
             <div>

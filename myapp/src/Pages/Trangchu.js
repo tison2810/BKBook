@@ -19,38 +19,11 @@ function Product(props) {
           <p className={styles.pVoting}>{props.vote + "/5"}<span><img className={styles.starVoting} src={voting} /></span></p>
         )
       }
-      <p>{props.price}<sup>đ</sup></p>
+      <p>{props.price.toLocaleString('vi-VN')}<sup>đ</sup></p>
     </div>
     </Link>
   )
 }
-
-// function Label(props) {
-//   return (
-//     <div className={props.clName}>
-//       <p className="text-label">{props.text}</p>
-//     </div>
-//   )
-// }
-
-// const listProducts = 
-// <ul className={styles.listProducts}>
-//   {productsData.map((product, index) => (
-//     <li key={index} className={styles.listProductsEle}>
-//       <Product
-//         imgSrc={product.imgSrc}
-//         name={product.name}
-//         vote={product.vote}
-//         price={product.price}
-//       />
-//     </li>
-//   ))}
-// </ul>
-
-// const content = 
-// <div className={styles.content}>
-//   {listProducts}
-// </div>
 
 function TrangChu() {
   const { searchTerm } = useSearch();
