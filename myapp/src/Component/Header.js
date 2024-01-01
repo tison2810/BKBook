@@ -5,13 +5,14 @@ import styles from './Header.module.css';
 // import star from '../images/Star.svg';
 // import cart from '../images/Cart.svg';
 import logo from '../images/logoBK.png';
-
+import DropdownProfile from './DropdownProfile';
 function Header() {
     const { loggedIn, userInfo } = useAuth();
 
     // console.log('loggedIn:', loggedIn);
     // console.log('userInfo:', userInfo);
-    
+
+    const[openProfile, setOpenProfile] = useState(false);
     return (
         <header>
             <nav>
@@ -32,13 +33,14 @@ function Header() {
                         <li><Link to='/'>TRANG CHỦ</Link></li>
                         <li>
                             {loggedIn ? (
-                                <Link to='/'> TÀI KHOẢN</Link>
+                                 <Link onClick={() => setOpenProfile(prevState => !prevState)}>TÀI KHOẢN</Link>
                             ) : (
                                 <Link to='/dangnhap'>ĐĂNG NHẬP</Link>
                             )}
                         </li>
                     </ul>
                 </div>
+                {openProfile && <DropdownProfile />}
             </nav>
         </header>
     );

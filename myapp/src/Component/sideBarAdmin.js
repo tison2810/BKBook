@@ -1,8 +1,8 @@
 import React from 'react';
-import './sideBar.css';
+import styles from './sideBar.module.css';
 function Sidebar () {
     return (
-        <div className="sidebar">
+        <div className={styles.sidebar}>
             <ul>
                 <li><a href="#">Thông tin tài khoản</a></li>
                 <li><a href="#">Xác nhận đơn hàng</a></li>
