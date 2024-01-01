@@ -17,6 +17,7 @@ import Theodoidon from './Pages/Theodoidon';
 import Xacnhandon from './Pages/Xacnhandon';
 import Quanlisanpham from './Pages/Quanlisanpham';
 import Thongtincanhan from './Pages/Thongtincanhan';
+import Thongtinkh from './Pages/Thongtinkh';
 function App() {
     return (
         <div className='App'>
@@ -37,6 +38,7 @@ function App() {
                 <Route path='/xacnhandon' element={<Xacnhandon />} />
                 <Route path='/quanlisanpham' element={<Quanlisanpham />} />
                 <Route path='/thongtincanhan' element={<Thongtincanhan/>} />
+                <Route path='/thongtinkh' element={<Thongtinkh/>} />
             </Routes>
             </SearchProvider>
             </AuthProvider>
