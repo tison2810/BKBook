@@ -1,7 +1,7 @@
 const db = require('../db');
 
 exports.getBooksForHomePage = (req, res) => {
-  const query = 'SELECT * FROM sach LIMIT 8';
+  const query = 'SELECT * FROM sach';
   db.query(query, (error, results) => {
     if (error) {
       console.error('Error executing query:', error);
