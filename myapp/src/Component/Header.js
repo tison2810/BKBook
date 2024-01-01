@@ -7,10 +7,7 @@ import styles from './Header.module.css';
 import logo from '../images/logoBK.png';
 import DropdownProfile from './DropdownProfile';
 function Header() {
-    const { loggedIn, userInfo } = useAuth();
-
-    // console.log('loggedIn:', loggedIn);
-    // console.log('userInfo:', userInfo);
+    const { loggedIn } = useAuth();
 
     const[openProfile, setOpenProfile] = useState(false);
     return (
@@ -27,18 +24,21 @@ function Header() {
                     <a className={styles.star" href="#">
                         <img src={star} alt="star" />
                     </a> */}
-                    <ul>
-                        <li><Link to='/giohang'>GIỎ HÀNG</Link></li>
-                        <li><Link to='/'>YÊU THÍCH</Link></li>
-                        <li><Link to='/'>TRANG CHỦ</Link></li>
-                        <li>
-                            {loggedIn ? (
-                                 <Link onClick={() => setOpenProfile(prevState => !prevState)}>TÀI KHOẢN</Link>
-                            ) : (
-                                <Link to='/dangnhap'>ĐĂNG NHẬP</Link>
-                            )}
-                        </li>
-                    </ul>
+                    {loggedIn ? (
+                        <ul>
+                            <li><Link to='/giohang'>GIỎ HÀNG</Link></li>
+                            <li><Link to='/'>YÊU THÍCH</Link></li>
+                            <li><Link to='/'>TRANG CHỦ</Link></li>
+                            <li><Link onClick={() => setOpenProfile(prevState => !prevState)}>TÀI KHOẢN</Link></li>
+                        </ul>
+                    ) : (
+                        <ul>
+                            <li><Link to='/dangnhap'>GIỎ HÀNG</Link></li>
+                            <li><Link to='/dangnhap'>YÊU THÍCH</Link></li>
+                            <li><Link to='/'>TRANG CHỦ</Link></li>
+                            <li><Link to='/dangnhap'>ĐĂNG NHẬP</Link></li>
+                        </ul>
+                    )}
                 </div>
                 {openProfile && <DropdownProfile />}
             </nav>

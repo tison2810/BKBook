@@ -119,10 +119,10 @@ const ViewProduct = () => {
                 ) : (
                   <div className={styles.moneyContainer}>
                     <p className={styles.moneyText_1}>
-                      {productDetails.Gia * (1 - productDetails.MucGiamGia / 100)} đ
+                      {(productDetails.Gia * (1 - productDetails.MucGiamGia / 100)).toLocaleString('vi-VN')} đ
                     </p>
                     <p className={styles.moneyText_2}>
-                      <del>{productDetails.Gia} đ</del>
+                      <del>{productDetails.Gia.toLocaleString('vi-VN')} đ</del>
                     </p>
                     <p className={styles.moneyText_3}>
                       -{productDetails.MucGiamGia}%
