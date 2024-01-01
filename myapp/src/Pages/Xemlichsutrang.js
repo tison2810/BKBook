@@ -4,12 +4,8 @@ import Header from '../Component/logHeader.js';
 import Footer from '../Component/Footer.js';
 import Sidebar from '../Component/sideBar.js';
 import Table from 'react-bootstrap/Table';
-import codethieunhi from '../images/300baicodethieunhi.jpg';
-const books = [
-  {TenSach: '300 bài code thiếu nhi', SoLuong: '1', Gia: '512.000'},
-  {TenSach: 'Blockchain cho trẻ em', SoLuong: '1', Gia: '245.000'},
-]
-
+import blockchaintreem from '../images/blockchaintreem.jpg';
+import { CiStar } from "react-icons/ci";
 const ViewHistory = () =>{
 
   return(
@@ -18,12 +14,30 @@ const ViewHistory = () =>{
       <button className ={styles.buttonDetailsOne}>Quay lại</button>
       <div className={styles.midDetails}>
         <div className={styles.midDetailsLeft}>
-          <img src={codethieunhi}/>
+          <img src={blockchaintreem}/>
+          <div className = {styles.midDetailsLeftBot}>
+            <ul>
+              <li><CiStar /></li>
+              <li><CiStar /></li>
+              <li><CiStar /></li>
+              <li><CiStar /></li>
+              <li><CiStar /></li>
+            </ul>
+            <div className ={styles.inputHistory}>
+            <input type="text" id="comment" name="comment" placeholder="Ghi đánh giá cho đơn hàng" ></input>
+            </div>
+            <button className ={styles.buttonHistory}>Gửi đánh giá</button>
+          </div>
         </div>
         <div className={styles.midDetailsRight}>
           <button className ={styles.buttonDetailsTwo}>
-            Chờ thanh toán
+            Đã giao
           </button>
+          <div>Tên sách: Blockchain cho trẻ</div>
+          <div>Thời gian đặt mua: 04:50 26/10/2023</div>
+          <div>Thời gian giao: 10:28 28/10/2023</div>
+          <div>Chi tiết quá trình</div>
+          èhefu
         </div>
       </div>
       <Table className={styles.orderTable}>
