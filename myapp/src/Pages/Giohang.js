@@ -235,7 +235,7 @@ function ListProductInCart() {
                 <span>Số lượng</span>
                 <span>Thành tiền</span>
             </div>
-            <div className="products-in-cart" id="products-in-cart">
+            <div className={styles.productsInCart} id="products-in-cart">
                 {products.map((product, index) => {
                 // console.log('totalPrice:', totalPrice);
                 return (
@@ -271,9 +271,9 @@ function ListProductInCart() {
             <span className={styles.orderInfoTitle}>SĐT:</span>
             <span className={styles.customPhoneValue}>{cusInfo[0]?.SoDienThoai}</span>
         </div>
-        <div className="total-price">
-            <span className="order-info-title">Tổng giá:</span>
-            <span className="total-price-value">{totalPrice.toLocaleString('vi-VN')}<sup>đ</sup></span>
+        <div className={styles.totalPrice}>
+            <span className={styles.orderInfoTitle}>Tổng giá:</span>
+            <span className={styles.totalPriceValue}>{totalPrice.toLocaleString('vi-VN')}<sup>đ</sup></span>
         </div>
         <div className={styles.orderButton}>
             <form>
