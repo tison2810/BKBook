@@ -15,7 +15,7 @@ import Xemlichsutrang from './Pages/Xemlichsutrang';
 import BookForm from './Pages/BookForm';
 import Theodoidon from './Pages/Theodoidon';
 import Xacnhandon from './Pages/Xacnhandon';
-
+import Quanlisanpham from './Pages/Quanlisanpham';
 function App() {
     return (
         <div className='App'>
@@ -34,6 +34,7 @@ function App() {
                 <Route path='/bookform' element={<BookForm />} />
                 <Route path='/theodoidon' element={<Theodoidon />} />
                 <Route path='/xacnhandon' element={<Xacnhandon />} />
+                <Route path='/quanlisanpham' element={<Quanlisanpham />} />
             </Routes>
             </SearchProvider>
             </AuthProvider>
