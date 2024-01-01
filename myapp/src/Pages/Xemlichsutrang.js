@@ -38,25 +38,17 @@ const ViewHistory = () =>{
             <button className ={styles.buttonHistory}>Gửi đánh giá</button>
           </div>
         </div>
+        <div className={styles.midDetailsRight}>
+          <button className ={styles.buttonDetailsTwo}>
+            Đã giao
+          </button>
+          <div>Tên sách: Blockchain cho trẻ</div>
+          <div>Thời gian đặt mua: 04:50 26/10/2023</div>
+          <div>Thời gian giao: 10:28 28/10/2023</div>
+          <div>Chi tiết quá trình</div>
+          èhefu
+        </div>
       </div>
-      <Table className={styles.orderTable}>
-        <thead>
-          <tr>
-            <th>Tên sách</th>
-            <th>Số lượng</th>
-            <th>Giá</th>
-          </tr>
-        </thead>
-        <tbody>
-          {books.map((book) => (
-            <tr key={book.title}>
-              <td>{book.TenSach}</td>
-              <td>{book.SoLuong}</td>
-              <td>{book.Gia}</td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
     </div>
   )
 }

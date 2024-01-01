@@ -7,6 +7,7 @@ import Footer from '../Component/Footer.js';
 import Sidebar from '../Component/sideBar.js';
 import Table from 'react-bootstrap/Table';
 import { useAuth } from '../AuthContext.js';
+import { Link } from 'react-router-dom';
 
 const getStatusClass = (status) => {
   switch (status) {
@@ -16,10 +17,14 @@ const getStatusClass = (status) => {
       return 'DangGiao';
     case 'Đã hủy':
       return 'DaHuy';
-    case 'Đang xử lí':
-      return 'DangXuLi';
+    case 'Đang xử lý':
+      return 'DangXuLy';
     case 'Chờ thanh toán':
       return 'ChoThanhToan';
+    case 'Đã thanh toán':
+      return 'DaThanhToan';
+    case 'Yêu cầu hủy đơn':
+      return 'YeuCauHuyDon';
     default:
       return ''; // Không có class nếu không có trạng thái nào khớp
   }
@@ -45,7 +50,6 @@ function PersonalBuy() {
       )
   } ,[])
 
-
   // Lọc dữ liệu theo giá trị của dropdown
   const filteredData =
     filter === 'Tất cả' ? data : data.filter(item => item.XacNhan.toLowerCase() === filter.toLowerCase());
@@ -55,9 +59,11 @@ function PersonalBuy() {
         <option value="Tất cả">Tất cả</option>
         <option value="Đã giao">Đã giao</option>
         <option value="Đang giao">Đang giao</option>
-        <option value="Đang xử lí">Đang xử lí</option>
+        <option value="Đang xử lý">Đang xử lý</option>
         <option value="Chờ thanh toán">Chờ thanh toán</option>
+        <option value="Đã thanh toán">Đã thanh toán</option>
         <option value="Đã hủy">Đã hủy</option>
+        <option value="Yêu cầu hủy đơn">Yêu cầu hủy đơn</option>
       </select>
     </div>
 
@@ -78,7 +84,7 @@ function PersonalBuy() {
               <td>{item.XacNhan}</td>
               <td>{item.ID}</td>
               <td>{item.NgayTao}</td>
-              <td><a href="#">Xem chi tiết</a></td>
+              <td><Link to={`/xemchitiet/${item.ID}`}>Xem chi tiết</Link></td>
             </tr>
           ))}
         </tbody>
