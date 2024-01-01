@@ -57,7 +57,7 @@ function LoginForm() {
                 // Xác thực thành công, chuyển hướng đến trang chủ
                 if (adminResponse.status === 200) {
                     handleLogin({ username: formData.username });
-                    navigate('/');
+                    navigate('/theodoidon');
                 }
             }
             catch(adminError){
