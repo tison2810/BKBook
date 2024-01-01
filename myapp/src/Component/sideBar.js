@@ -5,8 +5,8 @@ function Sidebar () {
     return (
         <div className={styles.sidebar}>
             <ul>
-                <li><a href="#">Thông tin tài khoản</a></li>
-                <li><a href="#">Lịch sử mua hàng</a></li>
+                <li><Link to='/thongtinkh'>Thông tin tài khoản</Link></li>
+                <li><Link to='/personalBuy'>Lịch sử mua hàng</Link></li>
                 <li><a href="#">Kho voucher</a></li>
                 <li><a href="#">Thông báo</a></li>
             </ul>

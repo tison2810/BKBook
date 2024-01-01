@@ -16,7 +16,7 @@ function Product(props) {
         props.vote === null ? (
           <p className={styles.pVoting}>Chưa có đánh giá</p>
         ) : (
-          <p className={styles.pVoting}>{props.vote + "/5"}<span><img className={styles.starVoting} src={voting} /></span></p>
+          <p className={styles.pVoting}>{props.vote.toFixed(1) + "/5"}<span><img className={styles.starVoting} src={voting} /></span></p>
         )
       }
       <p>{props.price.toLocaleString('vi-VN')}<sup>đ</sup></p>

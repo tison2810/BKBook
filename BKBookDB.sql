@@ -176,7 +176,7 @@ BEGIN
     DECLARE p_DiaChi VARCHAR(1000);
     DECLARE IDDonHang INT;
 
-    SET p_XacNhan = 'Chờ thanh toán';
+    SET p_XacNhan = 'Đang xử lý';
     SET p_DiaChi = (SELECT DiaChi FROM KhachHang WHERE SoDienThoai = p_SoDienThoai);
     
     INSERT INTO DonHang (SoDienThoai, TongTien, NgayTao, XacNhan, DiaChi) VALUE (p_SoDienThoai, p_TongTien, NOW(), p_XacNhan, p_DiaChi);
