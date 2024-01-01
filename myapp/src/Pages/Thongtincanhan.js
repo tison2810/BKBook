@@ -9,17 +9,17 @@ import { MdOutlineMail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FaHome } from "react-icons/fa";
 import {useAuth} from '../AuthContext.js';
-const Thongtinkh = () =>{
+const Thongtintk = () =>{
 
   const {userInfo} = useAuth();
-  const [customerInfo, setCustomerInfo] = useState([]);
+  const [staffInfo, setstaffInfo] = useState([]);
 
-  const fetchCustomerInfo = (username, setCustomerInfo ) => {
-    fetch(`http://localhost:3001/api/customerInfo/${username}`)
+  const fetchStaffInfo = (username, setStaffInfo ) => {
+    fetch(`http://localhost:3001/api/staffInfo/${username}`)
       .then(res => res.json())
       .then(
         (result) => {
-          setCustomerInfo(result);
+          setStaffInfo(result);
         },
         (error) => {
           console.log(error);
@@ -28,7 +28,7 @@ const Thongtinkh = () =>{
   }
   
   useEffect(() => {
-    fetchCustomerInfo(userInfo.username, setCustomerInfo);
+    fetchStaffInfo(userInfo.username, setStaffInfo);
   }, [userInfo.username]);
 
   const handelUpdateEmail = () => {
@@ -46,7 +46,7 @@ const Thongtinkh = () =>{
       .then(
         (result) => {
           alert("Cập nhật email thành công");
-          fetchCustomerInfo(userInfo.username, setCustomerInfo);
+          fetchStaffInfo(userInfo.username, setStaffInfo);
         },
         (error) => {
           console.log(error);
@@ -69,7 +69,7 @@ const Thongtinkh = () =>{
       .then(
         (result) => {
           alert("Cập nhật địa chỉ thành công");
-          fetchCustomerInfo(userInfo.username, setCustomerInfo);
+          fetchStaffInfo(userInfo.username, setStaffInfo);
         },
         (error) => {
           console.log(error);
@@ -99,7 +99,7 @@ const Thongtinkh = () =>{
       )
   }
 
-  if (customerInfo.length === 0) return null;
+  if (staffInfo.length === 0) return null;
   return (
 
       <div className ={styles.infoPersonal}>
@@ -112,15 +112,15 @@ const Thongtinkh = () =>{
             <div className = {styles.infoDetails}>
               <ul>
                 <li>
-                  Họ và tên: {customerInfo[0].HoTen}
+                  Họ và tên: {staffInfo[0].HoTen}
                 </li>
-                <li>Ngày sinh: {customerInfo[0].NgaySinh}</li>
+                <li>Ngày sinh: {staffInfo[0].NgaySinh}</li>
                 <li>Giới tính: 
                   {
-                    customerInfo[0].GioiTinh === 'M' ? " Nam" : " Nữ"
+                    staffInfo[0].GioiTinh === 'M' ? " Nam" : " Nữ"
                   }
                 </li>
-                <li>Ngày tạo tài khoản: {customerInfo[0].NgayTao}</li>
+                <li>Ngày tạo tài khoản: {staffInfo[0].NgayTao}</li>
               </ul>
             </div>
 
@@ -129,7 +129,7 @@ const Thongtinkh = () =>{
             <div className = {styles.infoRight}>
                 <ul>
                   <li><BsFillTelephoneFill /> Số điện thoại</li>
-                  <li className ={styles.infoTel}>{customerInfo[0].SoDienThoai}</li>
+                  <li className ={styles.infoTel}>{staffInfo[0].SoDienThoai}</li>
                 </ul>
                 <button className ={styles.infoButton1}>Cập nhật</button>
             </div>
@@ -137,7 +137,7 @@ const Thongtinkh = () =>{
                 <ul>
                   <li><MdOutlineMail />Địa chỉ email</li>
                   <li className ={styles.infoTel}>{
-                    customerInfo[0].Email === null ? "Chưa cập nhật" : customerInfo[0].Email
+                    staffInfo[0].Email === null ? "Chưa cập nhật" : staffInfo[0].Email
                   }</li>
                 </ul>
                 <button  className ={styles.infoButton2} onClick={handelUpdateEmail}>Cập nhật</button>
@@ -147,7 +147,7 @@ const Thongtinkh = () =>{
                   <li><FaHome /> Địa chỉ </li>
                   <li className ={styles.infoTel}>
                     {
-                      customerInfo[0].Diachi === null ? "Chưa cập nhật" : customerInfo[0].Diachi
+                      staffInfo[0].Diachi === null ? "Chưa cập nhật" : staffInfo[0].Diachi
                     }
                   </li>
                 </ul>
@@ -171,7 +171,7 @@ function App() {
     <React.Fragment>
       <Header/>
       <Sidebar/>
-      <Thongtinkh/>
+      <Thongtintk/>
       <Footer/>
     </React.Fragment>
   );
