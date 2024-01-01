@@ -195,8 +195,11 @@ END //
 
 DELIMITER ;
 
-INSERT INTO KhachHang VALUE ('nguyenvana', '0903181625', '123456', 'Nguyễn Văn A', '2000/05/06', 'M', 'nguyenvana@gmail.com', 'TPHCM', NOW(), NOW());
-INSERT INTO KhachHang VALUE ('tranbinh', '0908452317', '12345678', 'Trần Văn Bình', '1993/08/12', 'M', 'tranvbinh@gmail.com', 'TPHCM', NOW(), NOW());
+INSERT INTO KhachHang VALUE ('tienhuynh', '0903127256', '12345678', 'Huỳnh Văn Tiến', '2000/05/06', 'M', 'huynhvtien@gmail.com', '64 Nguyễn Đình Chính, P15, Q.Phú Nhuận, TP.HCM', NOW(), NOW());
+INSERT INTO KhachHang VALUE ('huyentran', '0913080299', '12345678', 'Trần Thị Huyền', '1993/08/12', 'F', 'huyentran@gmail.com', '356/11 Bạch Đằng, P14, Q.Bình Thạnh, TP.HCM', NOW(), NOW());
+INSERT INTO KhachHang VALUE ('phamvbinh', '0909991573', '12345678', 'Phạm Văn Bình', '1998/02/03', 'M', 'binhphamvan@gmail.com', '36 Bùi Văn Thêm, P9, Q.Phú Nhuận, TP.HCM', NOW(), NOW());
+INSERT INTO KhachHang VALUE ('quynh2507', '0902764213', '12345678', 'Nguyễn Ngọc Quỳnh', '1995/07/25', 'F', 'nguyenquynh@gmail.com', '313 Phạm Văn Chiêu, P14, Q.Gò Vấp, TP.HCM', NOW(), NOW());
+INSERT INTO KhachHang VALUE ('dat2203', '0913020447', '12345678', 'Trương Thành Đạt', '2001/03/22', 'M', 'truongtdat@gmail.com', '242 Lý Thường Kiệt, P14, Q.10, TP.HCM', NOW(), NOW());
 
 INSERT INTO DanhMuc VALUE (1, 'Truyện Ngắn', NULL);
 INSERT INTO DanhMuc VALUE (2, 'Truyện Dài', NULL);
@@ -270,35 +273,35 @@ INSERT INTO SachThuocDanhMuc VALUE (9,23);
 INSERT INTO SachThuocDanhMuc VALUE (8,24);
 INSERT INTO SachThuocDanhMuc VALUE (9,24);
 
-INSERT INTO KhachThemSach VALUE ('0903181625', 1, 2);
-INSERT INTO KhachThemSach VALUE ('0903181625', 2, 3);
-INSERT INTO KhachThemSach VALUE ('0908452317', 3, 1);
-INSERT INTO KhachThemSach VALUE ('0908452317', 4, 2);
+INSERT INTO KhachThemSach VALUE ('0903127256', 1, 2);
+INSERT INTO KhachThemSach VALUE ('0903127256', 2, 3);
+INSERT INTO KhachThemSach VALUE ('0913020447', 3, 1);
+INSERT INTO KhachThemSach VALUE ('0913020447', 4, 2);
 
 INSERT INTO NhanVien VALUE ('EMP0001', 'admin', '123456789', 'Nguyễn Văn A', '0908246578', 'M');
 
-insert into DanhGia value ('0903181625', 1, 4, 'Sách rất mới, đóng gói kĩ.');
-insert into DanhGia value ('0908452317', 1, 5, 'Chất lượng giấy tốt, nội dung rất hay.');
-insert into DanhGia value ('0903181625', 2, 5, 'Sách rất mới, đóng gói kĩ.');
-insert into DanhGia value ('0908452317', 2, 5, 'Chất lượng giấy tốt, nội dung rất hay.');
-insert into DanhGia value ('0903181625', 3, 3, 'Sách rất mới, đóng gói kĩ.');
-insert into DanhGia value ('0908452317', 3, 4, 'Chất lượng giấy tốt, nội dung rất hay.');
-insert into DanhGia value ('0903181625', 4, 4, 'Sách rất mới, đóng gói kĩ.');
-insert into DanhGia value ('0908452317', 4, 4, 'Chất lượng giấy tốt, nội dung rất hay.');
-insert into DanhGia value ('0903181625', 5, 4, 'Sách rất mới, đóng gói kĩ.');
-insert into DanhGia value ('0908452317', 5, 5, 'Chất lượng giấy tốt, nội dung rất hay.');
-insert into DanhGia value ('0903181625', 6, 5, 'Sách rất mới, đóng gói kĩ.');
-insert into DanhGia value ('0908452317', 6, 5, 'Chất lượng giấy tốt, nội dung rất hay.');
-insert into DanhGia value ('0903181625', 7, 2, 'Sách rất mới, đóng gói kĩ.');
-insert into DanhGia value ('0908452317', 7, 3, 'Chất lượng giấy tốt, nội dung rất hay.');
-insert into DanhGia value ('0903181625', 8, 4, 'Sách rất mới, đóng gói kĩ.');
-insert into DanhGia value ('0908452317', 8, 4, 'Chất lượng giấy tốt, nội dung rất hay.');
+insert into DanhGia value ('0903127256', 1, 4, 'Đóng gói đẹp, sách mới.');
+insert into DanhGia value ('0913020447', 1, 3, 'Sách bị nhăn, đóng gói chưa tốt');
+insert into DanhGia value ('0902764213' , 2, 5, 'Mình là đứa không thích những con số, và khi đọc xong sách này, đương nhiên mình vẫn chưa thích, nhưng ít ra đã giúp mình có cái nhìn tổng quan và chi tiết hơn những điều trước nay mình nghĩ rằng "rất khó"..');
+insert into DanhGia value ('0909991573', 2, 2, 'Nội dung ko hay, ko hữu ích');
+insert into DanhGia value ('0903127256', 2, 3, 'Sách cung cấp một khối lượng kiến thức cơ bản về kế toán. Đọc sách cũng rất thú vị. Đọc sách giống như đang học một môn học vậy');
+insert into DanhGia value ('0913080299', 3, 5, 'Sách còn mới toanh, không bị quăn góc, giao hàng khá nhanh. Mình đã đọc khá nhiều cuốn của Bác Keigo và phải nói là bị mê bởi lối hành văn sâu sắc, súc tích và rất thu hút của bác. Đã đọc rồi là phải đọc cho bằng hết. Mình nghe danh cuốn này đã lâu, giờ quyết định mua đọc thử xem như thế nào! Mong là sẽ có một trải nghiệm đọc thật tốt như mình kì vọng! ');
+insert into DanhGia value ('0909991573', 3, 3, 'bị móp sách rùi, ko có bookmark .');
+insert into DanhGia value ('0913020447', 4, 4, 'Chất lượng giấy tốt, đóng gói kĩ càng.');
+insert into DanhGia value ('0909991573', 5, 5, 'Giao hàng nhanh. Sách đẹp.');
+insert into DanhGia value ('0913080299', 5, 5, 'Nội dung hay ý nghĩa.');
+insert into DanhGia value ('0913020447', 6, 5, 'sách chất lượng có tặng kèm bookmark.');
+insert into DanhGia value ('0909991573', 6, 5, 'Sách chữ rõ, bìa đẹp, giấy tốt. Đóng gói cẩn thận, giao hàng nhanh.');
+insert into DanhGia value ('0909991573', 7, 2, 'Sách hơi cũ, cách tiếp cận các kiến thức khá khó hiểu.');
+insert into DanhGia value ('0902764213', 7, 3, 'Chất lượng giấy kém, nội dung ổn.');
+insert into DanhGia value ('0903127256', 8, 4, 'sách đóng gói cẩn thận và giao hàng nhanh, rất hài lòng .');
+insert into DanhGia value ('0913020447', 8, 5, 'Tuyệt vời!');
 
-insert into DonHang(SoDienThoai, TongTien, NgayTao, XacNhan, DiaChi) value ('0903181625', 98000, '2021-12-01 00:00:00', 'Chờ thanh toán', 'TPHCM');
-insert into DonHang(SoDienThoai, TongTien, NgayTao, XacNhan, DiaChi) value ('0903181625', 98000, '2021-12-02 00:00:00', 'Đang xử lý', 'TPHCM');
-insert into DonHang(SoDienThoai, TongTien, NgayTao, XacNhan, DiaChi) value ('0903181625', 98000, '2021-12-03 00:00:00', 'Đã hủy', 'TPHCM');
-insert into DonHang(SoDienThoai, TongTien, NgayTao, XacNhan, DiaChi) value ('0903181625', 98000, '2021-12-04 00:00:00', 'Đang giao', 'TPHCM');
-insert into DonHang(SoDienThoai, TongTien, NgayTao, XacNhan, DiaChi) value ('0903181625', 98000, '2021-12-05 00:00:00', 'Đã giao', 'TPHCM');
+insert into DonHang(SoDienThoai, TongTien, NgayTao, XacNhan, DiaChi) value ('0903127256', 98000, '2021-12-01 00:00:00', 'Chờ thanh toán', 'TPHCM');
+insert into DonHang(SoDienThoai, TongTien, NgayTao, XacNhan, DiaChi) value ('0903127256', 98000, '2021-12-02 00:00:00', 'Đang xử lý', 'TPHCM');
+insert into DonHang(SoDienThoai, TongTien, NgayTao, XacNhan, DiaChi) value ('0903127256', 98000, '2021-12-03 00:00:00', 'Đã hủy', 'TPHCM');
+insert into DonHang(SoDienThoai, TongTien, NgayTao, XacNhan, DiaChi) value ('0903127256', 98000, '2021-12-04 00:00:00', 'Đang giao', 'TPHCM');
+insert into DonHang(SoDienThoai, TongTien, NgayTao, XacNhan, DiaChi) value ('0903127256', 98000, '2021-12-05 00:00:00', 'Đã giao', 'TPHCM');
 
 insert into DonHangCoSach(IDDonHang, IDSach, SoLuong, TongTien) value (1, 6, 1, 98000);
 insert into DonHangCoSach(IDDonHang, IDSach, SoLuong, TongTien) value (2, 6, 1, 98000);
