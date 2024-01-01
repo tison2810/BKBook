@@ -8,7 +8,7 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
-import "../Styles/BookForm.css";
+import styles from "../Styles/BookForm.module.css";
 
 const BookForm = () => {
   const [bookInfo, setBookInfo] = useState({
@@ -77,13 +77,13 @@ const BookForm = () => {
 
   return (
     <Form
-      className="book-form"
+      className={styles.bookForm}
       noValidate
       validated={validated}
       onSubmit={handleSubmit}
     >
-      <Row className="row">
-        <Col md={6} className="col">
+      <Row className={styles.row}>
+        <Col md={6} className={styles.col}>
           <FormGroup>
             <FormLabel>Tên sách</FormLabel>
             <FormControl
@@ -95,7 +95,7 @@ const BookForm = () => {
             />
             <Form.Control.Feedback
               type="invalid"
-              className={showFeedback ? "feedback-valid" : "feedback-invalid"}
+              className={showFeedback ? styles.feedbackValid : styles.feedbackInvalid}
             >
               Tên sách không được trống.
             </Form.Control.Feedback>
@@ -111,7 +111,7 @@ const BookForm = () => {
             />
             <Form.Control.Feedback
               type="invalid"
-              className={showFeedback ? "feedback-valid" : "feedback-invalid"}
+              className={showFeedback ? styles.feedbackValid : styles.feedbackInvalid}
             >
               Vui lòng chọn ảnh.
             </Form.Control.Feedback>
@@ -129,7 +129,7 @@ const BookForm = () => {
             />
             <Form.Control.Feedback
               type="invalid"
-              className={showFeedback ? "feedback-valid" : "feedback-invalid"}
+              className={showFeedback ? styles.feedbackValid : styles.feedbackInvalid}
             >
               Giá sách không hợp lệ.
             </Form.Control.Feedback>
@@ -145,7 +145,7 @@ const BookForm = () => {
           </FormGroup>
         </Col>
 
-        <Col md={6} className="col">
+        <Col md={6} className={styles.col}>
           <FormGroup>
             <FormLabel>Nhà xuất bản</FormLabel>
             <FormControl
@@ -184,21 +184,21 @@ const BookForm = () => {
         </Col>
       </Row>
 
-      <Row className="row">
-        <Col className="col">
+      <Row className={styles.row}>
+        <Col className={styles.col}>
           <FormGroup>
             <FormLabel>Mô tả</FormLabel>
             <FormControl
               as="textarea"
               name="description"
-              className="description"
+              className={styles.description}
               value={bookInfo.description}
               onChange={handleInputChange}
               required
             />
             <Form.Control.Feedback
               type="invalid"
-              className={showFeedback ? "feedback-valid" : "feedback-invalid"}
+              className={showFeedback ? styles.feedbackValid : styles.feedbackInvalid}
             >
               Mô tả không được trống.
             </Form.Control.Feedback>
@@ -206,7 +206,7 @@ const BookForm = () => {
         </Col>
       </Row>
 
-      <FormGroup className="form-actions">
+      <FormGroup className={styles.formActions}>
         <Button type="submit" variant="primary">
           Xác nhận
         </Button>

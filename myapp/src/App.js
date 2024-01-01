@@ -10,7 +10,8 @@ import TrangchuLogged from './Pages/TrangchuLogged';
 import Dangnhap from './Dangnhap';
 import Dangky from './Dangky';
 import Xemsanpham from './Pages/Xemsanpham';
-import Xemchitiet from './Pages/Xemchitiet';
+import Xemchitiet from './Pages/Xemchitiet'; 
+// import BookForm from './Pages/BookForm';
 function App() {
     return (
         <div className='App'>
@@ -25,6 +26,7 @@ function App() {
                 <Route path='/personalBuy' element={<PersonalBuy />} />
                 <Route path='/xemsanpham/:bookId' element={<Xemsanpham />} />
                 <Route path='/xemchitiet' element={<Xemchitiet />} />
+                {/* <Route path='/bookform' element={<BookForm />} /> */}
             </Routes>
             </SearchProvider>
             </AuthProvider>
