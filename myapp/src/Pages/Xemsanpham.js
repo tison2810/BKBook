@@ -149,7 +149,7 @@ const ViewProduct = () => {
                 <button className={styles.view_button_1} onClick={() => addToCart(bookId, count, userInfo)} >
                   <FaShoppingCart /> Thêm vào giỏ hàng
                 </button>
-                <button className={styles.view_button_2}>Mua ngay</button>
+                {/* <button className={styles.view_button_2}>Mua ngay</button> */}
               </>
             </div>
 

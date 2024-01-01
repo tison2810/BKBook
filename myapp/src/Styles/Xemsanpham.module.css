@@ -60,6 +60,8 @@
   background-color:#FFFFFF;
   font-size:15px;
   cursor: pointer;
+  position: relative;
+  left: 20%;
 }
 .view_button_2{
   border: 2px solid #C92127;

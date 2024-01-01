@@ -22,3 +22,22 @@ exports.getOrderList = (req, res) => {
         });
     });
 }
+
+exports.getOrderProduct = (req, res) => {
+    const id = req.params.id;
+    const query = 'SELECT donhangcosach.*, sach.Ten, sach.Anh, donhang.XacNhan FROM donhangcosach, sach, donhang WHERE IDDonHang=? AND donhangcosach.IDSach=sach.ID AND donhang.ID=donhangcosach.IDDonHang';
+    db.query(query, [id], (error, results) => {
+        if (error) throw error;
+        res.json(results);
+    });
+}
+
+exports.updateOrderState = (req, res) => {
+    const id = req.params.id;
+    const state = req.body.state;
+    const query = 'UPDATE donhang SET XacNhan=? WHERE ID=?';
+    db.query(query, [state, id], (error, results) => {
+        if (error) throw error;
+        res.json(results);
+    });
+}
