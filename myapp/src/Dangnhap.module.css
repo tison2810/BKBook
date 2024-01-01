@@ -1,4 +1,4 @@
-.signup-title::before
+.loginTitle::before
 {
     content: ' ';
     display: block;
@@ -12,7 +12,7 @@
     background-size: 25%;
     
 }
-.signup-title
+.loginTitle
 {
     position: relative;
     height: 200px;
@@ -22,7 +22,7 @@
     align-items: center;
     margin-bottom: 43px;
 }
-.signup-title p
+.loginTitle p
 {
     position: relative;
     display: flex;
@@ -38,34 +38,36 @@
     letter-spacing: -0.6px;
     align-items: center;
     justify-content: center;
-    text-shadow: 0px 4px 4px #FF2020;
+    text-shadow: 0px 4px 4px #5081FF;
 }
-
-.signup-form
+.loginForm
 {
-    display: grid;
     width: 614px;
     height: 440px;
     flex-shrink: 0;
     border-radius: 10px;
-    border: 1px solid #65A3FF;
-    text-align: center;
+    border: 1px solid #FF2020;
+    display: grid;
+    gap: 0px;
     align-items: center;
+    align-content: space-around;
+    justify-content: center;
+    justify-items: center;
+    margin-bottom: 43px;
 }
-
-.signup-form p
+.loginForm p
 {
-    color: #000;
+    width: 428px;
+    text-align: center;
     font-size: 32px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.32px;
-    margin-top: 15px;
-    margin-bottom: 0px;
+    margin: 16px 0px 16px 0px;
 }
-
-.signup-form input
+.loginForm .usernameInput,
+.loginForm .passwordInput
 {
     border: none;
     border-bottom: 1px solid;
@@ -75,28 +77,75 @@
     line-height: normal;
     letter-spacing: -0.2px;
     width: 577px;
-    height: 60px;
+    height: 71px;
     flex-shrink: 0;
-    margin-left: 10px;
 }
-
-.signup-form form .signup-button
+.loginForm div
+{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.loginForm div a
+{
+    color: #4B8DBD;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.2px;
+    text-decoration: none;
+}
+.loginForm form
+{
+    display: block;
+    margin-top: 0em;
+    padding: 0px 5px;
+} 
+.loginForm form button
 {
     width: 264px;
     height: 63px;
     flex-shrink: 0;
     border-radius: 60px;
     border: 1px solid #000;
-    cursor: pointer;
+    color: #000;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.2px;
+    cursor: pointer;
+    position: relative;
+    left: 30%;
+}
+.loginForm .sub
+{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 250px;
+    margin: 10px 5px 10px 0;
 }
 
-.login-welcome::before
-{
+.signupWelcome {
+    position: relative;
+    width: 614px;
+    height: 440px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    background-color: #65A3FF;
+    display: grid;
+    text-align: center;
+    align-items: stretch;
+    justify-items: center;
+  }
+  
+.signupWelcome:before {
     content: ' ';
     display: block;
     position: absolute;
@@ -105,35 +154,20 @@
     width: 100%;
     height: 100%;
     opacity: 0.5;
-    background: url(./images/BinhMinh.jpg), lightgray 50%;
+    background-image: url(./images/whiteCloud.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
     background-size: cover;
-    background-position: 50% 50%;
-}
-
-.login-welcome
-{   width: 614px;
-    height: 440px;
-    flex-shrink: 0;
-    position: relative;
-    flex-shrink: 0;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-    margin-bottom: 43px;
-    background-color: #FF2020;
     border-radius: 10px;
-    border: 2px solid #000;
 }
-
-.login-welcome h2,
-.login-welcome p,
-.login-welcome .login-button
+.signupWelcome h2,
+.signupWelcome p,
+.signupWelcome .signupButton
 {
-    position: relative
+    position: relative;
 }
 
-.login-welcome h2
+.signupWelcome h2
 {
     color: #FFF2F2;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -142,52 +176,53 @@
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.32px;
-    margin-top: 50px;
-    margin-bottom: 58px;
+    margin-top: 60px;
+    margin-bottom: 0px;
 }
 
-.login-welcome p
+.signupWelcome p
 {
     color: #FFF;
     font-size: 25px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     line-height: normal;
     letter-spacing: -0.2px;
-    margin-top: 0px;
-    margin-bottom: 46px;
 }
 
-.login-welcome .login-button
+.signupWelcome .signupButton
 {
     width: 264px;
     height: 63px;
     flex-shrink: 0;
     border-radius: 60px;
-    border: 1px solid #FFF;
-    background: #F00;
+    border: 2px solid #FFF;
+    background: #65A3FF;
+    color: #FFF;
+    font-family: Noticia Text;
     font-size: 25px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.2px;
-    margin-bottom: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    cursor: pointer;
 }
 
-.login-welcome .login-button a
+.signupWelcome .signupButton
 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     color: #FFF;
 }
 
-.login-welcome .login-button a:hover
+.signupWelcome .signupButton:hover
 {
     color: rgba(180, 176, 176);
 }
-.display-signup-form
+
+.displayLoginForm
 {
     display: grid;
     grid-template-columns: 614px 614px;
@@ -195,7 +230,7 @@
     margin: 0px 34px 49px 34px;
     justify-content: space-evenly;
 }
-.signup-popup {
+.loginPopup {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -209,19 +244,3 @@
     padding: 20px;
     text-align: center;
 }
-  
-.popup-content {
-    margin-bottom: 20px;
-}
-  
-.close-button {
-    cursor: pointer;
-    background: none;
-    border: none;
-    font-size: 14px;
-    color: #555;
-}
-  
-  .close-button:hover {
-    color: #333;
-  }
