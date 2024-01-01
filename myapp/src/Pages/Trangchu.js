@@ -5,6 +5,7 @@ import voting from '../images/voting.png';
 import Header from '../Component/Header.js';
 import Sideboard from '../Component/Sideboard.js';
 import { useSearch } from '../SearchContext';
+import Footer from '../Component/Footer.js';
 
 function Product(props) {
   return (
