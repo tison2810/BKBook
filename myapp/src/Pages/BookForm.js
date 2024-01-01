@@ -76,6 +76,7 @@ const BookForm = () => {
   };
 
   return (
+    <div className={styles.bookInput}>
     <Form
       className={styles.bookForm}
       noValidate
@@ -212,6 +213,7 @@ const BookForm = () => {
         </Button>
       </FormGroup>
     </Form>
+    </div>
   );
 };
 

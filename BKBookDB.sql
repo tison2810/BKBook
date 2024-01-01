@@ -61,7 +61,7 @@ CREATE TABLE DonHang (
     SoDienThoai CHAR(10) NOT NULL,
     TongTien INT,
     NgayTao DATETIME,
-    XacNhan CHAR(1),
+    XacNhan CHAR(20),
     DiaChi TEXT(65535) NOT NULL,
     PRIMARY KEY(ID)
 );
@@ -176,7 +176,7 @@ BEGIN
     DECLARE p_DiaChi VARCHAR(1000);
     DECLARE IDDonHang INT;
 
-    SET p_XacNhan = 'N';
+    SET p_XacNhan = 'Chờ thanh toán';
     SET p_DiaChi = (SELECT DiaChi FROM KhachHang WHERE SoDienThoai = p_SoDienThoai);
     
     INSERT INTO DonHang (SoDienThoai, TongTien, NgayTao, XacNhan, DiaChi) VALUE (p_SoDienThoai, p_TongTien, NOW(), p_XacNhan, p_DiaChi);
@@ -194,9 +194,7 @@ BEGIN
 END //
 
 DELIMITER ;
-------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------
+
 INSERT INTO KhachHang VALUE ('nguyenvana', '0903181625', '123456', 'Nguyễn Văn A', '2000/05/06', 'M', 'nguyenvana@gmail.com', 'TPHCM', NOW(), NOW());
 INSERT INTO KhachHang VALUE ('tranbinh', '0908452317', '12345678', 'Trần Văn Bình', '1993/08/12', 'M', 'tranvbinh@gmail.com', 'TPHCM', NOW(), NOW());
 
@@ -253,3 +251,15 @@ insert into DanhGia value ('0903181625', 7, 2, 'Sách rất mới, đóng gói k
 insert into DanhGia value ('0908452317', 7, 3, 'Chất lượng giấy tốt, nội dung rất hay.');
 insert into DanhGia value ('0903181625', 8, 4, 'Sách rất mới, đóng gói kĩ.');
 insert into DanhGia value ('0908452317', 8, 4, 'Chất lượng giấy tốt, nội dung rất hay.');
+
+insert into DonHang(SoDienThoai, TongTien, NgayTao, XacNhan, DiaChi) value ('0903181625', 98000, '2021-12-01 00:00:00', 'Chờ thanh toán', 'TPHCM');
+insert into DonHang(SoDienThoai, TongTien, NgayTao, XacNhan, DiaChi) value ('0903181625', 98000, '2021-12-02 00:00:00', 'Đang xử lý', 'TPHCM');
+insert into DonHang(SoDienThoai, TongTien, NgayTao, XacNhan, DiaChi) value ('0903181625', 98000, '2021-12-03 00:00:00', 'Đã hủy', 'TPHCM');
+insert into DonHang(SoDienThoai, TongTien, NgayTao, XacNhan, DiaChi) value ('0903181625', 98000, '2021-12-04 00:00:00', 'Đang giao', 'TPHCM');
+insert into DonHang(SoDienThoai, TongTien, NgayTao, XacNhan, DiaChi) value ('0903181625', 98000, '2021-12-05 00:00:00', 'Đã giao', 'TPHCM');
+
+insert into DonHangCoSach(IDDonHang, IDSach, SoLuong, TongTien) value (1, 6, 1, 98000);
+insert into DonHangCoSach(IDDonHang, IDSach, SoLuong, TongTien) value (2, 6, 1, 98000);
+insert into DonHangCoSach(IDDonHang, IDSach, SoLuong, TongTien) value (3, 6, 1, 98000);
+insert into DonHangCoSach(IDDonHang, IDSach, SoLuong, TongTien) value (4, 6, 1, 98000);
+insert into DonHangCoSach(IDDonHang, IDSach, SoLuong, TongTien) value (5, 6, 1, 98000);
