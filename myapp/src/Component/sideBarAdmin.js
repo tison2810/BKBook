@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './sideBar.module.css';
 function Sidebar () {
     return (
         <div className={styles.sidebar}>
             <ul>
-                <li><a href="#">Thông tin tài khoản</a></li>
-                <li><a href="#">Xác nhận đơn hàng</a></li>
-                <li><a href="#">Theo dõi đơn hàng</a></li>
-                <li><a href="#">Tìm kiếm sản phẩm</a></li>
+                <li><Link to =''>Thông tin tài khoản</Link></li>
+                <li><Link to ='/xacnhandon'>Xác nhận đơn hàng</Link></li>
+                <li><Link to ='/theodoidon'>Theo dõi đơn hàng</Link></li>
+                <li><Link to =''>Tìm kiếm sản phẩm</Link></li>
             </ul>
         </div>
     );
