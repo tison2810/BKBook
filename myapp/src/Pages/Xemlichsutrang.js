@@ -15,7 +15,16 @@ const ViewHistory = () =>{
       <div className={styles.midDetails}>
         <div className={styles.midDetailsLeft}>
           <img src={blockchaintreem}/>
-          <div className = {styles.midDetailsLeftBot}>
+
+        </div>
+        <div className={styles.midDetailsRight}>
+          <button className ={styles.buttonDetailsTwo}>
+            Đã giao
+          </button>
+          <div>Tên sách: Blockchain cho trẻ</div>
+          <div>Thời gian đặt mua: 04:50 26/10/2023</div>
+          <div>Thời gian giao: 10:28 28/10/2023</div>
+          <div className = {styles.midDetailsRightBot}>
             <ul>
               <li><CiStar /></li>
               <li><CiStar /></li>
@@ -28,16 +37,6 @@ const ViewHistory = () =>{
             </div>
             <button className ={styles.buttonHistory}>Gửi đánh giá</button>
           </div>
-        </div>
-        <div className={styles.midDetailsRight}>
-          <button className ={styles.buttonDetailsTwo}>
-            Đã giao
-          </button>
-          <div>Tên sách: Blockchain cho trẻ</div>
-          <div>Thời gian đặt mua: 04:50 26/10/2023</div>
-          <div>Thời gian giao: 10:28 28/10/2023</div>
-          <div>Chi tiết quá trình</div>
-          èhefu
         </div>
       </div>
     </div>
