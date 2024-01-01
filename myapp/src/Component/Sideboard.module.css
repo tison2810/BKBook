@@ -15,6 +15,7 @@
     text-align: center;
     /* align-items: center; */
     height: 100%;
+
 }
 
 .sideboard .sideboardele p {
@@ -27,11 +28,11 @@
     /* margin: 5px; */
     display: grid;
     /* row-gap: 8px; */
-    font-size: 20px;    
+    font-size: 20px;
 }
 .sideboardele ul li a{
     text-decoration: none;
-} 
+}
 .sideboardele ul a{
     color: white;
     text-align: center;

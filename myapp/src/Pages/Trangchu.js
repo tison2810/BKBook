@@ -4,6 +4,7 @@ import styles from '../Styles/Trangchu.module.css';
 import voting from '../images/voting.png';
 import Header from '../Component/Header.js';
 import Sideboard from '../Component/Sideboard.js';
+import Footer from '../Component/Footer.js';
 import { useSearch } from '../SearchContext';
 
 function Product(props) {
@@ -46,7 +47,7 @@ function TrangChu() {
     }
   }, [searchTerm]);
 
-  const listProducts = 
+  const listProducts =
   <ul className={styles.listProducts}>
     {products.map((product, index) => (
       <li key={index} className={styles.listProductsEle}>
@@ -61,7 +62,7 @@ function TrangChu() {
     ))}
   </ul>
 
-  const content = 
+  const content =
   <div className={styles.content}>
   {listProducts}
   </div>;
@@ -72,6 +73,7 @@ function TrangChu() {
       <Sideboard/>
       {isSearch ? <p id='search-result'>Kết quả tìm kiếm cho "{searchTerm}":</p> : null}
       {content}
+      <Footer/>
     </React.Fragment>
   );
 }
