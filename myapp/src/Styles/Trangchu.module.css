@@ -181,3 +181,44 @@ a[id='link-to-product-tag']
 {
   all:unset;
 }
+.pagination
+{ 
+  text-decoration: none;
+  font-size: 15px;
+  list-style-type: none;
+  display: flex;
+  column-gap: 10px;
+  justify-content: center;
+  position: relative;
+  top: 780px;
+}
+.pagination li
+{
+  width: 20px;
+  height: 25px;
+}
+.nonCurrentPage
+{
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  border: 1px solid #000000;
+  width: 15px;
+  height: 22px;
+  text-align: center;
+  color: black;
+}
+.currentPage
+{
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  border: 1px solid #000000;
+  width: 15px;
+  height: 22px;
+  text-align: center;
+  color: black;
+  background-color: #ff3030;
+  color: white;
+  border: 1px solid #ff3030;
+}

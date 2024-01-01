@@ -177,7 +177,7 @@ const ViewProduct = () => {
                 {reviewDetails && reviewDetails.length > 0 ? (
                   <>
                     <p>
-                      <span className={styles.commentStar1}>{productDetails.DiemTrungBinh}</span>
+                      <span className={styles.commentStar1}>{productDetails.DiemTrungBinh.toFixed(1)}</span>
                       <span className={styles.commentStar2}>/5</span>
                     </p>
                     <p>

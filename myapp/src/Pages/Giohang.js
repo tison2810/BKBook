@@ -280,7 +280,7 @@ function ListProductInCart() {
                 <button className={styles.adjustInfomation} type="button">Sửa thông tin</button>
             </form>
             <form>
-                <button className={styles.payment} type="button" onClick={handleIntoOrder}>Thanh toán</button>
+                <button className={styles.payment} type="button" onClick={handleIntoOrder}>Đặt hàng</button>
             </form>
         </div>
     </div>

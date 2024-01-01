@@ -2,24 +2,24 @@ import styles from '../Styles/Thongtincanhan.module.css';
 import React , {useState, useEffect} from 'react';
 import Header from '../Component/logHeader.js';
 import Footer from '../Component/Footer.js';
-import Sidebar from '../Component/sideBarAdmin.js';
+import Sidebar from '../Component/sideBar.js';
 import { RxAvatar } from "react-icons/rx";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdOutlineMail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FaHome } from "react-icons/fa";
 import {useAuth} from '../AuthContext.js';
-const Thongtintk = () =>{
+const Thongtinkh = () =>{
 
   const {userInfo} = useAuth();
-  const [staffInfo, setStaffInfo] = useState([]);
+  const [customerInfo, setCustomerInfo] = useState([]);
 
-  const fetchStaffInfo = (username, setStaffInfo ) => {
-    fetch(`http://localhost:3001/api/staffInfo/${username}`)
+  const fetchCustomerInfo = (username, setCustomerInfo ) => {
+    fetch(`http://localhost:3001/api/customerInfo/${username}`)
       .then(res => res.json())
       .then(
         (result) => {
-          setStaffInfo(result);
+          setCustomerInfo(result);
         },
         (error) => {
           console.log(error);
@@ -28,7 +28,7 @@ const Thongtintk = () =>{
   }
   
   useEffect(() => {
-    fetchStaffInfo(userInfo.username, setStaffInfo);
+    fetchCustomerInfo(userInfo.username, setCustomerInfo);
   }, [userInfo.username]);
 
   const handelUpdateEmail = () => {
@@ -46,7 +46,7 @@ const Thongtintk = () =>{
       .then(
         (result) => {
           alert("Cập nhật email thành công");
-          fetchStaffInfo(userInfo.username, setStaffInfo);
+          fetchCustomerInfo(userInfo.username, setCustomerInfo);
         },
         (error) => {
           console.log(error);
@@ -69,7 +69,7 @@ const Thongtintk = () =>{
       .then(
         (result) => {
           alert("Cập nhật địa chỉ thành công");
-          fetchStaffInfo(userInfo.username, setStaffInfo);
+          fetchCustomerInfo(userInfo.username, setCustomerInfo);
         },
         (error) => {
           console.log(error);
@@ -99,7 +99,7 @@ const Thongtintk = () =>{
       )
   }
 
-  if (staffInfo.length === 0) return null;
+  if (customerInfo.length === 0) return null;
   return (
 
       <div className ={styles.infoPersonal}>
@@ -112,15 +112,15 @@ const Thongtintk = () =>{
             <div className = {styles.infoDetails}>
               <ul>
                 <li>
-                  Họ và tên: {staffInfo[0].HoTen}
+                  Họ và tên: {customerInfo[0].HoTen}
                 </li>
-                <li>Ngày sinh: {staffInfo[0].NgaySinh}</li>
+                <li>Ngày sinh: {customerInfo[0].NgaySinh}</li>
                 <li>Giới tính: 
                   {
-                    staffInfo[0].GioiTinh === 'M' ? " Nam" : " Nữ"
+                    customerInfo[0].GioiTinh === 'M' ? " Nam" : " Nữ"
                   }
                 </li>
-                <li>Ngày tạo tài khoản: {staffInfo[0].NgayTao}</li>
+                <li>Ngày tạo tài khoản: {customerInfo[0].NgayTao}</li>
               </ul>
             </div>
 
@@ -129,7 +129,7 @@ const Thongtintk = () =>{
             <div className = {styles.infoRight}>
                 <ul>
                   <li><BsFillTelephoneFill /> Số điện thoại</li>
-                  <li className ={styles.infoTel}>{staffInfo[0].SoDienThoai}</li>
+                  <li className ={styles.infoTel}>{customerInfo[0].SoDienThoai}</li>
                 </ul>
                 <button className ={styles.infoButton1}>Cập nhật</button>
             </div>
@@ -137,7 +137,7 @@ const Thongtintk = () =>{
                 <ul>
                   <li><MdOutlineMail />Địa chỉ email</li>
                   <li className ={styles.infoTel}>{
-                    staffInfo[0].Email === null ? "Chưa cập nhật" : staffInfo[0].Email
+                    customerInfo[0].Email === null ? "Chưa cập nhật" : customerInfo[0].Email
                   }</li>
                 </ul>
                 <button  className ={styles.infoButton2} onClick={handelUpdateEmail}>Cập nhật</button>
@@ -147,7 +147,7 @@ const Thongtintk = () =>{
                   <li><FaHome /> Địa chỉ </li>
                   <li className ={styles.infoTel}>
                     {
-                      staffInfo[0].Diachi === null ? "Chưa cập nhật" : staffInfo[0].Diachi
+                      customerInfo[0].Diachi === null ? "Chưa cập nhật" : customerInfo[0].Diachi
                     }
                   </li>
                 </ul>
@@ -171,7 +171,7 @@ function App() {
     <React.Fragment>
       <Header/>
       <Sidebar/>
-      <Thongtintk/>
+      <Thongtinkh/>
       <Footer/>
     </React.Fragment>
   );

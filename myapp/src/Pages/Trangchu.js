@@ -6,6 +6,7 @@ import Header from '../Component/Header.js';
 import Sideboard from '../Component/Sideboard.js';
 import Footer from '../Component/Footer.js';
 import { useSearch } from '../SearchContext';
+import Footer from '../Component/Footer.js';
 
 function Product(props) {
   return (
@@ -17,7 +18,7 @@ function Product(props) {
         props.vote === null ? (
           <p className={styles.pVoting}>Chưa có đánh giá</p>
         ) : (
-          <p className={styles.pVoting}>{props.vote + "/5"}<span><img className={styles.starVoting} src={voting} /></span></p>
+          <p className={styles.pVoting}>{props.vote.toFixed(1) + "/5"}<span><img className={styles.starVoting} src={voting} /></span></p>
         )
       }
       <p>{props.price.toLocaleString('vi-VN')}<sup>đ</sup></p>
@@ -27,9 +28,32 @@ function Product(props) {
 }
 
 function TrangChu() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 10;
   const { searchTerm } = useSearch();
   const [products, setProducts] = useState([]);
   const [isSearch, setIsSearch] = useState(false);
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(products.length / productsPerPage); i++) {
+    pageNumbers.push(i);
+  }
+  console.log(pageNumbers);
+  const renderPageNumbers = pageNumbers.map((number) => (
+    <li key={number} >
+      <a href="#" onClick={() => paginate(number)}
+      className={number === currentPage ? styles.currentPage : styles.nonCurrentPage}>
+        {number}
+      </a>
+    </li>
+  ));
 
   useEffect(() => {
     if (searchTerm) {
@@ -62,10 +86,28 @@ function TrangChu() {
     ))}
   </ul>
 
+  // const content =
+  // <div className={styles.content}>
+  // {listProducts}
+  // <ul className={styles.pagination}>{renderPageNumbers}</ul>
+  // </div>;
+
   const content =
-  <div className={styles.content}>
-  {listProducts}
-  </div>;
+    <div className={styles.content}>
+      <ul className={styles.listProducts}>
+        {currentProducts.map((product, index) => (
+          <li key={index} className={styles.listProductsEle}>
+            <Product
+              bookId={product.ID}
+              imgSrc={`/images/${product.Anh}`}
+              name={product.Ten}
+              vote={product.DiemTrungBinh}
+              price={product.Gia}
+            />
+          </li>
+        ))}
+      </ul>
+    </div>;
 
   return (
     <React.Fragment>
@@ -73,6 +115,7 @@ function TrangChu() {
       <Sideboard/>
       {isSearch ? <p id='search-result'>Kết quả tìm kiếm cho "{searchTerm}":</p> : null}
       {content}
+      <ul className={styles.pagination}>{renderPageNumbers}</ul>
       <Footer/>
     </React.Fragment>
   );
