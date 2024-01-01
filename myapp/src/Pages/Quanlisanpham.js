@@ -26,13 +26,18 @@ import {
   Col,
 } from "react-bootstrap";
 function Quanlisanpham(){
-    const data = [
-        {TenSach: 'Kế Toán Vỉa Hè', Anh: ketoanviahe, NhaXuatBan: 'BKBook', GiaGoc: '99.000đ', TacGia: 'Anoymous',SoLuongDaBan:'20', SoLuongConLai:'30',MucGiamGia:'10%',DiemTrungBinh:'9.0' },
-        {TenSach: 'Ỷ Thiên Đồ Long Ký', Anh: yThien, NhaXuatBan: 'BKBook', GiaGoc: '55.800đ', TacGia: 'KimDung',SoLuongDaBan:'18', SoLuongConLai:'32',MucGiamGia:'10%',DiemTrungBinh:'9.2'},
-        {TenSach: 'Về nơi có nhiều cánh đồng', Anh: vncncd, NhaXuatBan: 'BKBook', GiaGoc: '142.500đ', TacGia: 'Anoymous',SoLuongDaBan:'20', SoLuongConLai:'30',MucGiamGia:'5%',DiemTrungBinh:'9.6' },
-        {TenSach: 'Osho - Tự tôn', Anh: osho, NhaXuatBan: 'BKBook', GiaGoc: '135.000đ', TacGia: 'Anoymous',SoLuongDaBan:'7', SoLuongConLai:'43',MucGiamGia:'0%',DiemTrungBinh:'9.9' },
-        {TenSach: 'Toán cao cấp tập 1', Anh: toancc, NhaXuatBan: 'BKBook', GiaGoc: '112.000đ', TacGia: 'Anoymous',SoLuongDaBan:'38', SoLuongConLai:'12',MucGiamGia:'0%',DiemTrungBinh:'9.5' },
-      ];
+  const [products, setProducts] = useState([]);
+  fetch('http://localhost:3001/api/getBooksForHomePage')
+        .then((response) => response.json())
+        .then((data) => setProducts(data))
+        .catch((error) => console.error('Error fetching books:', error));
+    // const data = [
+    //     {TenSach: 'Kế Toán Vỉa Hè', Anh: ketoanviahe, NhaXuatBan: 'BKBook', GiaGoc: '99.000đ', TacGia: 'Anoymous',SoLuongDaBan:'20', SoLuongConLai:'30',MucGiamGia:'10%',DiemTrungBinh:'9.0' },
+    //     {TenSach: 'Ỷ Thiên Đồ Long Ký', Anh: yThien, NhaXuatBan: 'BKBook', GiaGoc: '55.800đ', TacGia: 'KimDung',SoLuongDaBan:'18', SoLuongConLai:'32',MucGiamGia:'10%',DiemTrungBinh:'9.2'},
+    //     {TenSach: 'Về nơi có nhiều cánh đồng', Anh: vncncd, NhaXuatBan: 'BKBook', GiaGoc: '142.500đ', TacGia: 'Anoymous',SoLuongDaBan:'20', SoLuongConLai:'30',MucGiamGia:'5%',DiemTrungBinh:'9.6' },
+    //     {TenSach: 'Osho - Tự tôn', Anh: osho, NhaXuatBan: 'BKBook', GiaGoc: '135.000đ', TacGia: 'Anoymous',SoLuongDaBan:'7', SoLuongConLai:'43',MucGiamGia:'0%',DiemTrungBinh:'9.9' },
+    //     {TenSach: 'Toán cao cấp tập 1', Anh: toancc, NhaXuatBan: 'BKBook', GiaGoc: '112.000đ', TacGia: 'Anoymous',SoLuongDaBan:'38', SoLuongConLai:'12',MucGiamGia:'0%',DiemTrungBinh:'9.5' },
+    //   ];
       const [bookInfo, setBookInfo] = useState({
         name: "",
         image: null,
@@ -275,15 +280,15 @@ function Quanlisanpham(){
         </tr>
       </thead>
       <tbody>
-        {data.map((item, index) => (
+        {products.map((item, index) => (
           <tr key={index} className = "tableColor">
-            <td>{item.TenSach}</td>
-            <td><img src={item.Anh}/></td>
-            <td>{item.NhaXuatBan}</td>
+            <td>{item.Ten}</td>
+            <td><img src={`/images/${item.Anh}`} alt={item.TenSach} /></td>
+            <td>{item.NXB}</td>
             <td>{item.TacGia}</td>
             <td>{item.SoLuongDaBan}</td>
             <td>{item.SoLuongConLai}</td>
-            <td>{item.GiaGoc}</td>
+            <td>{item.Gia}</td>
             <td>{item.MucGiamGia}</td>
             <td>{item.DiemTrungBinh}</td>
           </tr>
