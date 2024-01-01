@@ -177,3 +177,7 @@ p[id='search-result']
   top:20px;
   left: 210px;
 }
+a[id='link-to-product-tag']
+{
+  all:unset;
+}

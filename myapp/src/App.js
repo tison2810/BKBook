@@ -24,7 +24,7 @@ function App() {
                 <Route path='/dangky' element={<Dangky />} />
                 <Route path='/homepagelogged' element={<TrangchuLogged />} />
                 <Route path='/personalBuy' element={<PersonalBuy />} />
-                <Route path='/xemsanpham' element={<Xemsanpham />} />
+                <Route path='/xemsanpham/:bookId' element={<Xemsanpham />} />
                 <Route path='/xemchitiet' element={<Xemchitiet />} />
                 <Route path='/xemlichsutrang' element={<Xemlichsutrang />} />
             </Routes>

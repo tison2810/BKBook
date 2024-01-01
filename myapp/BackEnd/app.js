@@ -3,6 +3,11 @@ const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 const cartRoutes = require('./routes/cartRoutes');
 const bookRoutes = require('./routes/bookRoutes');
+const AddBookRoutes = require('./routes/AddBookRoutes');
+const AdminLoginRoutes = require('./routes/AdminLoginRoutes');
+const ConfirmRoutes = require('./routes/ConfirmRoutes');
+const GetInfoBookRoutes = require('./routes/GetInfoRoutes');
+const UpdateBookRoutes = require('./routes/UpdateBookRoutes');
 
 const app = express();
 const port = 3001;
@@ -13,6 +18,11 @@ app.use(express.json());
 app.use('/api', authRoutes);
 app.use('/api', cartRoutes);
 app.use('/api', bookRoutes);
+app.use('/api', AddBookRoutes);
+app.use('/api', AdminLoginRoutes);
+app.use('/api', ConfirmRoutes);
+app.use('/api', GetInfoBookRoutes);
+app.use('/api', UpdateBookRoutes);
 
 app.listen(port, () => {
   console.log(`Server đang lắng nghe tại http://localhost:${port}`);

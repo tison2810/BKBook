@@ -200,3 +200,30 @@
 .set-name-comment{
   font-weight:bold;
 }
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  overflow: hidden;
+  max-width: 80%;
+  max-height: 80%;
+  padding: 20px;
+  text-align: center;
+}
+.popup-content {
+  margin-bottom: 20px;
+}
+.describe-story p
+{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 23px;
+}
+.describe-story
+{
+  padding: 2px 5px;
+}
