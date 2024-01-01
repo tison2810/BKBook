@@ -5,11 +5,19 @@ import Footer from '../Component/Footer.js';
 import Sidebar from '../Component/sideBar.js';
 import Table from 'react-bootstrap/Table';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useAuth } from '../AuthContext.js';
 
 const ViewDetails = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSecondModalOpen, setIsSecondModalOpen] = useState(false);
+  const [isModalForRatingOpen, setIsModalForRatingOpen] = useState(false);
+  const [reviewInfo, setReviewInfo] = useState({
+    rating: 0, 
+    comment: '',
+  });
+  const { userInfo} = useAuth();
   const { orderId } = useParams();
+  const [bookID, setBookID] = useState(null);
   const [books, setBooks] = useState([]);
   const navigate = useNavigate();
 
@@ -32,7 +40,7 @@ const ViewDetails = () => {
 
   const openSecondModal = () => {
     setIsSecondModalOpen(true);
-    setIsModalOpen(false); // Đóng cửa sổ modal hiện tại
+    setIsModalOpen(false); 
   };
 
   const closeModal = () => {
@@ -40,6 +48,67 @@ const ViewDetails = () => {
     setIsSecondModalOpen(false);
     turnBack();
   };
+
+  const openModalForRating = (bookId) => {
+    setBookID(prevBookID => (prevBookID !== bookId ? bookId : prevBookID));
+    setIsModalForRatingOpen(true);
+  }
+
+  const handleRatingChange = (e) => {
+    const newRating = e.target.value;
+  
+    setReviewInfo({
+      ...reviewInfo,
+      rating: newRating,
+    });
+
+    console.log(reviewInfo);
+  };
+
+  const handleCommentChange = (e) => {
+    setReviewInfo({
+      ...reviewInfo,
+      comment: e.target.value,
+    });
+    console.log(reviewInfo);
+  };
+
+  const closeRatingModal = () => {
+    setIsModalForRatingOpen(false);
+    setReviewInfo({
+      rating: 0,
+      comment: '',
+    });
+  };
+
+  const submitReview = () => {
+    const { rating, comment } = reviewInfo;
+    const username = userInfo.username;
+    console.log(username);
+    console.log(bookID);
+    const body = { username, rating, comment: comment };
+    fetch(`http://localhost:3001/api/rating/${bookID}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    })
+      .then(res => res.json())
+      .then(
+        (result) => {
+          console.log(result);
+          window.alert('Đánh giá thành công!');
+          closeRatingModal();
+        },
+        (error) => {
+          console.log(error);
+          window.alert('Đánh giá thất bại!');
+        }
+      )
+  };
+
+
 
   const turnBack = () => {
     navigate('/personalBuy');
@@ -97,10 +166,8 @@ const ViewDetails = () => {
       console.log(error);
       window.alert('Thanh toán thất bại!');
     }
-  }
-
+  };
   if (books.length === 0) return <div>Đang tải...</div>;
-  console.log(books);
   return (
     <div className={styles.containerDetails}>
       <h2>Lịch sử mua hàng</h2>
@@ -124,7 +191,11 @@ const ViewDetails = () => {
         <tbody>
           {books.map((book) => (
             <tr key={book.title}>
-              <td className='book-name'>{book.Ten}</td>
+              {
+                book.XacNhan === 'Đã giao' ?
+                <td className='book-name-open-rating' onClick={() => openModalForRating(book.IDSach)}>{book.Ten}</td> :
+                <td className='book-name'>{book.Ten}</td>
+              }
               <td>{book.SoLuong}</td>
               <td>{book.TongTien.toLocaleString('vi-VN')}<sup>đ</sup></td>
             </tr>
@@ -142,9 +213,19 @@ const ViewDetails = () => {
             Thanh Toán
             </button>
           )}
-            <button className={styles.buttonDetails_4} onClick={openModal}>
-              Hủy đơn
-            </button>
+          {
+            books[0].XacNhan !== 'Đã thanh toán' && books[0].XacNhan !== 'Đã hủy' &&
+            books[0].XacNhan !== 'Đã giao' && books[0].XacNhan !== 'Đang giao' &&
+            books[0].XacNhan !== 'Yêu cầu hủy đơn' &&
+            (
+              <button
+                className={styles.buttonDetails_4}
+                onClick={openModal}
+              >
+                Hủy đơn
+              </button>
+            )
+          }
             {isModalOpen && (
               <div className={styles.modalWindow}>
                 <div className={styles.modalContent}>
@@ -166,6 +247,37 @@ const ViewDetails = () => {
                 </div>
               </div>
             )}
+            {isModalForRatingOpen && (
+            <div className={styles.modalRatingWindow}>
+            <div className={styles.modalRatingContent}>
+            <h3>Nhập đánh giá của bạn</h3>
+            <div className={styles.ratingNumber}>
+            <label>Đánh giá: </label>
+            <div className={styles.ratingNumberRadio}>
+            {[1, 2, 3, 4, 5].map((rating) => (
+            <label key={rating}>
+            <input type="radio" name="rating" value={rating} onChange={handleRatingChange}/>
+            {rating} sao
+            </label>
+            ))}
+            </div>
+            </div>
+            <div className={styles.ratingContent}>
+            <label>Nội dung đánh giá: </label>
+            <div>
+            <textarea
+              value={reviewInfo.comment}
+              onChange={handleCommentChange}
+            />
+            </div>
+          </div>
+          <div className={styles.modalRatingButton}>
+            <button className={styles.modalRatingButton_1} onClick={submitReview}>Gửi đánh giá</button>
+            <button className={styles.modalRatingButton_2} onClick={closeRatingModal}>Đóng</button>
+          </div>
+        </div>
+      </div>
+    )}
           </div>
         </div>
       </div>
