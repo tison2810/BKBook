@@ -50,3 +50,32 @@ exports.getProductReviews = (req, res) => {
     }
   });
 };
+
+exports.rating = (req, res) => {
+  const bookId = req.params.bookId;
+  const { username, rating, comment } = req.body;
+  console.log(req.body);
+  console.log(bookId);
+
+  const query = 'SELECT SoDienThoai FROM khachhang WHERE TenDangNhap = ?';
+  const params = [username];
+
+  db.query(query, params, (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Đã có lỗi xảy ra' });
+    } else {
+      const query = 'INSERT INTO danhgia VALUES (?, ?, ?, ?)';
+      const params = [results[0].SoDienThoai, bookId, rating, comment];
+
+      db.query(query, params, (error, results) => {
+        if (error) {
+          console.error(error);
+          res.status(500).json({ message: 'Đã có lỗi xảy ra' });
+        } else {
+          res.json({ message: 'Đánh giá thành công' });
+        }
+      });
+    }
+  });
+}
