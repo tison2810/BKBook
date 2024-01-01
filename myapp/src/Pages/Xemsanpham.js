@@ -71,10 +71,6 @@ const ViewProduct = () => {
         setModalContent('Đã có lỗi xảy ra. Vui lòng thử lại!');
       });
   };
-  // console.log(productDetails);
-  // console.log(reviewDetails);
-  // console.log(userInfo);
-  // console.log(count);
   if (!productDetails) return null;
   let pricePerProduct = 0;
   if (productDetails.MucGiamGia == null || productDetails.MucGiamGia === 0)

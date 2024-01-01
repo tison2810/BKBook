@@ -259,3 +259,13 @@ form .payment
     height: 800px;
     padding: 5px 0;
 }
+a[id='from-cart-to-detail']
+{
+    all: unset;
+    cursor: pointer;
+}
+div[id='products-in-cart']
+{
+    max-height: 390px;
+    overflow: auto;
+}
