@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body {
     font-family: 'Roboto', sans-serif;
 }
@@ -12,27 +12,31 @@ body {
     left: 0;
     width: 298px;
     height: 550px;
-    background: #ffffff;
-    border-right: 1px solid #E5E5E5;
+    background: rgba(27, 27, 27, 0.95);
+    /* border-right: 1px solid #E5E5E5; */
 }
 .sidebar ul a{
+    transition: all 0.5s ease;
+    padding: 10px;
     text-decoration: none;
     text-align: center;
     display: block;
     height: 100%;
     width: 100%;
-    line-height: 65px;
+    line-height: 25px;
     font-size: 24px;
-    color: #5081FF;
     /* padding-left: 40px; */
     box-sizing: border-box;
-    border-top: 1px solid #E5E5E5;
-    border-bottom: 1px solid #E5E5E5;
-    border-right: 1px solid #E5E5E5;
+    color: rgb(255, 255, 255);
+    border-radius: 3px;
+    /* border-to10px5E5E5; */
+    /* border-bottom: 1px solid #E5E5E5; */
+    /* border-right: 1px solid #E5E5E5; */
 }
 .sidebar ul li:hover a{
     /* padding-left: 50px; */
-    color: #FF5050;
+    background:#dfdfdfc3;
+    transform: matrix(1, 0, 0, 1, 7, 0);
 }
 .sidebar ul a i{
     margin-right: 16px;
