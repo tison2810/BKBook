@@ -79,3 +79,14 @@ exports.rating = (req, res) => {
     }
   });
 }
+exports.getBooksByCategory = (req, res) => {
+  const categoryId = req.params.categoryId;
+
+  const query = 'SELECT sach.Ten, danhmuc.Ten AS category FROM sach JOIN sachthuocdanhmuc ON sach.ID = sachthuocdanhmuc.IDSach JOIN danhmuc ON sachthuocdanhmuc.IDDanhmuc = danhmuc.ID WHERE danhmuc.ID =? ORDER BY danhmuc.Ten';
+  const params = [categoryId];
+
+  db.query(query, params, (error, results) => {
+    if (error) throw error;
+    res.json(results);
+  });
+}
