@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 .containerDetails{
-  position: absolute;
-  top: 100px;
   padding: 20px;
   margin-left: 300px;
   margin-top:-550px;
+<<<<<<< HEAD
   height:650px;
+=======
+  height:600px;
+>>>>>>> tiSon
   /* background-color: blue; */
 }
 .buttonDetailsOne{
@@ -85,13 +87,4 @@
   background-color: #FFCE51;
   border: 2px solid #FFFFFF;
   font-weight:  medium;
-}
-.orderTable{
-  position: absolute;
-  top: 170px;
-  left: 350px;
-  width:600px;
-  height:150px;
-  border-collapse: collapse;
-  border: none;
 }

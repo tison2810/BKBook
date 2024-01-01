@@ -40,24 +40,6 @@ const ViewHistory = () =>{
           èhefu
         </div>
       </div>
-      <Table className={styles.orderTable}>
-        <thead>
-          <tr>
-            <th>Tên sách</th>
-            <th>Số lượng</th>
-            <th>Giá</th>
-          </tr>
-        </thead>
-        <tbody>
-          {books.map((book) => (
-            <tr key={book.title}>
-              <td>{book.TenSach}</td>
-              <td>{book.SoLuong}</td>
-              <td>{book.Gia}</td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
     </div>
   )
 }
