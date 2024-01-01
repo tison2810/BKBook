@@ -30,6 +30,7 @@ function Quanlisanpham() {
   const [fileName, setFileName] = useState("");
   const [products, setProducts] = useState([]);
   fetch('http://localhost:3001/api/getBooksForHomePage')
+<<<<<<< HEAD
     .then((response) => response.json())
     .then((data) => setProducts(data))
     .catch((error) => console.error('Error fetching books:', error));
@@ -96,9 +97,54 @@ function Quanlisanpham() {
         setIsSuccessModalVisible(true);
         if (response.ok) {
           alert("Thêm sách thành công");
+=======
+        .then((response) => response.json())
+        .then((data) => setProducts(data))
+        .catch((error) => console.error('Error fetching books:', error));
+    // const data = [
+    //     {TenSach: 'Kế Toán Vỉa Hè', Anh: ketoanviahe, NhaXuatBan: 'BKBook', GiaGoc: '99.000đ', TacGia: 'Anoymous',SoLuongDaBan:'20', SoLuongConLai:'30',MucGiamGia:'10%',DiemTrungBinh:'9.0' },
+    //     {TenSach: 'Ỷ Thiên Đồ Long Ký', Anh: yThien, NhaXuatBan: 'BKBook', GiaGoc: '55.800đ', TacGia: 'KimDung',SoLuongDaBan:'18', SoLuongConLai:'32',MucGiamGia:'10%',DiemTrungBinh:'9.2'},
+    //     {TenSach: 'Về nơi có nhiều cánh đồng', Anh: vncncd, NhaXuatBan: 'BKBook', GiaGoc: '142.500đ', TacGia: 'Anoymous',SoLuongDaBan:'20', SoLuongConLai:'30',MucGiamGia:'5%',DiemTrungBinh:'9.6' },
+    //     {TenSach: 'Osho - Tự tôn', Anh: osho, NhaXuatBan: 'BKBook', GiaGoc: '135.000đ', TacGia: 'Anoymous',SoLuongDaBan:'7', SoLuongConLai:'43',MucGiamGia:'0%',DiemTrungBinh:'9.9' },
+    //     {TenSach: 'Toán cao cấp tập 1', Anh: toancc, NhaXuatBan: 'BKBook', GiaGoc: '112.000đ', TacGia: 'Anoymous',SoLuongDaBan:'38', SoLuongConLai:'12',MucGiamGia:'0%',DiemTrungBinh:'9.5' },
+    //   ];
+      const [bookInfo, setBookInfo] = useState({
+        name: "",
+        image: null,
+        price: "",
+        author: "",
+        publisher: "",
+        soldQuantity: "",
+        discount: "",
+      });
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setBookInfo({ ...bookInfo, [name]: value });
+      };
+
+      const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        const imageName = file ? file.name : null;
+        setBookInfo({ ...bookInfo, image: imageName });
+      };
+      
+
+      const [validated, setValidated] = useState(false);
+      const [showFeedback, setShowFeedback] = useState(false);
+      const handleSubmit = async (event) => {
+        event.preventDefault();
+        const form = event.currentTarget;
+      
+        if (form.checkValidity() === false) {
+          event.stopPropagation();
+          setValidated(true);
+          setShowFeedback(true);
+          return;
+>>>>>>> main
         } else {
           alert("Lỗi khi thêm sách");
         }
+<<<<<<< HEAD
       } catch (error) {
         alert("Lỗi khi thêm sách", error);
       }
@@ -162,6 +208,39 @@ function Quanlisanpham() {
                         Vui lòng chọn ảnh.
                       </Form.Control.Feedback>
                     </FormGroup>
+=======
+      
+        try {
+          console.log(bookInfo);
+      
+          const response = await fetch('http://localhost:3001/api/addBook', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(bookInfo),
+          });
+      
+          if (response.ok) {
+            const data = await response.json();
+            console.log(data);
+            alert("Thêm sách thành công");
+          } else {
+            alert("Lỗi khi thêm sách");
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          alert("Lỗi khi thêm sách", error);
+        }
+      };
+    const [isFormVisible, setIsFormVisible] = useState(false);
+    const [isSuccessModalVisible, setIsSuccessModalVisible] = useState(false);
+    const closeSuccessModal = () => {
+      setIsSuccessModalVisible(false);
+    };
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isSecondModalOpen, setIsSecondModalOpen] = useState(false);
+>>>>>>> main
 
                     <FormGroup>
                       <FormLabel for = "price">Giá</FormLabel>
@@ -208,6 +287,7 @@ function Quanlisanpham() {
                           name="soldQuantity"
                           onChange={handleInputChange}
                         />
+<<<<<<< HEAD
                       </FormGroup> */}
 
                     {/* <FormGroup>
@@ -237,6 +317,19 @@ function Quanlisanpham() {
                       </FormGroup> */}
                   </Col>
                 </Row>
+=======
+                      </FormGroup>
+                      <FormGroup>
+                        <FormLabel>Mức giảm giá</FormLabel>
+                        <FormControl
+                          type="text"
+                          name="discount"
+                          onChange={handleInputChange}
+                        />
+                      </FormGroup>
+                    </Col>
+                  </Row>
+>>>>>>> main
 
                 <FormGroup className={styles.formActions}>
                   <Button type="submit" variant="primary"

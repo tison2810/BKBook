@@ -5,7 +5,7 @@ function Sidebar () {
     return (
         <div className={styles.sidebar}>
             <ul>
-                <li><Link to =''>Thông tin tài khoản</Link></li>
+                <li><Link to ='/thongtincanhan'>Thông tin tài khoản</Link></li>
                 <li><Link to ='/xacnhandon'>Xác nhận đơn hàng</Link></li>
                 <li><Link to ='/theodoidon'>Theo dõi đơn hàng</Link></li>
                 <li><Link to =''>Tìm kiếm sản phẩm</Link></li>

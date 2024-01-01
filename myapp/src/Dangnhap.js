@@ -40,7 +40,7 @@ function LoginForm() {
         try {
           const response = await axios.post(apiEndpoint, formData);
           console.log(response.data);
-      
+
           if (response.status === 200) {
             handleLogin(formData, isAdmin);
             navigate('/');
@@ -51,11 +51,11 @@ function LoginForm() {
           setModalContent('Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng thử lại!');
         }
       };
-      
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-      
+
         const isAdmin = document.getElementById('isAdmin').checked;
 
         if (isAdmin) {
@@ -100,7 +100,7 @@ function LoginForm() {
                 appElement={document.getElementById('root')}
             >
                 <div className={styles.popupContent}>{modalContent}</div>
-                <button onClick={closeModal}>Đóng</button>
+                <button onClick={closeModal} className = {styles.popupButton}>Đóng</button>
             </Modal>
         </div>
     );

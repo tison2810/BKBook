@@ -226,4 +226,5 @@
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 20px;
+  text-align: justify;
 }

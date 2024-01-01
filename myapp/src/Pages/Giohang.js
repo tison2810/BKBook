@@ -31,7 +31,7 @@ function ProductInCart(props) {
     const handleDeleteFromCart = async () => {
         const isConfirmed = window.confirm("Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng không?");
         if (!isConfirmed) return;
-    
+
         try {
             const response = await fetch('http://localhost:3001/api/deleteFromCart', {
                 method: 'DELETE',
@@ -43,12 +43,12 @@ function ProductInCart(props) {
                     username: props.username,
                 }),
             });
-    
+
             const responseText = await response.text();
             console.log(responseText);
             alert('Xóa thành công!');
             props.updateProduct();
-    
+
         } catch (error) {
             console.error('Error:', error);
             alert('Xóa không thành công. Vui lòng thử lại!');
@@ -139,7 +139,7 @@ function ProductInCart(props) {
 }
 
 function ListProductInCart() {
-    
+
     const {userInfo} = useAuth();
     const [products, setProducts] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
@@ -147,7 +147,7 @@ function ListProductInCart() {
 
     const updateProductInfo = ({ bookId, quantity, sumPrice }) => {
         console.log("Updating product info:", bookId, quantity, sumPrice);
-    
+
         setProducts((prevProducts) =>
             prevProducts.map((product) =>
                 product.IDSach === bookId
@@ -155,7 +155,7 @@ function ListProductInCart() {
                     : product
             )
         );
-    
+
         const newTotalPrice = products.reduce(
             (total, product) => total + product.sumPrice,
             0
@@ -205,7 +205,7 @@ function ListProductInCart() {
           .then(response => response.json())
           .then(data => setProducts(data))
           .catch(error => console.error('Error fetching cart:', error));
-    }, [userInfo.username]); 
+    }, [userInfo.username]);
     useEffect(() => {
         const username = userInfo.username;
         fetch(`http://localhost:3001/api/customerInfo/${username}`)
@@ -240,7 +240,7 @@ function ListProductInCart() {
                 // console.log('totalPrice:', totalPrice);
                 return (
                 <ProductInCart
-                    key={index} 
+                    key={index}
                     username={userInfo.username}
                     bookId={product.IDSach}
                     imgSrc={`/images/${product.Anh}`}
@@ -280,7 +280,7 @@ function ListProductInCart() {
                 <button className={styles.adjustInfomation} type="button">Sửa thông tin</button>
             </form>
             <form>
-                <button className={styles.payment} type="button" onClick={handleIntoOrder}>Thanh toán</button>
+                <button className={styles.payment} type="button" onClick={handleIntoOrder}>Đặt hàng</button>
             </form>
         </div>
     </div>

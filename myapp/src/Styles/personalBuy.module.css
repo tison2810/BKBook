@@ -6,13 +6,15 @@
   left: 320px;
   top: 140px;
   height: 45px;
-  width: 160px;
+  width: 180px;
   letter-spacing: -0.24px;
+  border-radius:9px;
+
   /* padding: 10px; */
   /* text-align: */
 }
 .filterDropdown{
-  border: 2px solid #ccc;
+  border: 3px solid #ccc;
 }
 .orderedTable{
   position: absolute;
