@@ -123,7 +123,7 @@
     height: 390px;
     background-color: white;
     overflow: auto;
-    -ms-overflow-style: none;  
+    -ms-overflow-style: none;
     scrollbar-width: none;
     padding: 5px;
     border-radius: 20px;
@@ -200,7 +200,8 @@
     font-size: 18px;
     padding: 5px;
     padding-top: 25px;
-    background-color: #FFF;
+    background-color: #E9E9E9;
+    margin-left:1000px;
 }
 .orderInfo .orderButton
 {
@@ -227,6 +228,7 @@
 form .adjustInfomation
 {
     background: #0500FF;
+    border-radius:9px;
 }
 form .adjustInfomation:hover,
 form .payment:hover
@@ -236,8 +238,9 @@ form .payment:hover
 form .payment
 {
     background: #F00;
+    border-radius:9px;
 }
-.customName, .customAddress, 
+.customName, .customAddress,
 .customPhone, .totalPrice
 {
     display: grid;

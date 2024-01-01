@@ -4,6 +4,7 @@ import styles from '../Styles/Trangchu.module.css';
 import voting from '../images/voting.png';
 import Header from '../Component/Header.js';
 import Sideboard from '../Component/Sideboard.js';
+import Footer from '../Component/Footer.js';
 import { useSearch } from '../SearchContext';
 import Footer from '../Component/Footer.js';
 
@@ -28,7 +29,7 @@ function Product(props) {
 
 function TrangChu() {
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 10; 
+  const productsPerPage = 10;
   const { searchTerm } = useSearch();
   const [products, setProducts] = useState([]);
   const [isSearch, setIsSearch] = useState(false);
@@ -70,7 +71,7 @@ function TrangChu() {
     }
   }, [searchTerm]);
 
-  const listProducts = 
+  const listProducts =
   <ul className={styles.listProducts}>
     {products.map((product, index) => (
       <li key={index} className={styles.listProductsEle}>
@@ -85,13 +86,13 @@ function TrangChu() {
     ))}
   </ul>
 
-  // const content = 
+  // const content =
   // <div className={styles.content}>
   // {listProducts}
   // <ul className={styles.pagination}>{renderPageNumbers}</ul>
   // </div>;
 
-  const content = 
+  const content =
     <div className={styles.content}>
       <ul className={styles.listProducts}>
         {currentProducts.map((product, index) => (

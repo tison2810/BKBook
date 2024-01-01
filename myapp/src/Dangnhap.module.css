@@ -10,7 +10,7 @@
     opacity: 0.5;
     background: linear-gradient(0deg, rgba(133, 163, 207, 0.30) 0%, rgba(133, 163, 207, 0.30) 100%), url(./images/ruthsbookshelf.webp), lightgray 25% / cover no-repeat;
     background-size: 25%;
-    
+
 }
 .loginTitle
 {
@@ -106,7 +106,7 @@
     display: block;
     margin-top: 0em;
     padding: 0px 5px;
-} 
+}
 .loginForm form button
 {
     width: 264px;
@@ -144,7 +144,7 @@
     align-items: stretch;
     justify-items: center;
   }
-  
+
 .signupWelcome:before {
     content: ' ';
     display: block;
@@ -237,10 +237,29 @@
     transform: translate(-50%, -50%);
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
+    border-radius: 9px;
     overflow: hidden;
     max-width: 80%;
     max-height: 80%;
     padding: 20px;
     text-align: center;
+    width:400px;
+    height:200px;
+    font-size:20px;
+    border:2px solid #C92127;
+    border-color:#C92127;
+    color:#C92127;
+}
+.popupContent{
+    /* background-color:blue; */
+    margin-top:20px;
+}
+.popupButton{
+    background-color:#FFFFFF;
+    margin-top:40px;
+    width:80px;
+    height:40px;
+    border:2px solid #C92127;
+    border-radius:9px;
+    color: #C92127;
 }

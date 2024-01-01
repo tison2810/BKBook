@@ -18,6 +18,7 @@ import Xacnhandon from './Pages/Xacnhandon';
 import Quanlisanpham from './Pages/Quanlisanpham';
 import Thongtincanhan from './Pages/Thongtincanhan';
 import Thongtinkh from './Pages/Thongtinkh';
+
 function App() {
     return (
         <div className='App'>
@@ -39,6 +40,7 @@ function App() {
                 <Route path='/quanlisanpham' element={<Quanlisanpham />} />
                 <Route path='/thongtincanhan' element={<Thongtincanhan/>} />
                 <Route path='/thongtinkh' element={<Thongtinkh/>} />
+                <Route path='/thongtincanhan' element={<Thongtincanhan/>} />
             </Routes>
             </SearchProvider>
             </AuthProvider>
