@@ -2,7 +2,7 @@ import styles from '../Styles/Thongtincanhan.module.css';
 import React , {useState, useEffect} from 'react';
 import Header from '../Component/logHeader.js';
 import Footer from '../Component/Footer.js';
-import Sidebar from '../Component/sideBar.js';
+import Sidebar from '../Component/sideBarAdmin.js';
 import { RxAvatar } from "react-icons/rx";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdOutlineMail } from "react-icons/md";
