@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../Component/Header.js';
 import Footer from '../Component/Footer.js';
-import styles from '../Styles/Xemsanpham.module.css';
+import styles from '../Styles/Xemsanpham.css';
 import { FaShoppingCart } from "react-icons/fa";
 import { MdStar } from "react-icons/md";
 import { MdStarHalf } from "react-icons/md";

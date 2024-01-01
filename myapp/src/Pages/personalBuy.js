@@ -1,12 +1,12 @@
 //import logo from './logo.svg';
 import styles from '../Styles/personalBuy.module.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../Component/logHeader.js';
 // import Header from '../Component/Header.js';
 import Footer from '../Component/Footer.js';
 import Sidebar from '../Component/sideBar.js';
 import Table from 'react-bootstrap/Table';
-
+import { useAuth } from '../AuthContext.js';
 
 const getStatusClass = (status) => {
   switch (status) {
@@ -26,21 +26,29 @@ const getStatusClass = (status) => {
 };
 
 function PersonalBuy() {
+  const {userInfo} = useAuth();
+  const [data, setData] = useState([]); 
   const [filter, setFilter] = useState('Tất cả'); // State để lưu giá trị filter, mặc định là '0' (Tất cả)
   const handleFilterChange = (e) => {
     setFilter(e.target.value);
   };
-  const data = [
-    { trangThai: 'Đã giao', maDonHang: '0x0001', ngayMua: '31/02/2023' },
-    { trangThai: 'Đang giao', maDonHang: '0x0002', ngayMua: '31/02/2023' },
-    { trangThai: 'Đã hủy', maDonHang: '0x0003', ngayMua: '31/02/2023' },
-    { trangThai: 'Đang xử lí', maDonHang: '0x0004', ngayMua: '31/02/2023' },
-    { trangThai: 'Chờ thanh toán', maDonHang: '0x0005', ngayMua: '31/02/2023' },
-  ];
+  useEffect(() => {
+    fetch(`http://localhost:3001/api/orderList/${userInfo.username}`)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          setData(result);
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+  } ,[])
+
 
   // Lọc dữ liệu theo giá trị của dropdown
   const filteredData =
-    filter === 'Tất cả' ? data : data.filter(item => item.trangThai.toLowerCase() === filter.toLowerCase());
+    filter === 'Tất cả' ? data : data.filter(item => item.XacNhan.toLowerCase() === filter.toLowerCase());
   const filterDropdown =
     <div className={styles.filterDropdown}>
       <select onChange={handleFilterChange} value={filter}>
@@ -66,10 +74,10 @@ function PersonalBuy() {
         </thead>
         <tbody>
           {filteredData.map((item, index) => (
-            <tr key={index} className={getStatusClass(item.trangThai)}>
-              <td>{item.trangThai}</td>
-              <td>{item.maDonHang}</td>
-              <td>{item.ngayMua}</td>
+            <tr key={index} className={getStatusClass(item.XacNhan)}>
+              <td>{item.XacNhan}</td>
+              <td>{item.ID}</td>
+              <td>{item.NgayTao}</td>
               <td><a href="#">Xem chi tiết</a></td>
             </tr>
           ))}
