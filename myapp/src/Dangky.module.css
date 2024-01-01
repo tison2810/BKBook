@@ -1,4 +1,4 @@
-.signup-title::before
+.signupTitle::before
 {
     content: ' ';
     display: block;
@@ -12,7 +12,7 @@
     background-size: 25%;
     
 }
-.signup-title
+.signupTitle
 {
     position: relative;
     height: 200px;
@@ -22,7 +22,7 @@
     align-items: center;
     margin-bottom: 43px;
 }
-.signup-title p
+.signupTitle p
 {
     position: relative;
     display: flex;
@@ -41,7 +41,7 @@
     text-shadow: 0px 4px 4px #FF2020;
 }
 
-.signup-form
+.signupForm
 {
     display: grid;
     width: 614px;
@@ -53,7 +53,7 @@
     align-items: center;
 }
 
-.signup-form p
+.signupForm p
 {
     color: #000;
     font-size: 32px;
@@ -65,7 +65,7 @@
     margin-bottom: 0px;
 }
 
-.signup-form input
+.signupForm input
 {
     border: none;
     border-bottom: 1px solid;
@@ -80,7 +80,7 @@
     margin-left: 10px;
 }
 
-.signup-form form .signup-button
+.signupForm form .signupButton
 {
     width: 264px;
     height: 63px;
@@ -95,7 +95,7 @@
     letter-spacing: -0.2px;
 }
 
-.login-welcome::before
+.loginWelcome::before
 {
     content: ' ';
     display: block;
@@ -110,7 +110,7 @@
     background-position: 50% 50%;
 }
 
-.login-welcome
+.loginWelcome
 {   width: 614px;
     height: 440px;
     flex-shrink: 0;
@@ -126,14 +126,14 @@
     border: 2px solid #000;
 }
 
-.login-welcome h2,
-.login-welcome p,
-.login-welcome .login-button
+.loginWelcome h2,
+.loginWelcome p,
+.loginWelcome .loginButton
 {
     position: relative
 }
 
-.login-welcome h2
+.loginWelcome h2
 {
     color: #FFF2F2;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -146,7 +146,7 @@
     margin-bottom: 58px;
 }
 
-.login-welcome p
+.loginWelcome p
 {
     color: #FFF;
     font-size: 25px;
@@ -158,7 +158,7 @@
     margin-bottom: 46px;
 }
 
-.login-welcome .login-button
+.loginWelcome .loginButton
 {
     width: 264px;
     height: 63px;
@@ -177,17 +177,17 @@
     align-items: center;
 }
 
-.login-welcome .login-button a
+.loginWelcome .loginButton a
 {
     text-decoration: none;
     color: #FFF;
 }
 
-.login-welcome .login-button a:hover
+.loginWelcome .loginButton a:hover
 {
     color: rgba(180, 176, 176);
 }
-.display-signup-form
+.displaySignupForm
 {
     display: grid;
     grid-template-columns: 614px 614px;
@@ -195,7 +195,7 @@
     margin: 0px 34px 49px 34px;
     justify-content: space-evenly;
 }
-.signup-popup {
+.signupPopup {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -210,11 +210,11 @@
     text-align: center;
 }
   
-.popup-content {
+.popupContent {
     margin-bottom: 20px;
 }
   
-.close-button {
+.closeButton {
     cursor: pointer;
     background: none;
     border: none;
@@ -222,6 +222,6 @@
     color: #555;
 }
   
-  .close-button:hover {
+  .closeButton:hover {
     color: #333;
   }

@@ -162,7 +162,7 @@
 }
 .signupWelcome h2,
 .signupWelcome p,
-.signupWelcome .signup-button
+.signupWelcome .signupButton
 {
     position: relative;
 }
@@ -190,7 +190,7 @@
     letter-spacing: -0.2px;
 }
 
-.signupWelcome .signup-button
+.signupWelcome .signupButton
 {
     width: 264px;
     height: 63px;
@@ -208,7 +208,7 @@
     cursor: pointer;
 }
 
-.signupWelcome .signup-button
+.signupWelcome .signupButton
 {
     display: flex;
     align-items: center;
@@ -217,7 +217,7 @@
     color: #FFF;
 }
 
-.signupWelcome .signup-button:hover
+.signupWelcome .signupButton:hover
 {
     color: rgba(180, 176, 176);
 }
