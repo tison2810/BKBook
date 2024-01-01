@@ -11,6 +11,7 @@ import Dangnhap from './Dangnhap';
 import Dangky from './Dangky';
 import Xemsanpham from './Pages/Xemsanpham';
 import Xemchitiet from './Pages/Xemchitiet';
+import Xemlichsutrang from './Pages/Xemlichsutrang';
 function App() {
     return (
         <div className='App'>
@@ -25,6 +26,7 @@ function App() {
                 <Route path='/personalBuy' element={<PersonalBuy />} />
                 <Route path='/xemsanpham' element={<Xemsanpham />} />
                 <Route path='/xemchitiet' element={<Xemchitiet />} />
+                <Route path='/xemlichsutrang' element={<Xemlichsutrang />} />
             </Routes>
             </SearchProvider>
             </AuthProvider>
