@@ -85,6 +85,8 @@ CREATE TABLE NhanVien (
     MatKhau VARCHAR(20) NOT NULL,
     HoTen VARCHAR(255) NOT NULL,
     SoDienThoai CHAR(10) NOT NULL,
+    Email VARCHAR(255),
+    DiaChi VARCHAR(1000),
     GioiTinh CHAR(1),
     PRIMARY KEY (ID)
 );
@@ -278,7 +280,7 @@ INSERT INTO KhachThemSach VALUE ('0903127256', 2, 3);
 INSERT INTO KhachThemSach VALUE ('0913020447', 3, 1);
 INSERT INTO KhachThemSach VALUE ('0913020447', 4, 2);
 
-INSERT INTO NhanVien VALUE ('EMP0001', 'admin', '123456789', 'Nguyễn Văn A', '0908246578', 'M');
+INSERT INTO NhanVien VALUE ('EMP0001', 'admin', '123456789', 'Nguyễn Văn A', '0908246578', 'nguyenvana@gmail.com', '5 Đinh Tiên Hoàng, phường Đa Kao, quận 1, TP.HCM', 'M');
 
 insert into DanhGia value ('0903127256', 1, 4, 'Đóng gói đẹp, sách mới.');
 insert into DanhGia value ('0913020447', 1, 3, 'Sách bị nhăn, đóng gói chưa tốt');
