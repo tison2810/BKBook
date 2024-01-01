@@ -1,4 +1,4 @@
-import styles from '../Styles/Xacnhandon.css';
+import styles from '../Styles/Xacnhandon.module.css';
 import React from 'react';
 import Header from '../Component/logHeader.js';
 import Footer from '../Component/Footer.js';
