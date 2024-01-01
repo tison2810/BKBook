@@ -4,7 +4,6 @@ import styles from '../Styles/Trangchu.module.css';
 import voting from '../images/voting.png';
 import Header from '../Component/Header.js';
 import Sideboard from '../Component/Sideboard.js';
-import Footer from '../Component/Footer.js';
 import { useSearch } from '../SearchContext';
 
 function Product(props) {

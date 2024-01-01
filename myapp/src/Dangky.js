@@ -100,7 +100,11 @@ function SignupForm() {
         appElement={document.getElementById('root')}
       >
         <div className={styles.popupContent}>{modalContent}</div>
-        <button onClick={closeModal}>Đóng</button>
+        <div>
+          <button onClick={closeModal}
+           className={styles.popupButton}
+          >Đóng</button>
+        </div>
       </Modal>
     </div>
   );
