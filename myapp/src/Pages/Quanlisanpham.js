@@ -46,8 +46,6 @@ function Quanlisanpham(){
         publisher: "",
         soldQuantity: "",
         discount: "",
-        averageRating: "",
-        description: "",
       });
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -56,15 +54,17 @@ function Quanlisanpham(){
 
       const handleImageChange = (e) => {
         const file = e.target.files[0];
-        setBookInfo({ ...bookInfo, image: file });
+        const imageName = file ? file.name : null;
+        setBookInfo({ ...bookInfo, image: imageName });
       };
+      
 
       const [validated, setValidated] = useState(false);
       const [showFeedback, setShowFeedback] = useState(false);
       const handleSubmit = async (event) => {
         event.preventDefault();
         const form = event.currentTarget;
-
+      
         if (form.checkValidity() === false) {
           event.stopPropagation();
           setValidated(true);
@@ -74,32 +74,30 @@ function Quanlisanpham(){
           setValidated(false);
           setShowFeedback(false);
         }
+      
         try {
-          const formData = new FormData();
-          formData.append("Ten", bookInfo.name);
-          formData.append("Anh", bookInfo.image);
-          formData.append("MoTa", bookInfo.description);
-          formData.append("Gia", bookInfo.price);
-          formData.append("MucGiamGia", bookInfo.discount);
-          formData.append("SoLuongDaBan", bookInfo.soldQuantity);
-          formData.append("NXB", bookInfo.publisher);
-          formData.append("TacGia", bookInfo.author);
-          formData.append("DiemTrungBinh", bookInfo.averageRating);
-
-          const response = await fetch("http://localhost:3001/api/AddBook", {
-            method: "POST",
-            body: formData,
+          console.log(bookInfo);
+      
+          const response = await fetch('http://localhost:3001/api/addBook', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(bookInfo),
           });
-          setIsSuccessModalVisible(true);
+      
           if (response.ok) {
+            const data = await response.json();
+            console.log(data);
             alert("Thêm sách thành công");
           } else {
             alert("Lỗi khi thêm sách");
           }
         } catch (error) {
+          console.error('Error:', error);
           alert("Lỗi khi thêm sách", error);
         }
-    };
+      };
     const [isFormVisible, setIsFormVisible] = useState(false);
     const [isSuccessModalVisible, setIsSuccessModalVisible] = useState(false);
     const closeSuccessModal = () => {
@@ -209,29 +207,11 @@ function Quanlisanpham(){
                           onChange={handleInputChange}
                         />
                       </FormGroup>
-
                       <FormGroup>
-                        <FormLabel>Số lượng còn lại</FormLabel>
-                        <FormControl
-                          type="text"
-                          name="remainQuantity"
-                          onChange={handleInputChange}
-                        />
-                      </FormGroup>
-                      <FormGroup>
-                        <FormLabel>Mục giảm giá</FormLabel>
+                        <FormLabel>Mức giảm giá</FormLabel>
                         <FormControl
                           type="text"
                           name="discount"
-                          onChange={handleInputChange}
-                        />
-                      </FormGroup>
-
-                      <FormGroup>
-                        <FormLabel>Điểm trung bình</FormLabel>
-                        <FormControl
-                          type="text"
-                          name="averageRating"
                           onChange={handleInputChange}
                         />
                       </FormGroup>
