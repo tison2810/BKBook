@@ -286,8 +286,8 @@ function Quanlisanpham(){
             <td><img src={`/images/${item.Anh}`} alt={item.TenSach} /></td>
             <td>{item.NXB}</td>
             <td>{item.TacGia}</td>
-            <td>{item.SoLuongDaBan}</td>
-            <td>{item.SoLuongConLai}</td>
+            {/* <td>{item.SoLuongDaBan}</td>
+            <td>{item.SoLuongConLai}</td> */}
             <td>{item.Gia}</td>
             <td>{item.MucGiamGia}</td>
             <td>{item.DiemTrungBinh}</td>
