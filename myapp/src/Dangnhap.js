@@ -6,11 +6,11 @@ import axios from 'axios';
 import Modal from 'react-modal';
 import { useAuth } from './AuthContext';
 
-import './Dangnhap.css';
+import styles from './Dangnhap.module.css';
 
 function LoginTitle() {
     return (
-        <div className='login-title'>
+        <div className={styles.loginTitle}>
             <p> ĐĂNG NHẬP </p>
         </div>
     );
@@ -25,72 +25,85 @@ function LoginForm() {
         username: '',
         password: '',
     });
-    
+
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalContent, setModalContent] = useState('');
-    
+
     const handleChange = (e) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
         });
     };
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+
         try {
-          const response = await axios.post('http://localhost:3001/api/login', formData);
-          console.log(response.data);
+            const response = await axios.post('http://localhost:3001/api/login', formData);
+            console.log(response.data);
+
+            // Xác thực thành công, chuyển hướng đến trang chủ
+            if (response.status === 200) {
+                handleLogin({ username: formData.username });
+                navigate('/');
+            }
+        }
+        catch (error) {
+            try {
+                const adminResponse = await axios.post('http://localhost:3001/api/AdminLogin', formData);
+                console.log(adminResponse.data);
     
-          // Xác thực thành công, chuyển hướng đến trang chủ
-          if (response.status === 200) {
-            handleLogin({ username: formData.username });
-            navigate('/');
-          }
-        } catch (error) {
-          console.error('Đã có lỗi xảy ra', error);
-          setIsModalOpen(true);
-          setModalContent('Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng thử lại!');
+                // Xác thực thành công, chuyển hướng đến trang chủ
+                if (adminResponse.status === 200) {
+                    handleLogin({ username: formData.username });
+                    navigate('/theodoidon');
+                }
+            }
+            catch(adminError){
+            console.error('Đã có lỗi xảy ra', adminError);
+            setIsModalOpen(true);
+            setModalContent('Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng thử lại!');
+            }
         }
     };
-    
+
     const closeModal = () => {
         setIsModalOpen(false);
         setModalContent('');
     };
 
     return (
-        <div className='login-form'>
+        <div className={styles.loginForm}>
             <p>
-            Chào mừng bạn trở lại!<br/>
-            Hãy đăng nhập ngay bây giờ.
+                Chào mừng bạn trở lại!<br />
+                Hãy đăng nhập ngay bây giờ.
             </p>
             <form onSubmit={handleSubmit}>
-            <input className='username-input' name='username' 
-            type="text" placeholder='Tên đăng nhập'
-            onChange={handleChange}/>
-            <input className='password-input' name='password' 
-            type="password" placeholder='Mật khẩu'
-            onChange={handleChange}/>
-            <div className="sub">
-                <div className='remember-user-input'>
-                    <input type="checkbox" id="remember-user"/>
-                    <label htmlFor="remember-user">Ghi nhớ tài khoản</label>
+                <input className={styles.usernameInput} name='username'
+                    type="text" placeholder='Tên đăng nhập'
+                    onChange={handleChange} />
+                <input className={styles.passwordInput} name='password'
+                    type="password" placeholder='Mật khẩu'
+                    onChange={handleChange} />
+                <div className={styles.sub}>
+                    <div className={styles.rememberUserInput}>
+                        <input type="checkbox" id="remember-user" />
+                        <label htmlFor="remember-user">Ghi nhớ tài khoản</label>
+                    </div>
+                    <a href="#">Quên mật khẩu?</a>
                 </div>
-                <a href="#">Quên mật khẩu?</a>
-            </div>
-                <button className="login-button" type="submit">Đăng nhập</button>
+                <button className={styles.loginButton} type="submit">Đăng nhập</button>
             </form>
             <Modal
-            className='login-popup'
-            isOpen={isModalOpen}
-            onRequestClose={closeModal}
-            contentLabel='Thông báo'
-            appElement={document.getElementById('root')}
+                className={styles.loginPopup}
+                isOpen={isModalOpen}
+                onRequestClose={closeModal}
+                contentLabel='Thông báo'
+                appElement={document.getElementById('root')}
             >
-            <div className='popup-content'>{modalContent}</div>
-            <button onClick={closeModal}>Đóng</button>
+                <div className={styles.popupContent}>{modalContent}</div>
+                <button onClick={closeModal}>Đóng</button>
             </Modal>
         </div>
     );
@@ -98,33 +111,33 @@ function LoginForm() {
 
 function SignUpWelcome() {
     return (
-        <div className='signup-welcome'>
+        <div className={styles.signupWelcome}>
             <h2>
                 Bạn chưa có tài khoản?
             </h2>
             <p>
                 Hãy kết nối với BKBOOK ngay tại đây.
             </p>
-            <Link className="signup-button" to='/dangky'>Tạo tài khoản</Link>
+            <Link className={styles.signupButton} to='/dangky'>Tạo tài khoản</Link>
         </div>
     );
 }
 
 function DisplayLoginForm() {
     return (
-        <div className='display-login-form'>
-            <SignUpWelcome/>
-            <LoginForm/>
+        <div className={styles.displayLoginForm}>
+            <SignUpWelcome />
+            <LoginForm />
         </div>
     );
 }
 function Dangnhap() {
     return (
         <React.Fragment>
-            <Header/>
-            <LoginTitle/>
-            <DisplayLoginForm/>
-            <Footer/>
+            <Header />
+            <LoginTitle />
+            <DisplayLoginForm />
+            <Footer />
         </React.Fragment>
     );
 }

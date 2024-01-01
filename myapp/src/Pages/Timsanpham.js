@@ -1,4 +1,4 @@
-import '../Styles/Theodoidon.css';
+import styles from '../Styles/Theodoidon.module.css';
 import React from 'react';
 import Header from '../Component/logHeader.js';
 import Footer from '../Component/Footer.js';
@@ -10,7 +10,7 @@ function Timsanpham(){
         <React.Fragment>
           <Header />
           <Sidebar />
-          <input className= "searchbar" type="text" placeholder="Nhập mã sản phẩm cần tìm" />
+          <input className={styles.searchbar} type="text" placeholder="Nhập mã sản phẩm cần tìm" />
           <Footer />
         </React.Fragment>
       );
