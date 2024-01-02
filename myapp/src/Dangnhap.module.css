@@ -79,6 +79,13 @@
     width: 577px;
     height: 71px;
     flex-shrink: 0;
+
+}
+.loginForm .usernameInput:focus{
+    outline:none;
+}
+.loginForm .passwordInput:focus{
+    outline:none;
 }
 .loginForm div
 {
@@ -247,7 +254,7 @@
     height:200px;
     font-size:20px;
     border:2px solid #C92127;
-    border-color:#C92127;
+    border-color:#111111;
     color:#C92127;
 }
 .popupContent{
@@ -259,7 +266,7 @@
     margin-top:40px;
     width:80px;
     height:40px;
-    border:2px solid #C92127;
+    border:2px solid #111111;
     border-radius:9px;
-    color: #C92127;
+    color: #111111;
 }

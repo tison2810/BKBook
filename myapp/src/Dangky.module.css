@@ -10,7 +10,7 @@
     opacity: 0.5;
     background: linear-gradient(0deg, rgba(133, 163, 207, 0.30) 0%, rgba(133, 163, 207, 0.30) 100%), url(./images/ruthsbookshelf.webp), lightgray 25% / cover no-repeat;
     background-size: 25%;
-    
+
 }
 .signupTitle
 {
@@ -202,18 +202,20 @@
     transform: translate(-50%, -50%);
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
+    border-radius: 9px;
     overflow: hidden;
-    max-width: 80%;
-    max-height: 80%;
+    width:300px;
+    height:150px;
     padding: 20px;
     text-align: center;
+    color: #C92127;
+    border: 2px solid #111111;
 }
-  
 .popupContent {
     margin-bottom: 20px;
+    margin-top:20px;
 }
-  
+
 .closeButton {
     cursor: pointer;
     background: none;
@@ -221,7 +223,27 @@
     font-size: 14px;
     color: #555;
 }
-  
+
   .closeButton:hover {
     color: #333;
   }
+.popupButton{
+    margin-top:15px;
+    width:80px;
+    height:35px;
+    border-radius:9px;
+    border: 2px solid #111111;
+    color: #111111;
+}
+.usernameInput:focus{
+    outline:none;
+}
+.passwordInput:focus{
+    outline:none;
+}
+.passwordReInput:focus{
+    outline:none;
+}
+.phoneInput:focus{
+    outline:none;
+}

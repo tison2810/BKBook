@@ -7,5 +7,6 @@ router.get('/GetOrder', GetInfoController.GetOrder);
 router.get('/GetOrderConfirm', GetInfoController.GetOrderConfirm);
 router.get('/GetListBook', GetInfoController.GetListBook);
 router.get('/GetBook', GetInfoController.GetBook);
+router.get('/SearchOrder', GetInfoController.SearchOrder);
 
 module.exports = router;

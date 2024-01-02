@@ -2,12 +2,12 @@ const db = require('../db');
 
 exports.getInfo = (req, res) => {
     const username = req.params.username;
-    const query = 'SELECT * FROM NhanVien WHERE TenDangNhap=?';
+    console.log(username);
+    const query = 'SELECT * FROM nhanvien WHERE TenDangNhap=?';
     console.log(username);
     db.query(query, [username], (error, results) => {
         if (error) throw error;
         res.json(results);
-        console.log(results);
     });
 }
 

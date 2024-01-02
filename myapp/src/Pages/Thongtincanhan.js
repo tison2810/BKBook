@@ -15,6 +15,7 @@ const Thongtintk = () =>{
   const [staffInfo, setStaffInfo] = useState([]);
 
   const fetchStaffInfo = (username, setStaffInfo ) => {
+    console.log(username);
     fetch(`http://localhost:3001/api/staffInfo/${username}`)
       .then(res => res.json())
       .then(
@@ -35,7 +36,7 @@ const Thongtintk = () =>{
     const username = userInfo.username;
     const email = prompt("Nhập email mới");
     if (email === null) return;
-    fetch(`http://localhost:3001/api/updateEmail/${username}`, {
+    fetch(`http://localhost:3001/api/updateStaffEmail/${username}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -58,7 +59,7 @@ const Thongtintk = () =>{
     const username = userInfo.username;
     const address = prompt("Nhập địa chỉ mới");
     if (address === null) return;
-    fetch(`http://localhost:3001/api/updateAddress/${username}`, {
+    fetch(`http://localhost:3001/api/updateStaffAddress/${username}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -81,7 +82,7 @@ const Thongtintk = () =>{
     const username = userInfo.username;
     const password = prompt("Nhập mật khẩu mới");
     if (password === null) return;
-    fetch(`http://localhost:3001/api/updatePassword/${username}`, {
+    fetch(`http://localhost:3001/api/updateStaffPassword/${username}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -114,13 +115,12 @@ const Thongtintk = () =>{
                 <li>
                   Họ và tên: {staffInfo[0].HoTen}
                 </li>
-                <li>Ngày sinh: {staffInfo[0].NgaySinh}</li>
                 <li>Giới tính: 
                   {
                     staffInfo[0].GioiTinh === 'M' ? " Nam" : " Nữ"
                   }
                 </li>
-                <li>Ngày tạo tài khoản: {staffInfo[0].NgayTao}</li>
+                <li>Nhân viên quản lý</li>
               </ul>
             </div>
 
@@ -147,7 +147,7 @@ const Thongtintk = () =>{
                   <li><FaHome /> Địa chỉ </li>
                   <li className ={styles.infoTel}>
                     {
-                      staffInfo[0].Diachi === null ? "Chưa cập nhật" : staffInfo[0].Diachi
+                      staffInfo[0].Diachi === null ? "Chưa cập nhật" : staffInfo[0].DiaChi
                     }
                   </li>
                 </ul>

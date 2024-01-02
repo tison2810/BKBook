@@ -4,7 +4,6 @@ import styles from '../Styles/Trangchu.module.css';
 import voting from '../images/voting.png';
 import Header from '../Component/Header.js';
 import Sideboard from '../Component/Sideboard.js';
-// import Footer from '../Component/Footer.js';
 import { useSearch } from '../SearchContext';
 import Footer from '../Component/Footer.js';
 
@@ -45,7 +44,6 @@ function TrangChu() {
   for (let i = 1; i <= Math.ceil(products.length / productsPerPage); i++) {
     pageNumbers.push(i);
   }
-  console.log(pageNumbers);
   const renderPageNumbers = pageNumbers.map((number) => (
     <li key={number} >
       <a href="#" onClick={() => paginate(number)}

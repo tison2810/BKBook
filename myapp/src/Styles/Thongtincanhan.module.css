@@ -1,3 +1,4 @@
+
 .infoPersonal{
   margin-left:320px;
   /* background-color:blue; */
@@ -45,7 +46,8 @@
   margin-left:20px;
 }
 .infoButton1{
-  margin-left:275px;
+  position:absolute;
+  right:185px;
   width:85px;
   height:30px;
   margin-top:5px;
@@ -56,7 +58,8 @@
   border-radius:10px;
 }
 .infoButton2{
-  margin-left:202px;
+  position:absolute;
+  right:185px;
   width:85px;
   height:30px;
   margin-top:5px;
@@ -67,7 +70,8 @@
   border-radius:10px;
 }
 .infoButton3{
-  margin-left:13px;
+  position:absolute;
+  right:185px;
   width:85px;
   height:30px;
   margin-top:5px;
@@ -78,7 +82,8 @@
   border-radius:10px;
 }
 .infoButton4{
-  margin-left:240px;
+  position:absolute;
+  right:185px;
   width:85px;
   height:30px;
   margin-top:5px;
