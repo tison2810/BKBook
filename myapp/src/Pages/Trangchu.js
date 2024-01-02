@@ -44,7 +44,6 @@ function TrangChu() {
   for (let i = 1; i <= Math.ceil(products.length / productsPerPage); i++) {
     pageNumbers.push(i);
   }
-  console.log(pageNumbers);
   const renderPageNumbers = pageNumbers.map((number) => (
     <li key={number} >
       <a href="#" onClick={() => paginate(number)}
