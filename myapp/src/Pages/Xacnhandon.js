@@ -4,15 +4,50 @@ import Header from '../Component/Header.js';
 import Footer from '../Component/Footer.js';
 import Sidebar from '../Component/sideBarAdmin.js';
 import Table from 'react-bootstrap/Table';
+import {useState, useEffect} from 'react';
+import { useSearch } from '../SearchContext';
 
 function Xacnhandon(){
-    const data = [
-        { MaDonHang: '0x0001', NguoiDat: 'Huỳnh Văn Tiến SĐT:0903127256', GiaTri: '512.000', DiaChi: '64 Nguyễn Đình Chính, P15, Q.Phú Nhuận, TP.HCM' },
-        { MaDonHang: '0x0002', NguoiDat: 'Trần Thị Huyền SĐT: 0913080299', GiaTri: '245.000', DiaChi: '356/11 Bạch Đằng, P14, Q.Bình Thạnh, TP.HCM' },
-        { MaDonHang: '0x0003', NguoiDat: 'Phạm Văn Bình SĐT: 0909991573', GiaTri: '1.508.000', DiaChi: '36 Bùi Văn Thêm, P9, Q.Phú Nhuận, TP.HCM' },
-        { MaDonHang: '0x0004', NguoiDat: 'Nguyễn Ngọc Quỳnh SĐT:0902764213', GiaTri: '722.000', DiaChi: '313 Phạm Văn Chiêu, P14, Q.Gò Vấp, TP.HCM' },
-        { MaDonHang: '0x0005', NguoiDat: 'Trương Thành Đạt SĐT:0913020447', GiaTri: '76.000', DiaChi: '242 Lý Thường Kiệt, P14, Q.10, TP.HCM' },
-      ];
+    const [data, setData] = useState([]);
+    const { searchTerm, setSearchTerm } = useSearch();
+    const [isSearch, setIsSearch] = useState(false);
+    const [searchInput, setSearchInput] = useState('');
+
+    const fetchAllOrder = () => {
+      fetch('http://localhost:3001/api/GetOrder')
+      .then(res => res.json())
+      .then(json => setData(json))
+    }
+
+    const handleSearchInputChange = (event) => {
+      setSearchInput(event.target.value);
+    };
+  
+    const handleSearchSubmit = (event) => {
+      event.preventDefault();
+      setSearchTerm(searchInput.trim());
+    };
+  
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+          handleSearchSubmit(event);
+        }
+    };
+
+    useEffect(() => {
+      if (searchTerm) {
+        console.log(searchTerm);
+        setIsSearch(true);
+        fetch(`http://localhost:3001/api/SearchOrder?searchTerm=${searchTerm}`)
+          .then((response) => response.json())
+          .then((data) => setData(data))
+          .catch((error) => console.log(error));
+      } else {
+        setIsSearch(false);
+        fetchAllOrder();
+      }
+    }, [searchTerm]);
+
     const OrderTable = 
     <Table className={styles.OrderTable}>
     <div className={styles.tableContainer}>
@@ -27,22 +62,39 @@ function Xacnhandon(){
       </thead>
       <tbody>
         {data.map((item, index) => (
-          <tr key={index} className = "tableColor">
-            <td>{item.MaDonHang}</td>
-            <td>{item.NguoiDat}</td>
-            <td>{item.GiaTri}</td>
-            <td>{item.DiaChi}</td>
-            <td><a href="#">Xác nhận đơn hàng</a></td>
-          </tr>
-        ))}
-      </tbody>
+        <tr key={index} className="tableColor">
+          <td>{item.ID}</td>
+          <td>{item.HoTen}</td>
+          <td>{item.TongTien}</td>
+          <td>{item.DiaChi}</td>
+          <td>
+        {
+          item.XacNhan === 'Đang xử lý' ? (
+            <a href="#">Xác nhận đơn hàng</a>
+          ) : (
+            item.XacNhan === 'Yêu cầu hủy đơn' ? (
+              <a href="#">Xác nhận hủy đơn</a>
+            ) : (
+              <a href="#">{item.XacNhan}</a>
+            )
+          )
+        }
+          </td>
+      </tr>
+    ))}
+</tbody>
     </div>
   </Table>
     return (
-        <React.Fragment>
+        <React.Fragment key={searchTerm}>
           <Header />
           <Sidebar />
-          <input className={styles.searchbar} type="text" placeholder="Nhập mã đơn hàng cần tìm" />
+          <form onSubmit={handleSearchSubmit}>
+          <input className={styles.searchbar} type="text" placeholder="Nhập mã đơn hàng cần tìm" 
+          value={searchInput}
+          onChange={handleSearchInputChange}
+          onKeyDown={handleKeyDown}/>
+          </form>
           {OrderTable}
           <Footer />  
         </React.Fragment>

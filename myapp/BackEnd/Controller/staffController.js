@@ -8,7 +8,6 @@ exports.getInfo = (req, res) => {
     db.query(query, [username], (error, results) => {
         if (error) throw error;
         res.json(results);
-        console.log(results);
     });
 }
 
